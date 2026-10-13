@@ -59,6 +59,10 @@ class CompanionController(context: Context, localeStore: LocaleStore) {
     private val _openSubtitlesConfigs = MutableSharedFlow<CompanionServiceConfig>(extraBufferCapacity = 4)
     val openSubtitlesConfigs: SharedFlow<CompanionServiceConfig> = _openSubtitlesConfigs.asSharedFlow()
 
+    /** Chosen ids from a [CompanionMode.SELECT_ITEMS] pick list (last selection wins). */
+    private val _selections = MutableSharedFlow<Set<String>>(extraBufferCapacity = 4)
+    val selections: SharedFlow<Set<String>> = _selections.asSharedFlow()
+
     /** A fresh 6-digit PIN per [start], so a leaked code is short-lived. */
     @Volatile private var currentPin: String = ""
 
@@ -116,6 +120,27 @@ class CompanionController(context: Context, localeStore: LocaleStore) {
     fun startForTmdbConfig(port: Int) = startInternal(port, CompanionMode.TMDB_CONFIG)
     fun startForOpenSubtitlesConfig(port: Int) = startInternal(port, CompanionMode.OPEN_SUBTITLES_CONFIG)
 
+    /**
+     * Serves a generic pick list ([CompanionMode.SELECT_ITEMS]): the remote browser ticks [items] and
+     * posts the chosen ids back, which arrive on [onSelection] and on [selections]. Sport-agnostic —
+     * the Sports hub uses it for leagues/teams, any other screen may reuse it.
+     */
+    fun startForSelectItems(
+        port: Int,
+        title: String,
+        items: List<CompanionSelectItem>,
+        onSelection: (Set<String>) -> Unit,
+    ) = startInternal(
+        port = port,
+        mode = CompanionMode.SELECT_ITEMS,
+        selectTitle = title,
+        selectItems = items,
+        onSelection = { ids ->
+            _selections.tryEmit(ids)
+            onSelection(ids)
+        },
+    )
+
     private fun startInternal(
         port: Int,
         mode: CompanionMode,
@@ -123,6 +148,9 @@ class CompanionController(context: Context, localeStore: LocaleStore) {
         syncInfo: () -> String = { "{}" },
         onPair: (name: String, address: String, deviceId: String) -> String? = { _, _, _ -> null },
         pairedSecrets: () -> Set<String> = { emptySet() },
+        selectTitle: String = "",
+        selectItems: List<CompanionSelectItem> = emptyList(),
+        onSelection: (Set<String>) -> Unit = {},
     ) {
         if (port !in 1..65535) {
             _state.value = CompanionServerState.Failed(CompanionFailure.InvalidPort)
@@ -160,6 +188,9 @@ class CompanionController(context: Context, localeStore: LocaleStore) {
                 syncInfo = syncInfo,
                 onPair = onPair,
                 pairedSecrets = pairedSecrets,
+                selectTitle = selectTitle,
+                selectItems = selectItems,
+                onSelection = onSelection,
                 onLocked = {
                     // The server has already stopped itself; just reflect it on the TV so the user
                     // knows why the link went away and that restarting gives them a new PIN.

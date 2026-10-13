@@ -43,7 +43,7 @@
     <string name="search_movie">Film</string>
     <string name="search_series">Serie</string>
     <string name="search_channels">Kanaler</string>
-    <string name="search_on_tv">Tv-programmer</string>
+    <string name="search_on_tv">På tv</string>
     <string name="search_go_to_channel">Gå til kanal</string>
     <string name="search_go_to_movie">Gå til film</string>
     <string name="search_clear_recent">Ryd seneste søgninger</string>
@@ -122,8 +122,8 @@
     <string name="update_not_enough_space">Der er ikke plads nok til opdateringen. Frigør cirka <xliff:g id="size">%1$s</xliff:g>, og prøv igen.</string>
     <string name="update_damaged_download">Opdateringen blev ikke hentet helt. Tjek din forbindelse, og prøv igen.</string>
     <string name="update_install_rejected">Systemets installationsprogram afviste opdateringen: <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="update_ready">OwnTV v<xliff:g id="available">%1$s</xliff:g> er klar (du har v<xliff:g id="current">%2$s</xliff:g>).</string>
-    <string name="recovery_title">OwnTV kunne ikke åbne sin database</string>
+    <string name="update_ready">Sportio v<xliff:g id="available">%1$s</xliff:g> er klar (du har v<xliff:g id="current">%2$s</xliff:g>).</string>
+    <string name="recovery_title">Sportio kunne ikke åbne sin database</string>
     <string name="recovery_data_safe_full">Dine profiler, afspilningslister, favoritter og din afspilningshistorik er IKKE blevet slettet — dette er en fejl under opgradering af databasen, og dataene findes stadig på denne enhed.\n\nRapportér dette, så det kan blive rettet, og medtag meddelelsen nedenfor.</string>
     <string name="recovery_retry">Prøv igen</string>
     <string name="recovery_backup_hint">Hvis du har en sikkerhedskopifil, kan du nulstille appen og gendanne den bagefter. Nulstilling sletter alt, der er gemt på denne enhed.</string>
@@ -181,7 +181,6 @@
     <string name="home_trending_trailer">Trailer</string>
     <string name="home_trending_more_details">Flere oplysninger</string>
     <string name="home_trending_all_versions">Alle versioner</string>
-    <string name="home_trending_why_menu">Hvorfor denne titel er her</string>
     <string name="home_trending_previous">Forrige</string>
     <string name="home_trending_pause">Sæt på pause</string>
     <string name="home_trending_resume">Fortsæt</string>
@@ -225,13 +224,13 @@
     <string name="settings_recording_pre_roll_description">Begynd så lang tid før det angivne starttidspunkt, så en guide der går lidt forud stadig når begyndelsen.</string>
     <string name="settings_recording_post_roll">Fortsæt efter slutningen</string>
     <string name="settings_recording_post_roll_description">Fortsæt så lang tid efter det angivne sluttidspunkt, så et program der trækker ud ikke bliver klippet af.</string>
-    <string name="settings_recording_timers_inexact">Denne enhed tillader ikke OwnTV at sætte præcise alarmer, så en optagelse kan starte et par minutter for sent. Optagelser starter tidligere for at opveje det.</string>
+    <string name="settings_recording_timers_inexact">Denne enhed tillader ikke Sportio at sætte præcise alarmer, så en optagelse kan starte et par minutter for sent. Optagelser starter tidligere for at opveje det.</string>
     <plurals name="recording_minutes">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> minut</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> minutter</item>
     </plurals>
     <string name="recording_failed_encrypted">Denne kanal er krypteret og kan ikke optages</string>
-    <string name="recording_failed_drm">Denne kanal er DRM-beskyttet, så den kan ses, men ikke optages. Beskyttelsen kommer fra din udbyder, ikke fra OwnTV.</string>
+    <string name="recording_failed_drm">Denne kanal er DRM-beskyttet, så den kan ses, men ikke optages. Beskyttelsen kommer fra din udbyder, ikke fra Sportio.</string>
     <string name="recording_failed_metered">Ikke optaget på mobildata</string>
     <string name="recording_card_empty_title">Intet optaget endnu</string>
     <string name="recording_card_body">Vælg et program i tv-guiden og vælg Optag, eller hold en kanal nede og planlæg et tidspunkt. Det havner her, også mens du ser noget andet.</string>

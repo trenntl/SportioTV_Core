@@ -83,8 +83,7 @@ have numbers that can disagree.
   passthrough
 - **HLS, MPEG-DASH and raw MPEG-TS**, chosen from what the playlist declares, what the response
   actually is, and what the panel has already been caught doing — plus **Widevine / ClearKey** for
-  channels that publish a licence server, and ClearKey keys written into the playlist itself
-  (ExoPlayer only; mpv has no CDM)
+  channels that publish a licence server (ExoPlayer only; mpv has no CDM)
 - **Watchdogs that assume the stream is hostile** — no-frame detection, stall recovery, surface
   resets, reconnect logic, and a live diagnostics log
 - Zero-copy **4K HDR** direct rendering, frame-rate matching, throughput tracking, resolution and
@@ -220,9 +219,9 @@ core's strings as a bare `R.string.*`.
 ## 🌍 Translations
 
 <!-- i18n-contribution:start -->
-## Help translate OwnTV
+## Help translate Sportio
 
-If your language is already available, contribute interface translations across OwnTV's six Android resource components on [Hosted Weblate](https://hosted.weblate.org/projects/owntv/). If it is not listed, [open a language request ticket](https://github.com/ahXN00/OwnTV/issues/new?template=feature_request.yml&title=%5BLanguage%5D%20Add%20) first. A maintainer will review the request, register the locale, and prepare its base translation files on Hosted Weblate. Once the language appears on Hosted Weblate, you can start translating it there. See the [language contributor guide](tools/i18n/README.md) for identifiers, validation, and promotion policy.
+Sportio inherits its strings from upstream OwnTV and is rebranded on top. Found a bad Sportio string in your language, or want to add a language? Head to [Hosted Weblate](https://hosted.weblate.org/projects/owntv/) — that is where the translations live, and this fork merges them down. If your language is not listed there, [open a language request ticket](https://github.com/old-repo/SportioTV/issues/new?template=feature_request.yml&title=%5BLanguage%5D%20Add%20) first. Once the language appears on Hosted Weblate, you can start translating it there. See the [language contributor guide](tools/i18n/README.md) for identifiers, validation, and promotion policy.
 <!-- i18n-contribution:end -->
 
 New user-visible text is never English-only: a string is not finished until it exists in every

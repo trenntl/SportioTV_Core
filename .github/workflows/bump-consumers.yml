@@ -10,7 +10,7 @@ name: Bump consumers
 # a newly finished language is stripped out of the APK with every check green.
 #
 # This workflow only OPENS the PR; it never merges. Merging is the consumer repo's business, and the
-# TV app decides to do it itself: `automerge-core-bump.yml` in ahXN00/OwnTV merges the PR once every
+# TV app decides to do it itself: `automerge-core-bump.yml` in old-repo/SportioTV merges the PR once every
 # check on it is green, guarded on the branch name, the author, and a diff touching only the two
 # files below. A consumer without that workflow simply gets a PR that waits for a human.
 #
@@ -63,13 +63,8 @@ jobs:
       fail-fast: false          # one consumer failing must not block the others
       matrix:
         consumer:
-          - ahXN00/OwnTV
-          # Private until the mobile app's first release, so CONSUMER_BUMP_TOKEN has to grant access
-          # to it explicitly — a fine-grained PAT lists repositories one by one, and adding this line
-          # without adding the repo to the token fails on `gh pr list` with a 404 that reads exactly
-          # like a typo. It carries its own `automerge-core-bump.yml` since Plan 3 Phase 5, so its
-          # pull request merges itself once green, exactly like the TV app's.
-          - ahXN00/OwnTV_Mobile
+          # Sportio is TV-only: a single consumer. There is no mobile app on this core.
+          - old-repo/SportioTV
 
     steps:
       # Check out the RELEASED commit, not whatever main has drifted to. `tools/i18n/locales.json`
@@ -112,7 +107,7 @@ jobs:
 
           if [ -z "${GH_TOKEN:-}" ]; then
             echo "::error::CONSUMER_BUMP_TOKEN is not set on this repository."
-            echo "Add a fine-grained PAT for OwnTV, OwnTV_Core and OwnTV_Mobile with Contents and Pull"
+            echo "Add a fine-grained PAT for Sportio and SportioTV_Core with Contents and Pull"
             echo "requests read/write: Settings -> Secrets and variables -> Actions."
             exit 1
           fi
@@ -155,7 +150,7 @@ jobs:
           EOF
 
           cat > ../pr-body.md <<EOF
-          Core \`${VERSION}\` has been published to OwnTV's Maven repository (https://ahxn00.github.io/OwnTV_Core/maven).
+          Core \`${VERSION}\` has been published to Sportio's Maven repository (https://old-repo.github.io/SportioTV_Core/maven).
 
           - \`owntvCore\` moved to \`${VERSION}\` in \`gradle/libs.versions.toml\`
           - \`tools/i18n/locales.json\` refreshed from core
@@ -167,8 +162,8 @@ jobs:
           Merge once the checks are green. See the core changelog for what \`${VERSION}\` contains.
           EOF
 
-          git config user.name  "Ashiq Hasan"
-          git config user.email "ashiq.hasan@hotmail.com"
+          git config user.name  "old-repo"
+          git config user.email "old-repo@users.noreply.github.com"
           git commit -a --file ../commit-message.txt
 
           git push --force-with-lease origin "$BRANCH"

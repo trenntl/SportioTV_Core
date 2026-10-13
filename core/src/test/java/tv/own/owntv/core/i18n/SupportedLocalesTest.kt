@@ -19,8 +19,8 @@ class SupportedLocalesTest {
     fun `catalogue has source override established translations and catalogue-only backlog`() {
         // A catalogue-only language moves from tier 2 to tier 1 when it is promoted at the readiness
         // threshold (tools/i18n/sync_translations.py), so only the total is fixed.
-        assertEquals(45, SupportedLocales.all.size)
-        assertEquals(44, SupportedLocales.all.count { it.tier == 1 || it.tier == 2 })
+        assertEquals(44, SupportedLocales.all.size)
+        assertEquals(43, SupportedLocales.all.count { it.tier == 1 || it.tier == 2 })
         assertTrue(SupportedLocales.all.count { it.tier == 1 } >= 25)
     }
 
@@ -121,8 +121,7 @@ class SupportedLocalesTest {
     @Test
     fun `pickerRows excludes non-packaged and non-visible locales`() {
         val rows = SupportedLocales.pickerRows
-        // Grows by one with every promotion (see the catalogue test above).
-        assertTrue(rows.size >= 25)
+        assertEquals(25, rows.size)
         assertFalse(rows.any { it.id == "en-GB" })
         assertFalse(rows.any { it.tier == 2 })
         rows.forEach {

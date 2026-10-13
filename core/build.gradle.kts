@@ -19,7 +19,9 @@ version = rootProject.extra["coreVersion"] as String
 android {
     namespace = "tv.own.owntv.core"
     compileSdk {
-        version = release(37)
+        version = release(37) {
+            minorApiLevel = 2
+        }
     }
 
     defaultConfig {

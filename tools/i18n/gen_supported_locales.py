@@ -52,12 +52,12 @@ def _readme_contribution(config: dict) -> str:
         if config.get("localTestOnly") else ""
     )
     return (
-        f"{README_START}\n## Help translate OwnTV\n\n{warning}"
-        "If your language is already available, contribute interface translations across OwnTV's six "
-        f"Android resource components on [Hosted Weblate]({url}). If it is not listed, "
-        f"[open a language request ticket]({request_url}) first. A maintainer will review the request, "
-        "register the locale, and prepare its base translation files on Hosted Weblate. Once the "
-        "language appears on Hosted Weblate, you can start translating it there. See the "
+        f"{README_START}\n## Help translate Sportio\n\n{warning}"
+        "Sportio inherits its strings from upstream OwnTV and is rebranded on top. Found a bad "
+        "Sportio string in your language, or want to add a language? Head to "
+        f"[Hosted Weblate]({url}) — that is where the translations live, and this fork merges them "
+        f"down. If your language is not listed there, [open a language request ticket]({request_url}) "
+        "first. Once the language appears on Hosted Weblate, you can start translating it there. See the "
         "[language contributor guide](tools/i18n/README.md) for identifiers, validation, and promotion "
         f"policy.\n{README_END}"
     )

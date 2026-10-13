@@ -84,6 +84,11 @@ class CompanionHttpServer(
     @Volatile private var onTmdbKey: (String) -> Unit = {}
     @Volatile private var onServiceConfig: (CompanionServiceConfig) -> Unit = {}
 
+    /** [CompanionMode.SELECT_ITEMS] only: the pick list's heading, its rows and the chosen ids. */
+    @Volatile private var selectTitle: String = ""
+    @Volatile private var selectItems: List<CompanionSelectItem> = emptyList()
+    @Volatile private var onSelection: (Set<String>) -> Unit = {}
+
     /** The backup file served at `/backup.json` in [CompanionMode.BACKUP_DOWNLOAD] mode. */
     @Volatile private var downloadFile: File? = null
 
@@ -114,6 +119,9 @@ class CompanionHttpServer(
         onImage: (bytes: ByteArray, extension: String) -> Unit = { _, _ -> },
         onTmdbKey: (String) -> Unit = {},
         onServiceConfig: (CompanionServiceConfig) -> Unit = {},
+        selectTitle: String = "",
+        selectItems: List<CompanionSelectItem> = emptyList(),
+        onSelection: (Set<String>) -> Unit = {},
         downloadFile: File? = null,
         syncInfo: () -> String = { "{}" },
         onPair: (name: String, address: String, deviceId: String) -> String? = { _, _, _ -> null },
@@ -131,6 +139,9 @@ class CompanionHttpServer(
         this.onImage = onImage
         this.onTmdbKey = onTmdbKey
         this.onServiceConfig = onServiceConfig
+        this.selectTitle = selectTitle
+        this.selectItems = selectItems
+        this.onSelection = onSelection
         this.downloadFile = downloadFile
         this.syncInfo = syncInfo
         this.onPair = onPair
@@ -151,6 +162,9 @@ class CompanionHttpServer(
         onBackup = {}
         onImage = { _, _ -> }
         onLocked = {}
+        selectTitle = ""
+        selectItems = emptyList()
+        onSelection = {}
         downloadFile = null
         syncInfo = { "{}" }
         onPair = { _, _, _ -> null }
@@ -184,10 +198,6 @@ class CompanionHttpServer(
                 scope.launch {
                     try {
                         handleClient(client)
-                    } catch (e: IOException) {
-                        // A cut-off upload or a read timeout. The socket closes unanswered, so the phone
-                        // page reports it could not reach the TV and offers to send again.
-                        Log.w(TAG, "Companion request dropped: ${e.javaClass.simpleName}")
                     } finally {
                         inFlight.release()
                     }
@@ -383,6 +393,18 @@ class CompanionHttpServer(
                 return sendHtml(socket, 200, CompanionHtml.serviceConfigSentPage(pageContext, pin))
             }
 
+            // Pick-list submission (SELECT_ITEMS mode) — PIN required. The body repeats `item=<id>`, so
+            // the multi-value parse keeps them all; an empty body clears the selection.
+            if (method == "POST" && path == "/select") {
+                val headerPin = headers["x-companion-pin"].orEmpty()
+                if (!requirePin(queryPin.ifBlank { headerPin })) return sendText(socket, 401, localized(R.string.companion_error_unauthorized))
+                val body = CompanionHttpProtocol.readBody(input, headers, CompanionHttpProtocol.maxBodyBytes(path))
+                    ?: return sendText(socket, 413, localized(R.string.companion_error_body_too_large))
+                val chosen = CompanionHttpProtocol.parseQueryValues(body)["item"].orEmpty().toSet()
+                onSelection(chosen)
+                return sendHtml(socket, 200, CompanionHtml.selectItemsSentPage(pageContext, pin, selectTitle))
+            }
+
             // Source submissions — PIN required (query or header), else 401.
             if (method == "POST" && (path == "/xtream" || path == "/m3u" || path == "/stalker")) {
                 val headerPin = headers["x-companion-pin"].orEmpty()
@@ -469,6 +491,7 @@ class CompanionHttpServer(
         CompanionMode.TMDB_KEY -> CompanionHtml.tmdbKeyPage(context, pin)
         CompanionMode.TMDB_CONFIG -> CompanionHtml.serviceConfigPage(context, pin, openSubtitles = false)
         CompanionMode.OPEN_SUBTITLES_CONFIG -> CompanionHtml.serviceConfigPage(context, pin, openSubtitles = true)
+        CompanionMode.SELECT_ITEMS -> CompanionHtml.selectItemsPage(context, pin, selectTitle, selectItems)
         // Local sync has no browser side. Someone who opens the address in a browser and types the
         // PIN gets told so rather than a blank page.
         CompanionMode.LOCAL_SYNC -> CompanionHtml.localSyncPage(context)

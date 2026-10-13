@@ -2,9 +2,10 @@
 """Two-way sync between `main` and Weblate's branch, `translations`, one string at a time.
 
 Weblate works only on `translations` and pushes there directly; it holds every language, including
-those that do not ship yet. Nothing else writes that branch except this script, which runs while
-Weblate is locked (.github/workflows/translations.yml), so Weblate never has a commit to replay and
-cannot hit a merge conflict. Git's line merge is never used in either direction.
+those that do not ship yet. On upstream nothing else writes that branch except this script, which runs
+while Weblate is locked (.github/workflows/translations.yml in the upstream repo). **This fork does not
+run that workflow** — sync_translations.py is kept for reference and is not wired here. Git's line
+merge is never used in either direction.
 
     sync_translations.py to-main        # translations -> working tree of main (shipped languages)
     sync_translations.py to-weblate     # prints the next `translations` commit, or nothing

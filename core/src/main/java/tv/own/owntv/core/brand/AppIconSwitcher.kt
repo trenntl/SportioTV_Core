@@ -16,19 +16,20 @@ import kotlinx.coroutines.launch
 import tv.own.owntv.core.settings.SettingsRepository
 
 /**
- * Switches which of the host app's six launcher activities is enabled, i.e. which [AppIcon] the home
+ * Switches which of the host app's launcher activities is enabled, i.e. which [AppIcon] the home
  * screen, the TV banner and the launch screen show.
  *
- * The *applied* icon is read from [PackageManager], never stored, so it cannot drift from what the
- * launcher shows. A choice is pending exactly when the saved [SettingsRepository.appIcon] differs
- * from it. Pending choices are applied only when the app is in the background, because some launchers
- * kill the app when a launcher component changes.
+ * Sportio ships exactly one launcher activity (`MainActivity`) and one mark, so there is nothing
+ * left to switch: [applied] always resolves to the Sportio icon and [apply] is a no-op that keeps
+ * the single activity enabled. The machinery stays so stored choices from the multi-colour era
+ * converge silently instead of stranding a disabled launcher entry.
  */
 object AppIconSwitcher {
 
     /**
      * The host app's `MainActivity` class name. Assigned in `Application.onCreate` before Koin starts, like
-     * the other core hooks. The five colour activities are this name + [AppIcon.activitySuffix].
+     * the other core hooks. (The multi-colour era derived sibling activities from this name +
+     * [AppIcon.activitySuffix]; Sportio's suffix is empty, so this is the only launcher activity.)
      */
     var mainActivityClass: String = ""
 

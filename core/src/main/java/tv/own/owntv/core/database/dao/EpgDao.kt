@@ -151,6 +151,18 @@ interface EpgDao {
     )
     suspend fun searchTitles(query: String, from: Long, to: Long, limit: Int): List<EpgProgrammeEntity>
 
+    /**
+     * Like [searchTitles], but matches [query] in the **description** too.
+     *
+     * Needed because a provider often keeps the teams out of the title: a German feed says
+     * "Fußball: England, Premier League" and names the clubs only in the body ("… Coventry City …"),
+     * and a conference front-ends its games in the description as well. A title-only probe misses
+     * every one of those channels; this one finds them. Bounded by the same `(startMs, stopMs)`
+     * window, so it stays a small index range rather than a scan of the whole guide.
+     */
+    @Query("SELECT id, sourceId, epgChannelId, startMs, stopMs, title, NULL AS description, 0 AS contentHash, NULL AS categories, NULL AS year, NULL AS rating, NULL AS lengthMin, NULL AS episode FROM epg_programmes WHERE startMs > :from - 86400000 AND startMs < :to AND stopMs > :from AND (title LIKE '%' || :query || '%' OR description LIKE '%' || :query || '%') ORDER BY startMs ASC LIMIT :limit")
+    suspend fun searchGuide(query: String, from: Long, to: Long, limit: Int): List<EpgProgrammeEntity>
+
     /** How many programmes are stored for these sources (to tell "no guide yet" from "empty window"). */
     @Query("SELECT COUNT(*) FROM epg_programmes WHERE sourceId IN (:sourceIds)")
     suspend fun countForSources(sourceIds: List<Long>): Int

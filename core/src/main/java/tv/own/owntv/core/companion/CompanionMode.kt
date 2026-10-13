@@ -11,13 +11,27 @@ package tv.own.owntv.core.companion
  *    talks to it directly. It accepts a backup upload AND serves this device's own export, because a
  *    merge sends and receives in one session, and it answers `/sync/hello` and `/sync/pair` so the
  *    two devices can identify each other and remember the pairing.
+ *  - [SELECT_ITEMS] — a generic pick list: the host passes labelled items, the remote browser ticks
+ *    the ones to keep and posts the chosen ids back. Used for the Sports hub's league/team picker;
+ *    deliberately sport-agnostic so any screen can reuse it.
  *
  * "Remote device" is any browser on the same Wi-Fi — a phone, a tablet or a desktop with the URL
  * typed in — which is why nothing here is named after a phone.
  *
  * One server, one PIN gate; the mode only changes which page is served and which endpoint is accepted.
  */
-enum class CompanionMode { ADD_SOURCE, BACKUP_RESTORE, BACKUP_DOWNLOAD, IMAGE_UPLOAD, TMDB_KEY, TMDB_CONFIG, OPEN_SUBTITLES_CONFIG, LOCAL_SYNC }
+enum class CompanionMode { ADD_SOURCE, BACKUP_RESTORE, BACKUP_DOWNLOAD, IMAGE_UPLOAD, TMDB_KEY, TMDB_CONFIG, OPEN_SUBTITLES_CONFIG, LOCAL_SYNC, SELECT_ITEMS }
+
+/**
+ * One row in a [CompanionMode.SELECT_ITEMS] pick list: a stable [id], a display [label], an optional
+ * [group] heading, and whether it starts ticked.
+ */
+data class CompanionSelectItem(
+    val id: String,
+    val label: String,
+    val group: String = "",
+    val selected: Boolean = false,
+)
 
 /**
  * A service setup handed over from the remote browser.

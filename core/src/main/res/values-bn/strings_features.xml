@@ -43,7 +43,7 @@
     <string name="search_movie">সিনেমা</string>
     <string name="search_series">সিরিজ</string>
     <string name="search_channels">চ্যানেলগুলো</string>
-    <string name="search_on_tv">টিভি অনুষ্ঠান</string>
+    <string name="search_on_tv">টিভিতে</string>
     <string name="search_go_to_channel">চ্যানেলে যান</string>
     <string name="search_go_to_movie">সিনেমায় যান</string>
     <string name="search_clear_recent">সাম্প্রতিক অনুসন্ধান মুছুন</string>
@@ -122,8 +122,8 @@
     <string name="update_not_enough_space">আপডেটের জন্য যথেষ্ট স্টোরেজ নেই। প্রায় <xliff:g id="size">%1$s</xliff:g> খালি করে আবার চেষ্টা করুন।</string>
     <string name="update_damaged_download">আপডেটটি সম্পূর্ণ ডাউনলোড হয়নি। আপনার সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।</string>
     <string name="update_install_rejected">সিস্টেম ইনস্টলার আপডেটটি প্রত্যাখ্যান করেছে: <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="update_ready">OwnTV v<xliff:g id="available">%1$s</xliff:g> প্রস্তুত (আপনার কাছে v<xliff:g id="current">%2$s</xliff:g> আছে)।</string>
-    <string name="recovery_title">OwnTV এর ডেটাবেস খুলতে পারেনি</string>
+    <string name="update_ready">Sportio v<xliff:g id="available">%1$s</xliff:g> প্রস্তুত (আপনার কাছে v<xliff:g id="current">%2$s</xliff:g> আছে)।</string>
+    <string name="recovery_title">Sportio এর ডেটাবেস খুলতে পারেনি</string>
     <string name="recovery_data_safe_full">আপনার প্রোফাইলগুলো, প্লেলিস্টগুলো, পছন্দেরগুলো ও ইতিহাস মোটেও মোছা হয়নি — এটি ডেটাবেস আপগ্রেড ব্যর্থ হওয়ার ঘটনা, এবং ডেটা এখনও এই ডিভাইসেই রয়েছে।\n\nঅনুগ্রহ করে সমস্যাটি জানান, যাতে এটি ঠিক করা যায়, এবং নিচের বার্তাটি সঙ্গে দিন।</string>
     <string name="recovery_retry">আবার চেষ্টা করুন</string>
     <string name="recovery_backup_hint">আপনার কাছে ব্যাকআপ ফাইল থাকলে অ্যাপটি রিসেট করে পরে সেটি পুনরুদ্ধার করতে পারেন। রিসেট করলে এই ডিভাইসে সংরক্ষিত সবকিছু মুছে যাবে।</string>
@@ -181,7 +181,6 @@
     <string name="home_trending_trailer">ট্রেলার</string>
     <string name="home_trending_more_details">আরও বিস্তারিত</string>
     <string name="home_trending_all_versions">সব সংস্করণ</string>
-    <string name="home_trending_why_menu">এই শিরোনামটি এখানে কেন</string>
     <string name="home_trending_previous">আগেরটি</string>
     <string name="home_trending_pause">বিরতি</string>
     <string name="home_trending_resume">আবার চালান</string>
@@ -225,13 +224,13 @@
     <string name="settings_recording_pre_roll_description">উল্লিখিত শুরুর সময়ের এত আগে শুরু করুন, যাতে সামান্য এগিয়ে থাকা গাইডেও শুরুটা বাদ না পড়ে।</string>
     <string name="settings_recording_post_roll">শেষের পরেও চালিয়ে যান</string>
     <string name="settings_recording_post_roll_description">উল্লিখিত শেষ সময়ের পরে এত সময় চালিয়ে যান, যাতে দীর্ঘ হয়ে যাওয়া অনুষ্ঠান কেটে না যায়।</string>
-    <string name="settings_recording_timers_inexact">এই ডিভাইস OwnTV-কে নির্ভুল অ্যালার্ম সেট করতে দেয় না, তাই রেকর্ডিং কয়েক মিনিট দেরিতে শুরু হতে পারে। তা পুষিয়ে নিতে রেকর্ডিং আগেই শুরু হয়।</string>
+    <string name="settings_recording_timers_inexact">এই ডিভাইস Sportio-কে নির্ভুল অ্যালার্ম সেট করতে দেয় না, তাই রেকর্ডিং কয়েক মিনিট দেরিতে শুরু হতে পারে। তা পুষিয়ে নিতে রেকর্ডিং আগেই শুরু হয়।</string>
     <plurals name="recording_minutes">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> মিনিট</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> মিনিট</item>
     </plurals>
     <string name="recording_failed_encrypted">এই চ্যানেলটি এনক্রিপ্ট করা, তাই রেকর্ড করা যাবে না</string>
-    <string name="recording_failed_drm">এই চ্যানেলটি DRM দ্বারা সুরক্ষিত, তাই এটি দেখা যায় কিন্তু রেকর্ড করা যায় না। এই সুরক্ষা আপনার প্রোভাইডারের দেওয়া, OwnTV-র নয়।</string>
+    <string name="recording_failed_drm">এই চ্যানেলটি DRM দ্বারা সুরক্ষিত, তাই এটি দেখা যায় কিন্তু রেকর্ড করা যায় না। এই সুরক্ষা আপনার প্রোভাইডারের দেওয়া, Sportio-র নয়।</string>
     <string name="recording_failed_metered">মোবাইল ডেটায় রেকর্ড করা হয়নি</string>
     <string name="recording_card_empty_title">এখনও কিছু রেকর্ড করা হয়নি</string>
     <string name="recording_card_body">টিভি গাইডে একটি অনুষ্ঠান বেছে রেকর্ড চাপুন, অথবা কোনো চ্যানেলে দীর্ঘক্ষণ চেপে সময় নির্ধারণ করুন। আপনি অন্য কিছু দেখার সময়ও এটি এখানে চলে আসে।</string>

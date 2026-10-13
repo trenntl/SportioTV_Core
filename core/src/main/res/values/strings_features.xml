@@ -89,8 +89,8 @@
     <string name="search_series">Series</string>
     <!-- Translators: Content type label in search results. -->
     <string name="search_channels">Channels</string>
-    <!-- Translators: Search filter button and results heading for TV guide programmes (on now or later today) whose title matches, with the channel showing them. Not films or series from the catalogue. -->
-    <string name="search_on_tv">TV Shows</string>
+    <!-- Translators: Search results heading for TV programmes whose title matches, with the channel showing them. -->
+    <string name="search_on_tv">On TV</string>
     <!-- Translators: Key hint on a channel search result: OK takes you to the channel in Live TV (it does not play it). -->
     <string name="search_go_to_channel">Go to channel</string>
     <!-- Translators: Key hint on a movie search result: OK takes you to the movie in Movies (it does not play it). -->
@@ -238,8 +238,6 @@
     <string name="home_trending_trailer">Trailer</string>
     <string name="home_trending_more_details">More Details</string>
     <string name="home_trending_all_versions">All versions</string>
-    <!-- Translators: Menu item on a Home Trending title's long-press menu; opens the sheet explaining why the title is on Home. -->
-    <string name="home_trending_why_menu">Why this title is here</string>
     <string name="home_trending_previous">Previous</string>
     <string name="home_trending_pause">Pause</string>
     <string name="home_trending_resume">Resume</string>
@@ -304,10 +302,10 @@
     <!-- Translators: Error when the system installer refuses the update. "reason" is the installer's own message, which is usually in English. -->
     <string name="update_install_rejected">The system installer refused the update: <xliff:g id="reason">%1$s</xliff:g></string>
     <!-- Translators: Status text when an update has been downloaded and is ready to install. "available" is the new version, "current" is the installed version. -->
-    <string name="update_ready">OwnTV v<xliff:g id="available">%1$s</xliff:g> is ready (you have v<xliff:g id="current">%2$s</xliff:g>).</string>
+    <string name="update_ready">Sportio v<xliff:g id="available">%1$s</xliff:g> is ready (you have v<xliff:g id="current">%2$s</xliff:g>).</string>
 
-    <!-- Translators: Dialog title for the database recovery screen. "OwnTV" is a brand name. -->
-    <string name="recovery_title">OwnTV could not open its database</string>
+    <!-- Translators: Dialog title for the database recovery screen. "Sportio" is a brand name. -->
+    <string name="recovery_title">Sportio could not open its database</string>
     <!-- Translators: Body text on the recovery screen explaining that data is safe and requesting a bug report. -->
     <string name="recovery_data_safe_full">Your profiles, playlists, favorites and history have NOT been deleted \u2014 this is a database upgrade failure, and the data is still on this device.\n\nPlease report this so it can be fixed, and include the message below.</string>
     <!-- Translators: Button on the recovery screen to retry opening the database. -->
@@ -397,7 +395,7 @@
     <!-- Translators: Description under the "keep going after the end" setting. -->
     <string name="settings_recording_post_roll_description">Carry on this long past the listed end time, so a programme that overruns is not cut off.</string>
     <!-- Translators: Warning on the recording settings screen when Android will not let the app set exact alarms, so recordings may begin late. -->
-    <string name="settings_recording_timers_inexact">This device does not allow OwnTV to set exact alarms, so a recording may begin a few minutes late. Recordings start earlier to make up for it.</string>
+    <string name="settings_recording_timers_inexact">This device does not allow Sportio to set exact alarms, so a recording may begin a few minutes late. Recordings start earlier to make up for it.</string>
     <!-- Translators: A number of minutes, used as the value of the "start early" and "keep going after the end" settings. -->
     <plurals name="recording_minutes">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> minute</item>
@@ -406,7 +404,7 @@
     <!-- Translators: Shown on a recording that was refused because the channel is delivered as encrypted HLS, which the recorder cannot turn into a playable file. -->
     <string name="recording_failed_encrypted">This channel is scrambled and cannot be recorded</string>
     <!-- Translators: Shown on a recording that was refused because the channel declares DRM (Widevine/ClearKey). The second sentence exists so the user understands this is the provider's protection rather than a fault in the app, and does not report it as a bug. Keep both sentences. -->
-    <string name="recording_failed_drm">This channel is DRM-protected, so it can be watched but not recorded. The protection comes from your provider, not from OwnTV.</string>
+    <string name="recording_failed_drm">This channel is DRM-protected, so it can be watched but not recorded. The protection comes from your provider, not from Sportio.</string>
     <!-- Translators: Shown on a recording that was skipped because the device was on a metered (mobile data) connection and the user has turned off recording over mobile data. -->
     <string name="recording_failed_metered">Not recorded on mobile data</string>
     <!-- Translators: Downloads screen, Recordings card: nothing has been recorded so far. -->

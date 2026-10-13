@@ -1,16 +1,16 @@
 package tv.own.owntv.core.theme
 
 /**
- * The one place OwnTV's colour values are written down, shared by the TV app and the mobile app.
+ * The one place Sportio's colour values are written down, shared by the TV app and the mobile app.
  *
  * Values are ARGB longs rather than `androidx.compose.ui.graphics.Color` because core carries the
  * Compose *runtime* only — no `compose-ui` — and because the two apps build different colour
  * schemes from them (`androidx.tv.material3` on the TV, `androidx.compose.material3` here). Each
  * app wraps a value once: `Color(OwnTVPalette.DarkBackground)`.
  *
- * Dark uses a near-black background (#040e0b) so the panel colours pop against the deep dark
- * surface while keeping a subtle green undertone. NEUTRAL and the secondary/tertiary roles are
- * theme-only; the `primary` roles are seeded per [AccentColor] (default teal).
+ * Dark uses a near-black pitch green (#060b07) so the panel colours (Phase 6) pop against
+ * the deep dark surface while keeping a subtle green undertone. NEUTRAL and the secondary/tertiary roles are
+ * theme-only; the `primary` roles are Sportio's fixed signature green ([SportioPalette]).
  *
  * The three `*RailPanel` / `*ContentPanel` / `*PreviewPanel` values are not part of the M3 ladder:
  * they are the shell's per-region colour identity, keeping the navigation, the content and the
@@ -19,58 +19,58 @@ package tv.own.owntv.core.theme
  */
 object OwnTVPalette {
 
-    /** Brand mark colour (the OwnTV play logo) — constant, and the default teal accent. */
-    const val AccentCyan = 0xFF52DBC8L
+    /** Brand mark colour (the Sportio play logo) — constant, and the fixed signature accent. */
+    const val AccentCyan = 0xFF4FEE94L
 
-    // ---------------- DARK (M3 dark over near-black #040e0b) ----------------
-    const val DarkBackground = 0xFF040E0BL
-    const val DarkSurface = 0xFF0E1513L
-    const val DarkSurfaceContainerLowest = 0xFF090F0EL
-    const val DarkSurfaceContainerLow = 0xFF161D1BL
-    const val DarkSurfaceContainer = 0xFF1B211FL
-    const val DarkSurfaceContainerHigh = 0xFF252B29L
-    const val DarkSurfaceContainerHighest = 0xFF303634L
-    const val DarkRailPanel = 0xFF111C18L
-    const val DarkContentPanel = 0xFF0A1512L
-    const val DarkPreviewPanel = 0xFF15201DL
-    const val DarkOnSurface = 0xFFDEE4E1L
-    const val DarkOnSurfaceVariant = 0xFFBFC9C4L
-    const val DarkOutline = 0xFF89938FL
-    const val DarkOutlineVariant = 0xFF3F4945L
-    const val DarkSecondary = 0xFFB1CCC3L
-    const val DarkOnSecondary = 0xFF1C352EL
-    const val DarkSecondaryContainer = 0xFF334B44L
-    const val DarkOnSecondaryContainer = 0xFFCDE8DFL
-    const val DarkTertiary = 0xFFA9CBE4L
-    const val DarkOnTertiary = 0xFF0B3445L
-    const val DarkTertiaryContainer = 0xFF294B5DL
-    const val DarkOnTertiaryContainer = 0xFFC5E7FFL
-    const val DarkError = 0xFFFFB4ABL
+    // ---------------- DARK (M3 dark over near-black #060b07) ----------------
+    const val DarkBackground = 0xFF060B07L
+    const val DarkSurface = 0xFF0B120DL
+    const val DarkSurfaceContainerLowest = 0xFF08100BL
+    const val DarkSurfaceContainerLow = 0xFF101A13L
+    const val DarkSurfaceContainer = 0xFF16241BL
+    const val DarkSurfaceContainerHigh = 0xFF1E3025L
+    const val DarkSurfaceContainerHighest = 0xFF28402FL
+    const val DarkRailPanel = 0xFF0C1710L
+    const val DarkContentPanel = 0xFF08120CL
+    const val DarkPreviewPanel = 0xFF122018L
+    const val DarkOnSurface = 0xFFEAF7EFL
+    const val DarkOnSurfaceVariant = 0xFFA6C3AFL
+    const val DarkOutline = 0xFF3C5A48L
+    const val DarkOutlineVariant = 0xFF1E3126L
+    const val DarkSecondary = 0xFF9FC8B0L
+    const val DarkOnSecondary = 0xFF0A1F14L
+    const val DarkSecondaryContainer = 0xFF22402EL
+    const val DarkOnSecondaryContainer = 0xFFBCE0C9L
+    const val DarkTertiary = 0xFF7FC4D6L
+    const val DarkOnTertiary = 0xFF04222AL
+    const val DarkTertiaryContainer = 0xFF1B3D46L
+    const val DarkOnTertiaryContainer = 0xFFB4E8F3L
+    const val DarkError = 0xFFFF8A86L
 
     // ---------------- LIGHT (M3 light) ----------------
-    const val LightBackground = 0xFFF5FBF8L
-    const val LightSurface = 0xFFF5FBF8L
+    const val LightBackground = 0xFFF4F8F4L
+    const val LightSurface = 0xFFFFFFFFL
     const val LightSurfaceContainerLowest = 0xFFFFFFFFL
-    const val LightSurfaceContainerLow = 0xFFEFF5F2L
-    const val LightSurfaceContainer = 0xFFE9EFECL
-    const val LightSurfaceContainerHigh = 0xFFE3EAE6L
-    const val LightSurfaceContainerHighest = 0xFFDEE4E1L
-    const val LightRailPanel = 0xFFE6EEE9L
-    const val LightContentPanel = 0xFFF2F7F4L
-    const val LightPreviewPanel = 0xFFDEE9E3L
-    const val LightOnSurface = 0xFF171D1BL
-    const val LightOnSurfaceVariant = 0xFF3F4945L
-    const val LightOutline = 0xFF6F7975L
-    const val LightOutlineVariant = 0xFFBFC9C4L
-    const val LightSecondary = 0xFF4B635CL
+    const val LightSurfaceContainerLow = 0xFFEFF5F0L
+    const val LightSurfaceContainer = 0xFFEDF3EEL
+    const val LightSurfaceContainerHigh = 0xFFE4ECE6L
+    const val LightSurfaceContainerHighest = 0xFFDCE6DFL
+    const val LightRailPanel = 0xFFE9F1EBL
+    const val LightContentPanel = 0xFFF8FBF8L
+    const val LightPreviewPanel = 0xFFE1EBE4L
+    const val LightOnSurface = 0xFF081C11L
+    const val LightOnSurfaceVariant = 0xFF3C5546L
+    const val LightOutline = 0xFFA8BBAEL
+    const val LightOutlineVariant = 0xFFD2DED5L
+    const val LightSecondary = 0xFF4F7261L
     const val LightOnSecondary = 0xFFFFFFFFL
-    const val LightSecondaryContainer = 0xFFCDE8DFL
-    const val LightOnSecondaryContainer = 0xFF07201AL
-    const val LightTertiary = 0xFF416278L
+    const val LightSecondaryContainer = 0xFFD3E9DCL
+    const val LightOnSecondaryContainer = 0xFF10291CL
+    const val LightTertiary = 0xFF3F6183L
     const val LightOnTertiary = 0xFFFFFFFFL
-    const val LightTertiaryContainer = 0xFFC5E7FFL
-    const val LightOnTertiaryContainer = 0xFF001E2FL
-    const val LightError = 0xFFBA1A1AL
+    const val LightTertiaryContainer = 0xFFD5E9F3L
+    const val LightOnTertiaryContainer = 0xFF112B3CL
+    const val LightError = 0xFFC42127L
 }
 
 /**
@@ -90,45 +90,22 @@ data class AccentRoleValues(
  * The tonal palette each [AccentColor] seeds the M3 colour scheme with, for both themes (M3 uses
  * lighter tones on dark surfaces, darker tones on light).
  *
+ * Sportio ships a single fixed signature green ([SportioPalette.roles]). The preset enum is kept
+ * only so stored choices from before the rebrand keep resolving — every entry returns the
+ * Sportio roles. There is no user-facing accent choice anymore.
+ *
  * The display label belongs to whichever app is drawing the settings screen, so it is not here.
  */
 private class AccentPalette(val dark: AccentRoleValues, val light: AccentRoleValues)
 
-private val TealPalette = AccentPalette(
-    dark = AccentRoleValues(0xFF52DBC8L, 0xFF003730L, 0xFF004F46L, 0xFF6FF8E4L),
-    light = AccentRoleValues(0xFF006B5EL, 0xFFFFFFFFL, 0xFF6FF8E4L, 0xFF00201BL),
+private val SportioBrandPalette = AccentPalette(
+    dark = AccentRoleValues(0xFF4FEE94L, 0xFF081C11L, 0xFF134D2CL, 0xFF9BF5BEL),
+    light = AccentRoleValues(0xFF0E6B41L, 0xFFFFFFFFL, 0xFFC8EFD8L, 0xFF08301CL),
 )
 
-private val BluePalette = AccentPalette(
-    dark = AccentRoleValues(0xFF6FB0FFL, 0xFF00315CL, 0xFF134A7CL, 0xFFD3E4FFL),
-    light = AccentRoleValues(0xFF1565C0L, 0xFFFFFFFFL, 0xFFD6E3FFL, 0xFF001C3AL),
-)
-
-private val VioletPalette = AccentPalette(
-    dark = AccentRoleValues(0xFFCBBEFFL, 0xFF312170L, 0xFF483A88L, 0xFFE7DEFFL),
-    light = AccentRoleValues(0xFF5B45C9L, 0xFFFFFFFFL, 0xFFE5DEFFL, 0xFF190066L),
-)
-
-private val GreenPalette = AccentPalette(
-    dark = AccentRoleValues(0xFF6FDB94L, 0xFF00391CL, 0xFF1F5135L, 0xFF8BF8AFL),
-    light = AccentRoleValues(0xFF1B6B3FL, 0xFFFFFFFFL, 0xFFA6F2C0L, 0xFF00210FL),
-)
-
-private val AmberPalette = AccentPalette(
-    dark = AccentRoleValues(0xFFFFB95CL, 0xFF452B00L, 0xFF624000L, 0xFFFFDDB3L),
-    light = AccentRoleValues(0xFF8A5100L, 0xFFFFFFFFL, 0xFFFFDDB3L, 0xFF2C1600L),
-)
-
-/** The preset's four primary-role values for the given theme. */
+/** The preset's four primary-role values for the given theme (always Sportio green). */
 fun AccentColor.roles(isDark: Boolean): AccentRoleValues {
-    val palette = when (this) {
-        AccentColor.TEAL -> TealPalette
-        AccentColor.BLUE -> BluePalette
-        AccentColor.VIOLET -> VioletPalette
-        AccentColor.GREEN -> GreenPalette
-        AccentColor.AMBER -> AmberPalette
-    }
-    return if (isDark) palette.dark else palette.light
+    return if (isDark) SportioBrandPalette.dark else SportioBrandPalette.light
 }
 
 /** Parses "#RRGGBB" / "RRGGBB" (also 8-digit AARRGGBB) into an ARGB long; null when invalid. */

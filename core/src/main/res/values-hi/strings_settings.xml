@@ -36,7 +36,7 @@
     <string name="settings_dynamic">डायनेमिक</string>
     <string name="settings_http_proxy">HTTP प्रॉक्सी</string>
     <string name="settings_use_proxy">प्रॉक्सी का उपयोग करें</string>
-    <string name="settings_proxy_description">OwnTV का पूरा ट्रैफ़िक और प्लेबैक HTTP प्रॉक्सी के माध्यम से भेजें।</string>
+    <string name="settings_proxy_description">Sportio का पूरा ट्रैफ़िक और प्लेबैक HTTP प्रॉक्सी के माध्यम से भेजें।</string>
     <string name="settings_host">होस्ट</string>
     <string name="settings_proxy_host_hint">proxy.example.com</string>
     <string name="settings_port">पोर्ट</string>
@@ -128,15 +128,15 @@
         <item quantity="other"><xliff:g id="remaining">%1$d</xliff:g> / <xliff:g id="limit">%2$d</xliff:g> शेष</item>
     </plurals>
     <string name="settings_metadata_active_source">सक्रिय स्रोत</string>
-    <string name="settings_metadata_shared_worker_description">OwnTV Worker · कोई सेटअप नहीं</string>
+    <string name="settings_metadata_shared_worker_description">Sportio Worker · कोई सेटअप नहीं</string>
     <string name="settings_metadata_connection">कनेक्शन</string>
     <string name="settings_metadata_remote_advanced">उन्नत TMDB जानकारी लें</string>
     <string name="settings_metadata_remote_advanced_description">साझा डिफ़ॉल्ट के बजाय अपनी TMDB API कुंजी या स्वयं होस्ट किया गया Worker इस्तेमाल करें।</string>
     <string name="settings_metadata_key_label">कुंजी</string>
     <string name="settings_metadata_server_label">सर्वर</string>
     <string name="settings_metadata_clear_advanced_title">अपनी कुंजी का उपयोग बंद करें?</string>
-    <string name="settings_metadata_clear_advanced_message">आपकी TMDB API कुंजी और आपके सर्वर का पता इस डिवाइस से हटा दिया जाएगा, और OwnTV अपने दैनिक हिस्से वाली अंतर्निहित साझा सेवा पर लौट आएगा।</string>
-    <string name="settings_metadata_fair_share">अंतर्निहित मेटाडेटा सेवा OwnTV का उपयोग करने वाले सभी लोगों के बीच साझा है, इसलिए हर डिवाइस को हर दिन अपना हिस्सा मिलता है। हिस्सा खत्म होने पर पोस्टर और विवरण तब तक रुक जाते हैं जब तक वह फिर से न भर जाए — आपकी अपनी प्लेलिस्ट की जानकारी सामान्य रूप से काम करती रहती है। अपनी TMDB API कुंजी या सर्वर जोड़ने पर यह सीमा हट जाती है: यह मुफ़्त है, और निजी कुंजी पर व्यावहारिक रूप से कोई सीमा नहीं है।</string>
+    <string name="settings_metadata_clear_advanced_message">आपकी TMDB API कुंजी और आपके सर्वर का पता इस डिवाइस से हटा दिया जाएगा, और Sportio अपने दैनिक हिस्से वाली अंतर्निहित साझा सेवा पर लौट आएगा।</string>
+    <string name="settings_metadata_fair_share">अंतर्निहित मेटाडेटा सेवा Sportio का उपयोग करने वाले सभी लोगों के बीच साझा है, इसलिए हर डिवाइस को हर दिन अपना हिस्सा मिलता है। हिस्सा खत्म होने पर पोस्टर और विवरण तब तक रुक जाते हैं जब तक वह फिर से न भर जाए — आपकी अपनी प्लेलिस्ट की जानकारी सामान्य रूप से काम करती रहती है। अपनी TMDB API कुंजी या सर्वर जोड़ने पर यह सीमा हट जाती है: यह मुफ़्त है, और निजी कुंजी पर व्यावहारिक रूप से कोई सीमा नहीं है।</string>
     <string name="settings_metadata_limit_reached">आज का मेटाडेटा हिस्सा खत्म हो गया — यह सीमा हटाने के लिए सेटिंग्स → मेटाडेटा में अपनी TMDB कुंजी जोड़ें।</string>
     <string name="settings_metadata_language">मेटाडेटा की भाषा</string>
     <string name="settings_metadata_language_description">TMDB से आने वाले कथानक, शैली और शीर्षक की भाषा। जिन फ़ील्ड का TMDB ने अनुवाद नहीं किया है वे अंग्रेज़ी में रहेंगे। विवरण हर भाषा के लिए अलग कैश होते हैं, इसलिए वापस बदलना तुरंत होता है।</string>
@@ -273,7 +273,7 @@
     <string name="settings_network_group">नेटवर्क</string>
     <string name="settings_app_group">ऐप</string>
     <string name="settings_app_startup">ऐप शुरू होने पर</string>
-    <string name="settings_app_startup_description">शुरू होने पर OwnTV क्या खोलेगा</string>
+    <string name="settings_app_startup_description">शुरू होने पर Sportio क्या खोलेगा</string>
     <string name="settings_check_updates">अपडेट जाँचें</string>
     <string name="settings_check_updates_description">GitHub Releases से नवीनतम संस्करण प्राप्त करें</string>
     <string name="settings_update_startup">शुरू होने पर अपडेट जाँचें</string>
@@ -302,7 +302,7 @@
     <string name="settings_use_color">इस रंग का उपयोग करें</string>
     <string name="settings_about_version">संस्करण <xliff:g id="version">%1$s</xliff:g></string>
     <string name="settings_about_description_full_mobile">Android के लिए आपका अपना IPTV प्लेयर — एक निःशुल्क, ओपन-सोर्स और केवल प्लेयर वाला ऐप। यह कोई चैनल या सामग्री उपलब्ध नहीं कराता; आप अपने कानूनी रूप से सुलभ स्रोत स्वयं जोड़ते हैं।</string>
-    <string name="settings_about_license">© 2026 OwnTV · GPLv3 लाइसेंस</string>
+    <string name="settings_about_license">© 2026 Sportio · GPLv3 लाइसेंस</string>
     <string name="settings_join_telegram">Telegram पर हमसे जुड़ें</string>
     <string name="settings_telegram_qr">Telegram समूह का QR कोड</string>
     <string name="settings_telegram_scan">फ़ोन से जुड़ने के लिए QR स्कैन करें या ऊपर दिया गया लिंक खोलें।</string>
@@ -460,9 +460,6 @@
     <string name="settings_hardware_decoding">हार्डवेयर डिकोडिंग</string>
     <string name="settings_hardware_decoding_description">TV के हार्डवेयर डिकोडर का उपयोग करें। यदि कुछ स्ट्रीम अटकती हैं या उनमें दृश्य विकृतियाँ दिखाई देती हैं, तो इसे बंद कर दें।</string>
     <string name="settings_hardware_decoding_description_mobile">डिवाइस के हार्डवेयर डिकोडर का उपयोग करें। यदि कुछ स्ट्रीम अटकती हैं या उनमें दृश्य विकृतियाँ दिखाई देती हैं, तो इसे बंद कर दें।</string>
-    <string name="settings_software_decode_above_1080p">1080p से ऊपर सॉफ़्टवेयर डिकोडिंग</string>
-    <string name="settings_software_decode_above_1080p_description">TV का हार्डवेयर डिकोडर बंद होने या विफल होने पर 4K और 1080p से ऊपर के अन्य वीडियो सॉफ़्टवेयर से चलाता है। तेज़ प्रोसेसर चाहिए: अधिकांश TV पर यह अटकता है।</string>
-    <string name="settings_software_decode_above_1080p_description_mobile">डिवाइस का हार्डवेयर डिकोडर बंद होने या विफल होने पर 4K और 1080p से ऊपर के अन्य वीडियो सॉफ़्टवेयर से चलाता है। तेज़ प्रोसेसर चाहिए: कई डिवाइस पर यह अटकता है।</string>
     <string name="settings_movies_series_player">फ़िल्मों और सीरीज़ का प्लेयर</string>
     <string name="settings_live_tv_player">लाइव टीवी का प्लेयर</string>
     <string name="settings_engine_order"><xliff:g id="first">%1$s</xliff:g>, फिर <xliff:g id="second">%2$s</xliff:g></string>
@@ -539,7 +536,7 @@
     <string name="settings_open_subtitles_api_key">OpenSubtitles ऐप्लिकेशन API कुंजी</string>
     <string name="settings_worker_server_url">Worker / सर्वर URL</string>
     <string name="settings_shared">साझा</string>
-    <string name="settings_open_subtitles_access_priority">OwnTV की साझा Worker सेवा उपयोग करने के लिए दोनों खाली छोड़ें। कस्टम Worker URL को सीधी API कुंजी पर प्राथमिकता मिलती है। खाता सत्र हर प्रोफ़ाइल के लिए अलग रहते हैं।</string>
+    <string name="settings_open_subtitles_access_priority">Sportio की साझा Worker सेवा उपयोग करने के लिए दोनों खाली छोड़ें। कस्टम Worker URL को सीधी API कुंजी पर प्राथमिकता मिलती है। खाता सत्र हर प्रोफ़ाइल के लिए अलग रहते हैं।</string>
     <string name="settings_remove_custom_access">कस्टम एक्सेस हटाएँ</string>
     <string name="settings_preferred_audio_language">पसंदीदा ऑडियो भाषा</string>
     <string name="settings_audio_sync">ऑडियो सिंक</string>
@@ -626,7 +623,7 @@
     <string name="settings_guide_synced">टीवी गाइड सिंक हो गया</string>
     <string name="settings_guide_sync_failed">टीवी गाइड सिंक नहीं हो सका</string>
     <string name="settings_restore_remote_title">किसी दूसरे डिवाइस से रीस्टोर करें</string>
-    <string name="settings_restore_remote_description">उसी वाई-फ़ाई पर ब्राउज़र वाले किसी भी डिवाइस — फ़ोन, कंप्यूटर या दूसरा टीवी — पर QR स्कैन करें (या URL खोलें), यह PIN डालें, अपनी OwnTV बैकअप फ़ाइल चुनें और भेजें। फिर यहाँ चुनें कि क्या वापस लाना है।</string>
+    <string name="settings_restore_remote_description">उसी वाई-फ़ाई पर ब्राउज़र वाले किसी भी डिवाइस — फ़ोन, कंप्यूटर या दूसरा टीवी — पर QR स्कैन करें (या URL खोलें), यह PIN डालें, अपनी Sportio बैकअप फ़ाइल चुनें और भेजें। फिर यहाँ चुनें कि क्या वापस लाना है।</string>
     <string name="settings_try_again">फिर कोशिश करें</string>
     <string name="settings_new_pin">नए PIN के साथ फिर से शुरू करें</string>
     <string name="settings_download_remote_title">किसी दूसरे डिवाइस पर डाउनलोड करें</string>
@@ -647,7 +644,7 @@
     </plurals>
     <string name="settings_catchup_timezone_device">डिवाइस</string>
     <string name="settings_catchup_player_ask">हमेशा पूछें</string>
-    <string name="settings_catchup_player_internal">OwnTV प्लेयर</string>
+    <string name="settings_catchup_player_internal">Sportio प्लेयर</string>
     <string name="settings_catchup_player_external">बाहरी प्लेयर</string>
     <string name="settings_download_folder_title">डाउनलोड फ़ोल्डर चुनें</string>
     <string name="settings_pick_background_title">पृष्ठभूमि चित्र चुनें</string>
@@ -781,9 +778,9 @@
     <string name="settings_sources_info">जानकारी</string>
     <string name="settings_sources_retest">फिर से जाँचें</string>
     <string name="settings_sources_probe_title">इस प्लेलिस्ट की जाँच करें?</string>
-    <string name="settings_sources_probe_warning">कई प्रदाता कभी नहीं बताते कि आप एक साथ कितने चैनल देख सकते हैं, इसलिए OwnTV कुछ चैनल खोलकर और यह देखकर पता लगाता है कि कौन से चलते रहते हैं। अभी जो कुछ चल रहा है वह रुक जाएगा, और इसमें दो मिनट तक लग सकते हैं।</string>
+    <string name="settings_sources_probe_warning">कई प्रदाता कभी नहीं बताते कि आप एक साथ कितने चैनल देख सकते हैं, इसलिए Sportio कुछ चैनल खोलकर और यह देखकर पता लगाता है कि कौन से चलते रहते हैं। अभी जो कुछ चल रहा है वह रुक जाएगा, और इसमें दो मिनट तक लग सकते हैं।</string>
     <string name="settings_sources_probe_running">जाँचा जा रहा है कि यह प्रदाता कितने चैनलों की अनुमति देता है… (<xliff:g id="total">%2$d</xliff:g> में से <xliff:g id="current">%1$d</xliff:g>)</string>
-    <string name="settings_sources_probe_unknown">OwnTV यह पता नहीं लगा सका कि यह प्रदाता कितने चैनलों की अनुमति देता है।</string>
+    <string name="settings_sources_probe_unknown">Sportio यह पता नहीं लगा सका कि यह प्रदाता कितने चैनलों की अनुमति देता है।</string>
     <string name="settings_sources_probe_skip">छोड़ें</string>
     <string name="settings_sources_auto_refresh">⟳ <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="settings_sources_default">डिफ़ॉल्ट</string>
@@ -1026,7 +1023,7 @@
     <string name="settings_move_category_action">ले जाएँ</string>
     <string name="settings_dns_description">डोमेन लुकअप के लिए कस्टम DNS सर्वर इस्तेमाल करें</string>
     <string name="settings_dns_custom">कस्टम DNS</string>
-    <string name="settings_dns_toggle_description">OwnTV के सभी डोमेन लुकअप कस्टम DNS सर्वर के ज़रिए हल करें।</string>
+    <string name="settings_dns_toggle_description">Sportio के सभी डोमेन लुकअप कस्टम DNS सर्वर के ज़रिए हल करें।</string>
     <string name="settings_dns_use_custom">कस्टम DNS इस्तेमाल करें</string>
     <string name="settings_dns_server_missing">कस्टम DNS चालू है, लेकिन कोई सर्वर कॉन्फ़िगर नहीं है। सर्वर पता दर्ज करके सहेजें चुनें या इसे बंद करें।</string>
     <string name="settings_dns_server">DNS सर्वर</string>
@@ -1072,7 +1069,7 @@
     <string name="settings_live_preroll">लाइव स्ट्रीम पहले से बफ़र करें</string>
     <string name="settings_live_preroll_description">लाइव चैनल चलना शुरू करने से पहले इतना वीडियो इकट्ठा करें, और अटकने के बाद फिर से। यह वीडियो की मात्रा है, कोई काउंटडाउन नहीं। बंद रखने पर सबसे तेज़ शुरुआत संभव होती है।</string>
     <string name="settings_live_tune_timeout">चैनल छोड़ने का समय</string>
-    <string name="settings_live_tune_timeout_description">अगर इस समय तक किसी लाइव चैनल पर तस्वीर नहीं आई, तो OwnTV कोशिश करना बंद कर देगा और आपको बता देगा — अपने सारे प्लेयर एक-एक करके आज़माते हुए काली स्क्रीन छोड़ने के बजाय। “कभी नहीं” चुनने पर कोशिश चलती रहती है, और आपके प्रदाता द्वारा हटाए गए चैनल पर इसमें एक मिनट से भी ज़्यादा लग सकता है। प्रदाता खुद जो इंतज़ार माँगता है, वह इसमें नहीं गिना जाता।</string>
+    <string name="settings_live_tune_timeout_description">अगर इस समय तक किसी लाइव चैनल पर तस्वीर नहीं आई, तो Sportio कोशिश करना बंद कर देगा और आपको बता देगा — अपने सारे प्लेयर एक-एक करके आज़माते हुए काली स्क्रीन छोड़ने के बजाय। “कभी नहीं” चुनने पर कोशिश चलती रहती है, और आपके प्रदाता द्वारा हटाए गए चैनल पर इसमें एक मिनट से भी ज़्यादा लग सकता है। प्रदाता खुद जो इंतज़ार माँगता है, वह इसमें नहीं गिना जाता।</string>
     <string name="settings_live_preroll_per_playlist">प्रति प्लेलिस्ट पहले से बफ़र करें</string>
     <string name="settings_live_preroll_per_playlist_description">ऊपर वाली सेटिंग को एक प्लेलिस्ट के लिए अलग से सेट करें, जबकि बाकी प्लेलिस्ट तेज़ बनी रहें।</string>
     <!-- Translators: Title of the per-playlist Live TV engine override row. -->
@@ -1098,7 +1095,7 @@
     <string name="settings_surround_auto_description_mobile">ऑटो — Dolby/DTS सराउंड आज़माता है, और अगर स्पीकर, हेडफ़ोन या जुड़ा हुआ रिसीवर उसे नहीं चला पाता तो अपने आप स्टीरियो पर लौट आता है। अनुशंसित।</string>
     <string name="settings_surround_stereo_description">केवल स्टीरियो — हमेशा ऐप में डिकोड करता है और सादा 2.0 ऑडियो भेजता है। इसे टीवी स्पीकर या स्टीरियो साउंडबार पर इस्तेमाल करें, या अगर ऑडियो वीडियो से पीछे रह जाता है।</string>
     <string name="settings_surround_stereo_description_mobile">केवल स्टीरियो — हमेशा ऐप में डिकोड करता है और सादा 2.0 ऑडियो भेजता है। इसे बिल्ट-इन स्पीकर, हेडफ़ोन या स्टीरियो साउंडबार के लिए इस्तेमाल करें, या अगर ऑडियो वीडियो से पीछे रह जाता है।</string>
-    <string name="settings_surround_forced_description">सराउंड — Dolby/DTS को असली 5.1/7.1 रिसीवर पर भेजता है। अगर आवाज़ बंद हो जाए या अटक जाए, तो OwnTV फिर भी स्टीरियो पर लौट आता है और आपको बता देता है।</string>
+    <string name="settings_surround_forced_description">सराउंड — Dolby/DTS को असली 5.1/7.1 रिसीवर पर भेजता है। अगर आवाज़ बंद हो जाए या अटक जाए, तो Sportio फिर भी स्टीरियो पर लौट आता है और आपको बता देता है।</string>
     <string name="settings_panel_width">पैनल चौड़ाई समायोजन</string>
     <string name="settings_panel_width_description">लाइव टीवी, फ़िल्मों और सीरीज़ में श्रेणी, सूची और पूर्वावलोकन पैनल का आकार बदलें।</string>
     <string name="settings_vod_layout">फ़िल्में और सीरीज़ का लेआउट</string>
@@ -1139,9 +1136,9 @@
     <string name="settings_panel_width_preview_panel"><xliff:g id="label">%1$s</xliff:g> पैनल</string>
     <string name="settings_panel_width_total">कुल आकार</string>
     <string name="settings_panel_width_invalid_total">कुल आकार <xliff:g id="total">%1$d</xliff:g>%% है। इसे 100%% होना चाहिए — कृपया समायोजित करें।</string>
-    <string name="settings_language_help_translate">OwnTV को अपनी भाषा में अनुवाद करने में मदद करें</string>
-    <string name="settings_language_contribution_description">QR कोड स्कैन करें या लिंक खोलकर किसी भी उपलब्ध भाषा को चुनें और OwnTV के सभी छह अनुवाद घटकों में योगदान दें।</string>
-    <string name="settings_language_contribution_qr_description">OwnTV अनुवाद परियोजना अवलोकन के लिए QR कोड</string>
+    <string name="settings_language_help_translate">Sportio को अपनी भाषा में अनुवाद करने में मदद करें</string>
+    <string name="settings_language_contribution_description">QR कोड स्कैन करें या लिंक खोलकर किसी भी उपलब्ध भाषा को चुनें और Sportio के सभी छह अनुवाद घटकों में योगदान दें।</string>
+    <string name="settings_language_contribution_qr_description">Sportio अनुवाद परियोजना अवलोकन के लिए QR कोड</string>
     <string name="settings_language_contribution_qr_failed">QR कोड जनरेट नहीं किया जा सका। इसके बजाय नीचे दिखाए गए लिंक का उपयोग करें।</string>
     <string name="settings_language_contribution_copy">लिंक कॉपी करें</string>
     <string name="settings_language_contribution_copied">लिंक कॉपी हो गया</string>
@@ -1150,8 +1147,8 @@
     <string name="settings_auto_frame_rate_warning_suffix">इस टीवी पर अनुशंसित नहीं: Android 12 से नीचे रेट सुचारू रूप से नहीं बदला जा सकता।</string>
     <string name="settings_auto_frame_rate_warning_title">इस टीवी पर अनुशंसित नहीं</string>
     <string name="settings_auto_frame_rate_warning_title_mobile">इस डिवाइस पर अनुशंसित नहीं</string>
-    <string name="settings_auto_frame_rate_warning_description">यह डिवाइस Android <xliff:g id="android_version">%1$s</xliff:g> पर चलता है। Android 12 से नीचे टीवी OwnTV को यह नहीं बता सकता कि वह किन रिफ़्रेश रेटों पर सुचारू रूप से स्विच कर सकता है, इसलिए रेट बदलने पर स्क्रीन एक-दो सेकंड के लिए काली हो सकती है — कभी-कभी कार्यक्रम के दौरान एक से अधिक बार।\n\nहम यहाँ Auto frame rate बंद रखने की अनुशंसा करते हैं। अगर आपका टीवी बिना किसी समस्या के स्विच करता है, तो इसे चालू करके देखें: आप इसे कभी भी वापस बदल सकते हैं।</string>
-    <string name="settings_auto_frame_rate_warning_description_mobile">यह डिवाइस Android <xliff:g id="android_version">%1$s</xliff:g> पर चलता है। Android 12 से नीचे डिवाइस OwnTV को यह नहीं बता सकता कि वह किन रिफ़्रेश रेटों पर सुचारू रूप से स्विच कर सकता है, इसलिए रेट बदलने पर स्क्रीन एक-दो सेकंड के लिए काली हो सकती है — कभी-कभी कार्यक्रम के दौरान एक से अधिक बार।\n\nहम यहाँ Auto frame rate बंद रखने की अनुशंसा करते हैं। अगर आपकी स्क्रीन बिना किसी समस्या के स्विच करती है, तो इसे चालू करके देखें: आप इसे कभी भी वापस बदल सकते हैं।</string>
+    <string name="settings_auto_frame_rate_warning_description">यह डिवाइस Android <xliff:g id="android_version">%1$s</xliff:g> पर चलता है। Android 12 से नीचे टीवी Sportio को यह नहीं बता सकता कि वह किन रिफ़्रेश रेटों पर सुचारू रूप से स्विच कर सकता है, इसलिए रेट बदलने पर स्क्रीन एक-दो सेकंड के लिए काली हो सकती है — कभी-कभी कार्यक्रम के दौरान एक से अधिक बार।\n\nहम यहाँ Auto frame rate बंद रखने की अनुशंसा करते हैं। अगर आपका टीवी बिना किसी समस्या के स्विच करता है, तो इसे चालू करके देखें: आप इसे कभी भी वापस बदल सकते हैं।</string>
+    <string name="settings_auto_frame_rate_warning_description_mobile">यह डिवाइस Android <xliff:g id="android_version">%1$s</xliff:g> पर चलता है। Android 12 से नीचे डिवाइस Sportio को यह नहीं बता सकता कि वह किन रिफ़्रेश रेटों पर सुचारू रूप से स्विच कर सकता है, इसलिए रेट बदलने पर स्क्रीन एक-दो सेकंड के लिए काली हो सकती है — कभी-कभी कार्यक्रम के दौरान एक से अधिक बार।\n\nहम यहाँ Auto frame rate बंद रखने की अनुशंसा करते हैं। अगर आपकी स्क्रीन बिना किसी समस्या के स्विच करती है, तो इसे चालू करके देखें: आप इसे कभी भी वापस बदल सकते हैं।</string>
     <string name="settings_auto_frame_rate_keep_off">बंद रखें</string>
     <string name="settings_auto_frame_rate_turn_on_anyway">फिर भी चालू करें</string>
     <string name="settings_language_request_workflow">क्या आप कोई ऐसी भाषा जोड़ना चाहते हैं जो सूचीबद्ध नहीं है? पहले भाषा अनुरोध खोलें। एक मेंटेनर इसे पंजीकृत करेगा और आधार अनुवाद फ़ाइलें तैयार करेगा; एक बार यह Hosted Weblate पर दिखाई दे, तो आप योगदान देना शुरू कर सकते हैं।</string>
@@ -1334,7 +1331,7 @@
     <string name="local_sync_received_items">प्राप्त आइटम: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="local_sync_sent">आपका डेटा भेज दिया गया</string>
     <string name="local_sync_failed">सिंक विफल</string>
-    <string name="local_sync_error_unreachable">इस डिवाइस तक नहीं पहुँचा जा सका। उस पर OwnTV → सेटिंग्स → डेटा → लोकल सिंक खोलें और सिंक मोड चालू करें। दोनों डिवाइस एक ही वाई-फ़ाई पर होने चाहिए।</string>
+    <string name="local_sync_error_unreachable">इस डिवाइस तक नहीं पहुँचा जा सका। उस पर Sportio → सेटिंग्स → डेटा → लोकल सिंक खोलें और सिंक मोड चालू करें। दोनों डिवाइस एक ही वाई-फ़ाई पर होने चाहिए।</string>
     <string name="local_sync_error_unauthorized">दूसरे डिवाइस ने मना कर दिया। पिन ग़लत हो सकता है, या उसने इस डिवाइस को भुला दिया है।</string>
     <string name="local_sync_error_bad_payload">जो आया उसे पढ़ा नहीं जा सका। अगर आपने पासवर्ड लगाया है, तो देखें कि वह दोनों डिवाइस पर एक जैसा है।</string>
     <string name="local_sync_error_unknown">कुछ ग़लत हो गया। दोबारा कोशिश करें।</string>
@@ -1409,7 +1406,7 @@
     <string name="settings_multiview_keep_two">2 ही रखें</string>
     <string name="settings_multiview_use_anyway">फिर भी इस्तेमाल करें</string>
     <string name="settings_app_icon">ऐप आइकन</string>
-    <string name="settings_app_icon_summary">OwnTV आइकन और लोगो का रंग</string>
+    <string name="settings_app_icon_summary">Sportio आइकन और लोगो का रंग</string>
     <string name="settings_brand_accent">एक्सेंट रंग का लोगो</string>
     <string name="app_icon_petrol">पेट्रोल</string>
     <string name="app_icon_sunflower">सूरजमुखी</string>
@@ -1420,8 +1417,8 @@
     <string name="app_icon_olive">ऑलिव</string>
     <string name="app_icon_olive_cream">क्रीम पर ऑलिव</string>
     <string name="app_icon_pixel">Pixel</string>
-    <string name="app_icon_restart_title">OwnTV रीस्टार्ट करें?</string>
-    <string name="app_icon_restart_message">आपने नया आइकन और लोगो चुना है। OwnTV रीस्टार्ट होने के बाद ये लागू होंगे।</string>
+    <string name="app_icon_restart_title">Sportio रीस्टार्ट करें?</string>
+    <string name="app_icon_restart_message">आपने नया आइकन और लोगो चुना है। Sportio रीस्टार्ट होने के बाद ये लागू होंगे।</string>
     <string name="app_icon_restart_now">अभी रीस्टार्ट करें</string>
     <string name="settings_navigation">नेविगेशन</string>
     <string name="settings_navigation_description">बाईं ओर का मेनू कैसे व्यवहार करे</string>
@@ -1435,13 +1432,6 @@
     <string name="settings_nav_widen_desc">डॉक और कॉम्पैक्ट: रेल पर फ़ोकस रहते समय सामग्री के ऊपर नाम दिखाता है</string>
     <string name="settings_nav_menu_items">मेनू आइटम</string>
     <string name="settings_nav_menu_items_desc">डायनेमिक: प्लेलिस्ट की सामग्री के अनुसार · स्टैटिक: आप खुद चुनें</string>
-    <string name="settings_nav_bar">बार</string>
-    <string name="settings_nav_labels">नाम</string>
-    <string name="settings_nav_icons_only">सिर्फ़ आइकन</string>
-    <string name="settings_nav_hide_scrolling">स्क्रॉल करते समय छिपाएँ</string>
-    <string name="settings_nav_hide_scrolling_desc">नीचे स्क्रॉल करने पर बार हट जाता है और ऊपर स्क्रॉल करने पर लौट आता है</string>
-    <string name="settings_sheet_counts">गिनती दिखाएँ</string>
-    <string name="settings_sheet_counts_desc">पैनलों में चैनलों और शीर्षकों की गिनती</string>
     <string name="settings_search_keywords_navigation">रेल, साइडबार, मेनू, नेविगेशन, छिपाएँ, फ़्लोटिंग, डॉक, आकार, कॉम्पैक्ट, चौड़ी, लंबाई, पूरी ऊँचाई</string>
     <string name="settings_breadcrumb_eyebrow"><xliff:g id="section">%1$s</xliff:g> · <xliff:g id="group">%2$s</xliff:g></string>
     <string name="settings_nav_size_desc">कॉम्पैक्ट: आइकन · सामान्य: नाम · चौड़ी: नाम और गिनती · अतिरिक्त चौड़ी: विवरण सहित</string>
@@ -1585,10 +1575,10 @@
     <string name="settings_help_epg_sources">लिंक से XMLTV गाइड फ़ीड जोड़ें, रीफ़्रेश करें या हटाएँ। फ़ीड से टीवी गाइड और लाइव टीवी की कार्यक्रम पंक्तियाँ भरती हैं।</string>
     <string name="settings_help_guide_days">गाइड कितने दिनों के कार्यक्रम आगे तक रखे। कम दिन रखने से गाइड जल्दी रीफ़्रेश होती है और डेटाबेस छोटा रहता है।</string>
     <string name="settings_help_catchup">कैच-अप आपके प्रोवाइडर के आर्काइव से कार्यक्रम चलाता है। ज़्यादातर प्रोवाइडर टीवी की अपनी घड़ी पर चलते हैं; अगर कैच-अप गलत समय पर शुरू हो, तो एक तय UTC ऑफ़सेट चुनें। कैच-अप कौन-सा प्लेयर इस्तेमाल करे, यह भी यहीं चुनें।</string>
-    <string name="settings_help_theme">OwnTV डार्क थीम के लिए बना है। सिस्टम टीवी की अपनी सेटिंग मानता है, अगर हो; लाइट रोशन कमरे के लिए ठीक है।</string>
+    <string name="settings_help_theme">Sportio डार्क थीम के लिए बना है। सिस्टम टीवी की अपनी सेटिंग मानता है, अगर हो; लाइट रोशन कमरे के लिए ठीक है।</string>
     <string name="settings_help_accent">हर जगह बटन, फ़ोकस की चमक, प्रोग्रेस बार और हाइलाइट रंगता है। कोई प्रीसेट चुनें, या पैलेट और कोई भी हेक्स कोड पाने के लिए OK दबाएँ।</string>
     <string name="settings_help_focus">फ़ोकस वाली चीज़ के चारों ओर का घेरा। उसका रंग और मोटाई चुनें ताकि सोफ़े से आसानी से दिखे।</string>
-    <string name="settings_help_fonts">पूरे OwnTV में इस्तेमाल होने वाला फ़ॉन्ट और टेक्स्ट का आकार। पॉपअप भी यही फ़ॉन्ट इस्तेमाल करते हैं।</string>
+    <string name="settings_help_fonts">पूरे Sportio में इस्तेमाल होने वाला फ़ॉन्ट और टेक्स्ट का आकार। पॉपअप भी यही फ़ॉन्ट इस्तेमाल करते हैं।</string>
     <string name="settings_help_popup_size">पॉपअप, मेनू और डायलॉग को पूरा बड़ा या छोटा करता है। जब पॉपअप तंग लगें या स्क्रीन का बहुत हिस्सा ढक दें, तब इस्तेमाल करें।</string>
     <string name="settings_help_zoom">स्क्रीन पर हर चीज़ का आकार बदलता है। बड़ा दूर से पढ़ने में आसान है; छोटा ज़्यादा जगह देता है। 85%% से नीचे कम मेमोरी वाले टीवी बॉक्स की मेमोरी खत्म हो सकती है।</string>
     <string name="settings_help_animations">चालू होने पर शीट, मेनू और फ़ोकस आराम से चलते हैं। बंद होने पर हर बदलाव तुरंत होता है।</string>
@@ -1598,11 +1588,11 @@
     <string name="settings_help_vod_layout">सिनेमैटिक फ़ोकस किए टाइटल की तस्वीर पोस्टरों की ग्रिड के पीछे दिखाता है। अलग श्रेणियाँ, टाइटल और विवरण साथ-साथ दिखाता है।</string>
     <string name="settings_help_home">चुनें कि होम कौन-सी पंक्तियाँ किस क्रम में दिखाए, और अभी ट्रेंडिंग पंक्ति कैसी दिखे।</string>
     <string name="settings_help_customize">जो श्रेणियाँ और आइटम आप कभी नहीं देखते उन्हें छिपाएँ, श्रेणियों को अपने नाम दें और अपने क्रम में रखें। छिपी चीज़ें यहीं से वापस आती हैं, कभी खोती नहीं।</string>
-    <string name="settings_help_app_icon">टीवी की होम स्क्रीन पर OwnTV का आइकन। बदलाव दिखाने में लॉन्चर को थोड़ा समय लग सकता है।</string>
-    <string name="settings_help_brand_accent">मेन्यू, About और सेटअप में OwnTV लोगो का प्ले त्रिकोण आपके एक्सेंट रंग में दिखता है। होम स्क्रीन का आइकन अपने रंग रखता है।</string>
-    <string name="settings_help_startup">शुरू होने पर OwnTV क्या दिखाए: होम, आखिरी देखा चैनल, आपके पसंदीदा, या आपका चुना चैनल।</string>
-    <string name="settings_help_check_updates">अभी GitHub पर नया OwnTV खोजता है और इंस्टॉल करने का विकल्प देता है। आपकी प्लेलिस्ट, पसंदीदा और सेटिंग्स जैसी हैं वैसी रहती हैं।</string>
-    <string name="settings_help_update_startup">हर बार OwnTV शुरू होने पर नया संस्करण खोजता है और मिलने पर बताता है। बिना पूछे कुछ इंस्टॉल नहीं होता।</string>
+    <string name="settings_help_app_icon">टीवी की होम स्क्रीन पर Sportio का आइकन। बदलाव दिखाने में लॉन्चर को थोड़ा समय लग सकता है।</string>
+    <string name="settings_help_brand_accent">मेन्यू, About और सेटअप में Sportio लोगो का प्ले त्रिकोण आपके एक्सेंट रंग में दिखता है। होम स्क्रीन का आइकन अपने रंग रखता है।</string>
+    <string name="settings_help_startup">शुरू होने पर Sportio क्या दिखाए: होम, आखिरी देखा चैनल, आपके पसंदीदा, या आपका चुना चैनल।</string>
+    <string name="settings_help_check_updates">अभी GitHub पर नया Sportio खोजता है और इंस्टॉल करने का विकल्प देता है। आपकी प्लेलिस्ट, पसंदीदा और सेटिंग्स जैसी हैं वैसी रहती हैं।</string>
+    <string name="settings_help_update_startup">हर बार Sportio शुरू होने पर नया संस्करण खोजता है और मिलने पर बताता है। बिना पूछे कुछ इंस्टॉल नहीं होता।</string>
     <string name="settings_help_dns">आपके नेटवर्क के अपने DNS की जगह आपके चुने DNS सर्वर से प्रोवाइडर के पते खोजता है — जब नेटवर्क उन्हें रोके या मोड़ दे, तब काम आता है।</string>
     <string name="settings_help_live_engine">ExoPlayer चैनल बहुत तेज़ी से खोलता है और लाइव सबटाइटल सिर्फ़ इसी में हैं। mpv वे चैनल चलाता है जो ExoPlayer नहीं चला पाता, कुछ असामान्य ऑडियो समेत। मिले-जुले विकल्प पहले के विफल होने पर दूसरा प्लेयर आज़माते हैं।</string>
     <string name="settings_help_hw">टीवी का हार्डवेयर डिकोडर इस्तेमाल करता है: स्मूद 4K और कम गर्मी। अगर कुछ स्ट्रीम अटकें या ब्लॉक दिखें तभी बंद करें; तब सॉफ़्टवेयर डिकोडर काम करता है।</string>
@@ -1626,8 +1616,8 @@
     <string name="settings_profile_add">प्रोफ़ाइल जोड़ें</string>
     <string name="settings_profile_add_line">अपने पसंदीदा, इतिहास और सेटिंग्स वाला दर्शक</string>
     <plurals name="settings_help_language">
-        <item quantity="one">OwnTV के हर मेनू और संदेश की भाषा। <xliff:g id="count">%1$d</xliff:g> भाषाएँ; जब तक आप न चुनें, टीवी की अपनी भाषा अपनाती है।</item>
-        <item quantity="other">OwnTV के हर मेनू और संदेश की भाषा। <xliff:g id="count">%1$d</xliff:g> भाषाएँ; जब तक आप न चुनें, टीवी की अपनी भाषा अपनाती है।</item>
+        <item quantity="one">Sportio के हर मेनू और संदेश की भाषा। <xliff:g id="count">%1$d</xliff:g> भाषाएँ; जब तक आप न चुनें, टीवी की अपनी भाषा अपनाती है।</item>
+        <item quantity="other">Sportio के हर मेनू और संदेश की भाषा। <xliff:g id="count">%1$d</xliff:g> भाषाएँ; जब तक आप न चुनें, टीवी की अपनी भाषा अपनाती है।</item>
     </plurals>
     <plurals name="settings_profile_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> प्रोफ़ाइल</item>
@@ -1664,8 +1654,8 @@
     <string name="settings_home_show_row">यह पंक्ति दिखाएँ</string>
     <string name="settings_home_move_row">खिसकाएँ (▲ ▼, फिर OK)</string>
     <string name="settings_line_remote_shortcuts_on">बंद करने पर आपके असाइनमेंट बने रहते हैं</string>
-    <string name="settings_language_system_help">OwnTV टीवी की भाषा का पालन करता है (अभी <xliff:g id="language">%1$s</xliff:g>)। सिर्फ़ OwnTV में इस्तेमाल करने के लिए नीचे कोई भाषा चुनें।</string>
-    <string name="settings_language_pick_help">टीवी की भाषा जो भी हो, OwnTV में <xliff:g id="language">%1$s</xliff:g> इस्तेमाल करें।</string>
+    <string name="settings_language_system_help">Sportio टीवी की भाषा का पालन करता है (अभी <xliff:g id="language">%1$s</xliff:g>)। सिर्फ़ Sportio में इस्तेमाल करने के लिए नीचे कोई भाषा चुनें।</string>
+    <string name="settings_language_pick_help">टीवी की भाषा जो भी हो, Sportio में <xliff:g id="language">%1$s</xliff:g> इस्तेमाल करें।</string>
     <string name="settings_key_use">इस्तेमाल करें</string>
     <string name="settings_line_metadata_source">फ़िल्मों और सीरीज़ की जानकारी कहाँ से आती है</string>
     <string name="settings_line_metadata_language">TMDB से कहानी, शैलियाँ और शीर्षक</string>
@@ -1714,7 +1704,7 @@
     <string name="settings_line_glass_bg">बैकग्राउंड, तस्वीर का रूप, ग्लास</string>
     <string name="settings_bg_background">बैकग्राउंड</string>
     <string name="settings_line_bg_background">हर स्क्रीन के पीछे क्या है</string>
-    <string name="settings_help_bg_background">Stage OwnTV के अपने हल्के रंग दिखाता है। तस्वीर हर स्क्रीन के पीछे आपकी अपनी तस्वीर दिखाती है। सादा एक सपाट गहरा रंग है।</string>
+    <string name="settings_help_bg_background">Stage Sportio के अपने हल्के रंग दिखाता है। तस्वीर हर स्क्रीन के पीछे आपकी अपनी तस्वीर दिखाती है। सादा एक सपाट गहरा रंग है।</string>
     <string name="settings_bg_stage">Stage</string>
     <string name="settings_bg_picture">तस्वीर</string>
     <string name="settings_bg_plain">सादा</string>

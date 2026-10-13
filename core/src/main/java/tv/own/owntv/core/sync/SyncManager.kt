@@ -134,7 +134,7 @@ class SyncManager(
                     // waits for the last writer — so sources fetch/parse/insert fully in parallel here.
                     when (source.type) {
                         SourceType.XTREAM -> xtreamSyncer.sync(source, progress, stats, effective)
-                        SourceType.M3U -> m3uSyncer.sync(source, progress, stats)
+                        SourceType.M3U -> m3uSyncer.sync(source, progress, stats, effective)
                         SourceType.LOCAL_BACKUP -> Unit
                         SourceType.STALKER -> stalkerSyncer.sync(source, progress, stats, effective)
                     }

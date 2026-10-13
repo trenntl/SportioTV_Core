@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sportio launcher icon background: the dark accent container (Field). -->
+    <color name="sportio_icon_bg">#134D2C</color>
+</resources>

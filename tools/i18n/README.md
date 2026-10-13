@@ -15,7 +15,7 @@ Spanish is `es` (there is no `es_ES` definition), while Latin America is `es_419
 <!-- canonical-weblate:start -->
 **Canonical project overview:** <https://hosted.weblate.org/projects/owntv/>
 
-**New-language request form:** <https://github.com/ahXN00/OwnTV/issues/new?template=feature_request.yml&title=%5BLanguage%5D%20Add%20>
+**New-language request form:** <https://github.com/old-repo/SportioTV/issues/new?template=feature_request.yml&title=%5BLanguage%5D%20Add%20>
 
 The app, README, and this guide use these values from `community.json`; update that single source when either route changes.
 <!-- canonical-weblate:end -->
@@ -50,13 +50,19 @@ coverage does not silently change release packaging.
 
 ## How Weblate and the repository stay in sync
 
+> **Fork note.** This fork does **not** run the scheduled Weblate sync. Upstream's
+> `.github/workflows/translations.yml` is not present here, and `sync_translations.py` below is kept
+> for reference but is **not wired to any workflow**. The strings still live here and are still the
+> authoritative copy the app consumes; translations for this fork arrive by merging them down from
+> upstream. Everything below describes the upstream sync so the script stays understandable.
+
 Weblate works on the `translations` branch only and pushes there directly; it never opens a pull
 request and never touches `main`. `translations` holds every language, including those still below
 the threshold, so it is also the permanent copy of all translators' work — never delete it, never
 merge it into `main`.
 
-`.github/workflows/translations.yml` (daily, after any push to `main` that changes strings, and on
-demand) locks Weblate, has it push its pending work, then runs `sync_translations.py`:
+Upstream's `.github/workflows/translations.yml` (daily, after any push to `main` that changes strings,
+and on demand) locks Weblate, has it push its pending work, then runs `sync_translations.py`:
 
 1. `to-main` — every string a translator changed in a shipped language replaces main's; everything
    else stays as main has it. Checked by the i18n gates and lint, then committed to `main`.
@@ -64,7 +70,7 @@ demand) locks Weblate, has it push its pending work, then runs `sync_translation
    languages exactly as Weblate has them. Weblate fast-forwards to it, so it never has a commit to
    replay and cannot hit a merge conflict.
 3. `ready` / `promote` — a language that reaches the threshold gets one pull request,
-   `promote-translation-<id>`, which adds its files and marks it tier 1, packaged and visible.
+   `translations/promote-<id>`, which adds its files and marks it tier 1, packaged and visible.
    Merging that pull request is the one manual step.
 
 If any gate fails, nothing is committed anywhere, Weblate is unlocked, and an issue says why.

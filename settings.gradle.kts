@@ -29,10 +29,12 @@ dependencyResolutionManagement {
         }
         google()
         mavenCentral()
-        // OwnTV's own Maven repository (this repo's gh-pages branch) — public, no login. Here for
-        // tv.own.owntv:libmpv, the mpv engine built by ahXN00/OwnTV_libmpv.
+        // Upstream OwnTV's Maven repository — public, no login. Here only for
+        // tv.own.owntv:libmpv, the mpv engine built by ahXN00/OwnTV_libmpv, which this fork
+        // does not rebuild. (This fork's own core artifacts publish to
+        // https://old-repo.github.io/SportioTV_Core/maven via tools/publish_pages.py.)
         maven {
-            name = "OwnTV"
+            name = "OwnTVUpstream"
             url = uri("https://ahxn00.github.io/OwnTV_Core/maven")
             content { includeGroup("tv.own.owntv") }
         }

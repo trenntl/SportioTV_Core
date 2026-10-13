@@ -43,6 +43,22 @@ internal object CompanionHttpProtocol {
         return out
     }
 
+    /**
+     * Parse a form body keeping **every** value of a repeated key (e.g. a pick list posting
+     * `item=…&item=…`). [parseQuery] would keep only the last.
+     */
+    fun parseQueryValues(query: String): Map<String, List<String>> {
+        if (query.isBlank()) return emptyMap()
+        val out = LinkedHashMap<String, MutableList<String>>()
+        query.split('&').forEach { pair ->
+            if (pair.isBlank()) return@forEach
+            val split = pair.split('=', limit = 2)
+            val key = urlDecode(split[0])
+            if (key.isNotBlank()) out.getOrPut(key) { ArrayList() }.add(urlDecode(split.getOrNull(1).orEmpty()))
+        }
+        return out
+    }
+
     /** Return the finite body cap for an endpoint. */
     fun maxBodyBytes(path: String): Int = when {
         // `/m3u` joins the upload group: the M3U panel can carry a whole playlist file inline, and a
@@ -53,9 +69,7 @@ internal object CompanionHttpProtocol {
 
     /**
      * Read a request body without trusting Content-Length for allocation. A declared or observed
-     * body over [limit] returns null so the caller can answer 413. A body that ends before its
-     * Content-Length throws [java.io.EOFException]: half an uploaded backup used to be kept and then
-     * failed to decrypt, which the TV could only report as a wrong password.
+     * body over [limit] returns null so the caller can answer 413.
      */
     fun readBody(input: BufferedInputStream, headers: Map<String, String>, limit: Int): String? {
         val declared = headers["content-length"]?.toLongOrNull() ?: 0L
@@ -72,7 +86,6 @@ internal object CompanionHttpProtocol {
             if (total > limit) return null
             buffer.write(chunk, 0, read)
         }
-        if (total < declared) throw java.io.EOFException("Body ended at $total of $declared bytes")
         return buffer.toString(StandardCharsets.UTF_8.name())
     }
 

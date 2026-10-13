@@ -36,7 +36,7 @@
     <string name="settings_dynamic">Dynamické</string>
     <string name="settings_http_proxy">HTTP proxy</string>
     <string name="settings_use_proxy">Používat proxy</string>
-    <string name="settings_proxy_description">Odesílat veškerý provoz OwnTV i přehrávání přes HTTP proxy.</string>
+    <string name="settings_proxy_description">Odesílat veškerý provoz Sportio i přehrávání přes HTTP proxy.</string>
     <string name="settings_host">Hostitel</string>
     <string name="settings_proxy_host_hint">proxy.example.com</string>
     <string name="settings_port">Port</string>
@@ -130,15 +130,15 @@
         <item quantity="other">zbývá <xliff:g id="remaining">%1$d</xliff:g> / <xliff:g id="limit">%2$d</xliff:g></item>
     </plurals>
     <string name="settings_metadata_active_source">Aktivní zdroj</string>
-    <string name="settings_metadata_shared_worker_description">OwnTV Worker · bez nastavování</string>
+    <string name="settings_metadata_shared_worker_description">Sportio Worker · bez nastavování</string>
     <string name="settings_metadata_connection">Připojení</string>
     <string name="settings_metadata_remote_advanced">Získat pokročilé údaje TMDB</string>
     <string name="settings_metadata_remote_advanced_description">Použijte vlastní klíč TMDB API nebo vlastní Worker místo společného výchozího.</string>
     <string name="settings_metadata_key_label">Klíč</string>
     <string name="settings_metadata_server_label">Server</string>
     <string name="settings_metadata_clear_advanced_title">Přestat používat vlastní klíč?</string>
-    <string name="settings_metadata_clear_advanced_message">Váš klíč API TMDB a adresa vlastního serveru budou z tohoto zařízení smazány a OwnTV se vrátí k vestavěné sdílené službě s jejím denním podílem.</string>
-    <string name="settings_metadata_fair_share">Vestavěnou službu metadat sdílejí všichni uživatelé OwnTV, takže každé zařízení dostává každý den vlastní podíl. Pokud svůj podíl vyčerpáte, plakáty a popisy se pozastaví, dokud se podíl neobnoví — informace z vaší vlastní playlistu fungují dál normálně. Přidání vlastního klíče API TMDB nebo serveru toto omezení odstraní: je zdarma a osobní klíč prakticky žádný limit nemá.</string>
+    <string name="settings_metadata_clear_advanced_message">Váš klíč API TMDB a adresa vlastního serveru budou z tohoto zařízení smazány a Sportio se vrátí k vestavěné sdílené službě s jejím denním podílem.</string>
+    <string name="settings_metadata_fair_share">Vestavěnou službu metadat sdílejí všichni uživatelé Sportio, takže každé zařízení dostává každý den vlastní podíl. Pokud svůj podíl vyčerpáte, plakáty a popisy se pozastaví, dokud se podíl neobnoví — informace z vaší vlastní playlistu fungují dál normálně. Přidání vlastního klíče API TMDB nebo serveru toto omezení odstraní: je zdarma a osobní klíč prakticky žádný limit nemá.</string>
     <string name="settings_metadata_limit_reached">Denní podíl metadat je vyčerpán — přidejte v Nastavení → Metadata vlastní klíč TMDB a toto omezení zmizí.</string>
     <string name="settings_metadata_language">Jazyk metadat</string>
     <string name="settings_metadata_language_description">Jazyk popisů, žánrů a názvů z TMDB. Pole, která TMDB nepřeložilo, zůstanou anglicky. Podrobnosti se ukládají do mezipaměti pro každý jazyk, takže přepnutí zpět je okamžité.</string>
@@ -277,7 +277,7 @@
     <string name="settings_network_group">Síť</string>
     <string name="settings_app_group">Aplikace</string>
     <string name="settings_app_startup">Spuštění aplikace</string>
-    <string name="settings_app_startup_description">Co OwnTV otevře při spuštění</string>
+    <string name="settings_app_startup_description">Co Sportio otevře při spuštění</string>
     <string name="settings_check_updates">Zkontrolovat aktualizace</string>
     <string name="settings_check_updates_description">Získat nejnovější verzi z GitHub Releases</string>
     <string name="settings_update_startup">Kontrolovat aktualizace při spuštění</string>
@@ -306,7 +306,7 @@
     <string name="settings_use_color">Použít tuto barvu</string>
     <string name="settings_about_version">Verze <xliff:g id="version">%1$s</xliff:g></string>
     <string name="settings_about_description_full_mobile">Váš vlastní přehrávač IPTV pro Android — bezplatná aplikace s otevřeným zdrojovým kódem sloužící pouze jako přehrávač. Neposkytuje žádné kanály ani obsah; vlastní legálně dostupné zdroje si přidáte sami.</string>
-    <string name="settings_about_license">© 2026 OwnTV · Licence GPLv3</string>
+    <string name="settings_about_license">© 2026 Sportio · Licence GPLv3</string>
     <string name="settings_join_telegram">Přidejte se k nám na Telegramu</string>
     <string name="settings_telegram_qr">QR kód skupiny na Telegramu</string>
     <string name="settings_telegram_scan">Naskenujte QR kód a připojte se z telefonu nebo otevřete odkaz výše.</string>
@@ -464,9 +464,6 @@
     <string name="settings_hardware_decoding">Hardwarové dekódování</string>
     <string name="settings_hardware_decoding_description">Používat hardwarový dekodér televizoru. Vypněte, pokud se některé streamy sekají nebo zobrazují obrazové vady.</string>
     <string name="settings_hardware_decoding_description_mobile">Používat hardwarový dekodér zařízení. Vypněte, pokud se některé streamy sekají nebo zobrazují obrazové vady.</string>
-    <string name="settings_software_decode_above_1080p">Softwarové dekódování nad 1080p</string>
-    <string name="settings_software_decode_above_1080p_description">Přehrává 4K a další video nad 1080p softwarově, když je hardwarový dekodér televizoru vypnutý nebo selže. Vyžaduje rychlý procesor: na většině televizorů se obraz seká.</string>
-    <string name="settings_software_decode_above_1080p_description_mobile">Přehrává 4K a další video nad 1080p softwarově, když je hardwarový dekodér zařízení vypnutý nebo selže. Vyžaduje rychlý procesor: na mnoha zařízeních se obraz seká.</string>
     <string name="settings_movies_series_player">Přehrávač filmů a seriálů</string>
     <string name="settings_live_tv_player">Přehrávač živého vysílání</string>
     <string name="settings_engine_order"><xliff:g id="first">%1$s</xliff:g>, poté <xliff:g id="second">%2$s</xliff:g></string>
@@ -543,7 +540,7 @@
     <string name="settings_open_subtitles_api_key">Aplikační klíč API pro OpenSubtitles</string>
     <string name="settings_worker_server_url">Adresa Workeru / serveru</string>
     <string name="settings_shared">Společné</string>
-    <string name="settings_open_subtitles_access_priority">Pro společný Worker OwnTV nechte obojí prázdné. Vlastní adresa Workeru má přednost před přímým klíčem API. Přihlášení k účtu zůstává specifické pro profil.</string>
+    <string name="settings_open_subtitles_access_priority">Pro společný Worker Sportio nechte obojí prázdné. Vlastní adresa Workeru má přednost před přímým klíčem API. Přihlášení k účtu zůstává specifické pro profil.</string>
     <string name="settings_remove_custom_access">Odebrat vlastní přístup</string>
     <string name="settings_preferred_audio_language">Preferovaný jazyk zvuku</string>
     <string name="settings_audio_sync">Synchronizace zvuku</string>
@@ -632,7 +629,7 @@
     <string name="settings_guide_synced">TV program synchronizován</string>
     <string name="settings_guide_sync_failed">Synchronizace TV programu se nezdařila</string>
     <string name="settings_restore_remote_title">Obnovit z jiného zařízení</string>
-    <string name="settings_restore_remote_description">Na libovolném zařízení s prohlížečem ve stejné Wi-Fi — telefonu, počítači nebo jiné televizi — naskenujte QR (nebo otevřete adresu), zadejte tento PIN, vyberte soubor zálohy OwnTV a odešlete ho. Co obnovit, pak zvolíte zde.</string>
+    <string name="settings_restore_remote_description">Na libovolném zařízení s prohlížečem ve stejné Wi-Fi — telefonu, počítači nebo jiné televizi — naskenujte QR (nebo otevřete adresu), zadejte tento PIN, vyberte soubor zálohy Sportio a odešlete ho. Co obnovit, pak zvolíte zde.</string>
     <string name="settings_try_again">Zkusit znovu</string>
     <string name="settings_new_pin">Spustit znovu s novým PIN</string>
     <string name="settings_download_remote_title">Stáhnout na jiném zařízení</string>
@@ -655,7 +652,7 @@
     </plurals>
     <string name="settings_catchup_timezone_device">Zařízení</string>
     <string name="settings_catchup_player_ask">Vždy se zeptat</string>
-    <string name="settings_catchup_player_internal">Přehrávač OwnTV</string>
+    <string name="settings_catchup_player_internal">Přehrávač Sportio</string>
     <string name="settings_catchup_player_external">Externí přehrávač</string>
     <string name="settings_download_folder_title">Vyberte složku pro stahování</string>
     <string name="settings_pick_background_title">Vyberte obrázek na pozadí</string>
@@ -793,9 +790,9 @@
     <string name="settings_sources_info">Informace</string>
     <string name="settings_sources_retest">Otestovat znovu</string>
     <string name="settings_sources_probe_title">Otestovat tento seznam?</string>
-    <string name="settings_sources_probe_warning">Mnozí poskytovatelé nikdy neuvedou, kolik kanálů můžete sledovat najednou, a tak to OwnTV zjistí tím, že jich několik otevře a sleduje, které vydrží. Vše, co právě běží, se zastaví a může to trvat až dvě minuty.</string>
+    <string name="settings_sources_probe_warning">Mnozí poskytovatelé nikdy neuvedou, kolik kanálů můžete sledovat najednou, a tak to Sportio zjistí tím, že jich několik otevře a sleduje, které vydrží. Vše, co právě běží, se zastaví a může to trvat až dvě minuty.</string>
     <string name="settings_sources_probe_running">Zjišťuje se, kolik kanálů tento poskytovatel dovolí… (<xliff:g id="current">%1$d</xliff:g> z <xliff:g id="total">%2$d</xliff:g>)</string>
-    <string name="settings_sources_probe_unknown">OwnTV nedokázal zjistit, kolik kanálů tento poskytovatel dovolí.</string>
+    <string name="settings_sources_probe_unknown">Sportio nedokázal zjistit, kolik kanálů tento poskytovatel dovolí.</string>
     <string name="settings_sources_probe_skip">Přeskočit</string>
     <string name="settings_sources_auto_refresh">⟳ <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="settings_sources_default">VÝCHOZÍ</string>
@@ -1064,7 +1061,7 @@
     <string name="settings_move_category_action">Přesunout</string>
     <string name="settings_dns_description">Používat k vyhledávání domén vlastní server DNS</string>
     <string name="settings_dns_custom">Vlastní DNS</string>
-    <string name="settings_dns_toggle_description">Všechna vyhledávání domén OwnTV provádět prostřednictvím vlastního serveru DNS.</string>
+    <string name="settings_dns_toggle_description">Všechna vyhledávání domén Sportio provádět prostřednictvím vlastního serveru DNS.</string>
     <string name="settings_dns_use_custom">Používat vlastní DNS</string>
     <string name="settings_dns_server_missing">Používání vlastního DNS je zapnuté, ale není nastaven žádný server. Zadejte adresu serveru a vyberte Uložit nebo tuto funkci vypněte.</string>
     <string name="settings_dns_server">Server DNS</string>
@@ -1110,7 +1107,7 @@
     <string name="settings_live_preroll">Přednačítání živých streamů</string>
     <string name="settings_live_preroll_description">Kolik videa se má načíst, než začne hrát živý kanál, a znovu po zadrhnutí. Jde o množství videa, ne o odpočet. Vypnuto zajistí nejrychlejší možné spuštění.</string>
     <string name="settings_live_tune_timeout">Vzdát kanál po</string>
-    <string name="settings_live_tune_timeout_description">Pokud se u živého kanálu do této doby neobjeví obraz, OwnTV to vzdá a dá vám vědět, místo aby nechal černou obrazovku, zatímco zkouší všechny své přehrávače. Volba „Nikdy“ zkouší dál, což u kanálu, který váš poskytovatel zrušil, může trvat výrazně přes minutu. Čekání, o které si řekne poskytovatel, se nezapočítává.</string>
+    <string name="settings_live_tune_timeout_description">Pokud se u živého kanálu do této doby neobjeví obraz, Sportio to vzdá a dá vám vědět, místo aby nechal černou obrazovku, zatímco zkouší všechny své přehrávače. Volba „Nikdy“ zkouší dál, což u kanálu, který váš poskytovatel zrušil, může trvat výrazně přes minutu. Čekání, o které si řekne poskytovatel, se nezapočítává.</string>
     <string name="settings_live_preroll_per_playlist">Přednačítání podle playlistu</string>
     <string name="settings_live_preroll_per_playlist_description">Přepíše výše uvedené nastavení pro jeden playlist, zatímco ostatní playlisty zůstanou rychlé.</string>
     <!-- Translators: Title of the per-playlist Live TV engine override row. -->
@@ -1138,7 +1135,7 @@
     <string name="settings_surround_auto_description_mobile">Auto – zkusí prostorový zvuk Dolby/DTS a automaticky přepne zpět na stereo, pokud ho reproduktor, sluchátka nebo připojený přijímač nepřehrají. Doporučeno.</string>
     <string name="settings_surround_stereo_description">Pouze stereo – vždy dekódujte v aplikaci a posílejte čistý zvuk 2.0. Použijte to u reproduktorů televize nebo stereo soundbaru, případně pokud zvuk zaostává za obrazem.</string>
     <string name="settings_surround_stereo_description_mobile">Pouze stereo – vždy dekódujte v aplikaci a posílejte čistý zvuk 2.0. Použijte to u vestavěného reproduktoru, sluchátek nebo stereo soundbaru, případně pokud zvuk zaostává za obrazem.</string>
-    <string name="settings_surround_forced_description">Prostorový zvuk – posílejte Dolby/DTS do skutečného přijímače 5.1/7.1. Pokud ztichne nebo se zadrhává, OwnTV se i tak vrátí ke stereu a dá vám vědět.</string>
+    <string name="settings_surround_forced_description">Prostorový zvuk – posílejte Dolby/DTS do skutečného přijímače 5.1/7.1. Pokud ztichne nebo se zadrhává, Sportio se i tak vrátí ke stereu a dá vám vědět.</string>
     <string name="settings_panel_width">Úprava šířky panelů</string>
     <string name="settings_panel_width_description">Změňte velikost panelů kategorií, seznamu a náhledu v Živé TV, filmech a seriálech.</string>
     <string name="settings_vod_layout">Rozvržení Filmů a Seriálů</string>
@@ -1179,9 +1176,9 @@
     <string name="settings_panel_width_preview_panel">Panel <xliff:g id="label">%1$s</xliff:g></string>
     <string name="settings_panel_width_total">Celková velikost</string>
     <string name="settings_panel_width_invalid_total">Celková velikost je <xliff:g id="total">%1$d</xliff:g>%%. Musí být 100 %% – upravte ji prosím.</string>
-    <string name="settings_language_help_translate">Pomozte přeložit OwnTV do vašeho jazyka</string>
-    <string name="settings_language_contribution_description">Naskenujte QR kód nebo otevřete odkaz, zvolte libovolný dostupný jazyk a přispějte ve všech šesti překladových komponentách OwnTV.</string>
-    <string name="settings_language_contribution_qr_description">QR kód pro přehled překladatelského projektu OwnTV</string>
+    <string name="settings_language_help_translate">Pomozte přeložit Sportio do vašeho jazyka</string>
+    <string name="settings_language_contribution_description">Naskenujte QR kód nebo otevřete odkaz, zvolte libovolný dostupný jazyk a přispějte ve všech šesti překladových komponentách Sportio.</string>
+    <string name="settings_language_contribution_qr_description">QR kód pro přehled překladatelského projektu Sportio</string>
     <string name="settings_language_contribution_qr_failed">QR kód se nepodařilo vygenerovat. Místo toho použijte odkaz níže.</string>
     <string name="settings_language_contribution_copy">Kopírovat odkaz</string>
     <string name="settings_language_contribution_copied">Odkaz zkopírován</string>
@@ -1190,8 +1187,8 @@
     <string name="settings_auto_frame_rate_warning_suffix">Na tomto televizoru se nedoporučuje: na Androidu nižším než 12 nelze frekvenci měnit plynule.</string>
     <string name="settings_auto_frame_rate_warning_title">Na tomto televizoru se nedoporučuje</string>
     <string name="settings_auto_frame_rate_warning_title_mobile">Na tomto zařízení se nedoporučuje</string>
-    <string name="settings_auto_frame_rate_warning_description">Toto zařízení běží na Androidu <xliff:g id="android_version">%1$s</xliff:g>. Na Androidu nižším než 12 televizor nedokáže OwnTV sdělit, které obnovovací frekvence umí plynule přepínat, takže změna frekvence může na vteřinu nebo dvě zhasnout obrazovku – někdy i vícekrát během jednoho pořadu.\n\nDoporučujeme zde nechat automatickou snímkovou frekvenci vypnutou. Pokud váš televizor přepíná bez problémů, zapněte ji a uvidíte: můžete to kdykoli změnit zpět.</string>
-    <string name="settings_auto_frame_rate_warning_description_mobile">Toto zařízení běží na Androidu <xliff:g id="android_version">%1$s</xliff:g>. Na Androidu nižším než 12 zařízení nedokáže OwnTV sdělit, které obnovovací frekvence umí plynule přepínat, takže změna frekvence může na vteřinu nebo dvě zhasnout obrazovku – někdy i vícekrát během jednoho pořadu.\n\nDoporučujeme zde nechat automatickou snímkovou frekvenci vypnutou. Pokud vaše obrazovka přepíná bez problémů, zapněte ji a uvidíte: můžete to kdykoli změnit zpět.</string>
+    <string name="settings_auto_frame_rate_warning_description">Toto zařízení běží na Androidu <xliff:g id="android_version">%1$s</xliff:g>. Na Androidu nižším než 12 televizor nedokáže Sportio sdělit, které obnovovací frekvence umí plynule přepínat, takže změna frekvence může na vteřinu nebo dvě zhasnout obrazovku – někdy i vícekrát během jednoho pořadu.\n\nDoporučujeme zde nechat automatickou snímkovou frekvenci vypnutou. Pokud váš televizor přepíná bez problémů, zapněte ji a uvidíte: můžete to kdykoli změnit zpět.</string>
+    <string name="settings_auto_frame_rate_warning_description_mobile">Toto zařízení běží na Androidu <xliff:g id="android_version">%1$s</xliff:g>. Na Androidu nižším než 12 zařízení nedokáže Sportio sdělit, které obnovovací frekvence umí plynule přepínat, takže změna frekvence může na vteřinu nebo dvě zhasnout obrazovku – někdy i vícekrát během jednoho pořadu.\n\nDoporučujeme zde nechat automatickou snímkovou frekvenci vypnutou. Pokud vaše obrazovka přepíná bez problémů, zapněte ji a uvidíte: můžete to kdykoli změnit zpět.</string>
     <string name="settings_auto_frame_rate_keep_off">Ponechat vypnuté</string>
     <string name="settings_auto_frame_rate_turn_on_anyway">Přesto zapnout</string>
     <string name="settings_language_request_workflow">Chcete přidat jazyk, který není v seznamu? Nejprve otevřete žádost o jazyk. Správce jej zaregistruje a připraví základní soubory překladů; jakmile se objeví na Hosted Weblate, můžete začít přispívat.</string>
@@ -1378,7 +1375,7 @@
     <string name="local_sync_received_items">Přijaté položky: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="local_sync_sent">Vaše data byla odeslána</string>
     <string name="local_sync_failed">Synchronizace selhala</string>
-    <string name="local_sync_error_unreachable">Toto zařízení se nepodařilo kontaktovat. Otevřete na něm OwnTV → Nastavení → Data → Místní synchronizace a zapněte Režim synchronizace. Obě zařízení musí být na stejné Wi-Fi.</string>
+    <string name="local_sync_error_unreachable">Toto zařízení se nepodařilo kontaktovat. Otevřete na něm Sportio → Nastavení → Data → Místní synchronizace a zapněte Režim synchronizace. Obě zařízení musí být na stejné Wi-Fi.</string>
     <string name="local_sync_error_unauthorized">Druhé zařízení odmítlo spojení. PIN může být špatný, nebo si toto zařízení už nepamatuje.</string>
     <string name="local_sync_error_bad_payload">Přijatá data se nepodařilo přečíst. Pokud jste použili heslo, ověřte, že je na obou zařízeních stejné.</string>
     <string name="local_sync_error_unknown">Něco se pokazilo. Zkuste to znovu.</string>
@@ -1461,7 +1458,7 @@
     <string name="settings_multiview_keep_two">Nechat 2</string>
     <string name="settings_multiview_use_anyway">Přesto použít</string>
     <string name="settings_app_icon">Ikona aplikace</string>
-    <string name="settings_app_icon_summary">Barva ikony a loga OwnTV</string>
+    <string name="settings_app_icon_summary">Barva ikony a loga Sportio</string>
     <string name="settings_brand_accent">Logo v barvě zvýraznění</string>
     <string name="app_icon_petrol">Petrolejová</string>
     <string name="app_icon_sunflower">Slunečnice</string>
@@ -1472,8 +1469,8 @@
     <string name="app_icon_olive">Olivová</string>
     <string name="app_icon_olive_cream">Olivová na krémové</string>
     <string name="app_icon_pixel">Pixel</string>
-    <string name="app_icon_restart_title">Restartovat OwnTV?</string>
-    <string name="app_icon_restart_message">Vybrali jste novou ikonu a logo. Projeví se po restartu OwnTV.</string>
+    <string name="app_icon_restart_title">Restartovat Sportio?</string>
+    <string name="app_icon_restart_message">Vybrali jste novou ikonu a logo. Projeví se po restartu Sportio.</string>
     <string name="app_icon_restart_now">Restartovat nyní</string>
     <string name="settings_navigation">Navigace</string>
     <string name="settings_navigation_description">Jak se chová nabídka vlevo</string>
@@ -1487,13 +1484,6 @@
     <string name="settings_nav_widen_desc">Ukotvená a kompaktní: při výběru lišty ukáže názvy přes obsah</string>
     <string name="settings_nav_menu_items">Položky nabídky</string>
     <string name="settings_nav_menu_items_desc">Dynamické: podle obsahu playlistu · Pevné: vyberete si sami</string>
-    <string name="settings_nav_bar">Lišta</string>
-    <string name="settings_nav_labels">Popisky</string>
-    <string name="settings_nav_icons_only">Jen ikony</string>
-    <string name="settings_nav_hide_scrolling">Skrývat při posouvání</string>
-    <string name="settings_nav_hide_scrolling_desc">Lišta zmizí při posouvání dolů a vrátí se při posouvání nahoru</string>
-    <string name="settings_sheet_counts">Zobrazit počty</string>
-    <string name="settings_sheet_counts_desc">Počty kanálů a titulů v panelech</string>
     <string name="settings_search_keywords_navigation">lišta, postranní panel, nabídka, navigace, skrýt, plovoucí, ukotvená, velikost, kompaktní, široká, délka, celá výška</string>
     <string name="settings_breadcrumb_eyebrow"><xliff:g id="section">%1$s</xliff:g> · <xliff:g id="group">%2$s</xliff:g></string>
     <string name="settings_nav_size_desc">Kompaktní: ikony · Normální: názvy · Široká: názvy a počty · Extra široká: s podrobnostmi</string>
@@ -1639,10 +1629,10 @@
     <string name="settings_help_epg_sources">Přidejte zdroj průvodce XMLTV podle odkazu, obnovte ho nebo ho odeberte. Zdroje plní TV průvodce a řádky pořadů v živé TV.</string>
     <string name="settings_help_guide_days">Kolik dní pořadů dopředu průvodce uchovává. Méně dní znamená rychlejší obnovu průvodce a menší databázi.</string>
     <string name="settings_help_catchup">Zpětné sledování přehrává pořady z archivu poskytovatele. Většina poskytovatelů se řídí hodinami televize; pokud záznam začíná ve špatný čas, zvolte pevný posun UTC. Zde také vyberete přehrávač pro zpětné sledování.</string>
-    <string name="settings_help_theme">OwnTV je navržen pro tmavý motiv. Systém se řídí nastavením televize, pokud ho má; světlý se hodí do světlé místnosti.</string>
+    <string name="settings_help_theme">Sportio je navržen pro tmavý motiv. Systém se řídí nastavením televize, pokud ho má; světlý se hodí do světlé místnosti.</string>
     <string name="settings_help_accent">Obarví tlačítka, záři výběru, ukazatele průběhu a zvýraznění všude. Vyberte předvolbu, nebo stiskněte OK pro paletu a libovolný hex kód.</string>
     <string name="settings_help_focus">Rámeček kolem prvku, který je vybraný. Zvolte jeho barvu a tloušťku, aby byl z gauče dobře vidět.</string>
-    <string name="settings_help_fonts">Písmo používané v celém OwnTV a velikost textu. Vyskakovací okna používají stejné písmo.</string>
+    <string name="settings_help_fonts">Písmo používané v celém Sportio a velikost textu. Vyskakovací okna používají stejné písmo.</string>
     <string name="settings_help_popup_size">Zvětší nebo zmenší vyskakovací okna, nabídky a dialogy jako celek. Použijte, když jsou okna stísněná nebo zakrývají příliš mnoho obrazovky.</string>
     <string name="settings_help_zoom">Změní velikost všeho na obrazovce. Větší se lépe čte z dálky, menší pojme víc obsahu. Pod 85 %% může TV boxům s malou pamětí dojít paměť.</string>
     <string name="settings_help_animations">Když je zapnuto, panely, nabídky a výběr se pohybují plynule. Vypnuto znamená, že se vše změní okamžitě.</string>
@@ -1652,11 +1642,11 @@
     <string name="settings_help_vod_layout">Filmový zobrazí obrázek vybraného titulu za mřížkou plakátů. Samostatné ukáže kategorie, tituly a podrobnosti vedle sebe.</string>
     <string name="settings_help_home">Vyberte, které řádky Domů zobrazí a v jakém pořadí, a jak bude vypadat řádek Právě populární.</string>
     <string name="settings_help_customize">Skryjte kategorie a položky, které nikdy nesledujete, pojmenujte kategorie po svém a seřaďte je podle sebe. Skryté věci se vrátí tady, nikdy se neztratí.</string>
-    <string name="settings_help_app_icon">Ikona OwnTV na domovské obrazovce televize. Spouštěči může chvíli trvat, než změnu zobrazí.</string>
-    <string name="settings_help_brand_accent">Logo OwnTV v nabídce, v sekci O aplikaci a v nastavení ukazuje trojúhelník přehrávání ve vaší barvě zvýraznění. Ikona na domovské obrazovce si ponechá své barvy.</string>
-    <string name="settings_help_startup">Co OwnTV zobrazí po spuštění: Domů, naposledy sledovaný kanál, oblíbené, nebo kanál, který vyberete.</string>
-    <string name="settings_help_check_updates">Hned vyhledá na GitHubu novější OwnTV a nabídne instalaci. Playlisty, oblíbené a nastavení zůstanou, jak jsou.</string>
-    <string name="settings_help_update_startup">Při každém spuštění OwnTV hledá novou verzi a dá vědět, když nějaká je. Bez zeptání se nic nenainstaluje.</string>
+    <string name="settings_help_app_icon">Ikona Sportio na domovské obrazovce televize. Spouštěči může chvíli trvat, než změnu zobrazí.</string>
+    <string name="settings_help_brand_accent">Logo Sportio v nabídce, v sekci O aplikaci a v nastavení ukazuje trojúhelník přehrávání ve vaší barvě zvýraznění. Ikona na domovské obrazovce si ponechá své barvy.</string>
+    <string name="settings_help_startup">Co Sportio zobrazí po spuštění: Domů, naposledy sledovaný kanál, oblíbené, nebo kanál, který vyberete.</string>
+    <string name="settings_help_check_updates">Hned vyhledá na GitHubu novější Sportio a nabídne instalaci. Playlisty, oblíbené a nastavení zůstanou, jak jsou.</string>
+    <string name="settings_help_update_startup">Při každém spuštění Sportio hledá novou verzi a dá vědět, když nějaká je. Bez zeptání se nic nenainstaluje.</string>
     <string name="settings_help_dns">Vyhledává adresy poskytovatele přes zvolený server DNS místo serveru vaší sítě — hodí se, když je síť blokuje nebo přesměrovává.</string>
     <string name="settings_help_live_engine">ExoPlayer otevírá kanály mnohem rychleji a jako jediný umí živé titulky. mpv přehraje kanály, které ExoPlayer nezvládne, včetně neobvyklého zvuku. Kombinované volby zkusí druhý přehrávač, když první selže.</string>
     <string name="settings_help_hw">Používá hardwarový dekodér televize: plynulé 4K a méně tepla. Vypněte jen tehdy, když se některé streamy trhají nebo ukazují kostičky; práci pak převezme softwarový dekodér.</string>
@@ -1680,10 +1670,10 @@
     <string name="settings_profile_add">Přidat profil</string>
     <string name="settings_profile_add_line">Divák s vlastními oblíbenými, historií a nastavením</string>
     <plurals name="settings_help_language">
-        <item quantity="one">Jazyk všech nabídek a zpráv v OwnTV. <xliff:g id="count">%1$d</xliff:g> jazyk; dokud nějaký nevyberete, řídí se jazykem televize.</item>
-        <item quantity="few">Jazyk všech nabídek a zpráv v OwnTV. <xliff:g id="count">%1$d</xliff:g> jazyky; dokud nějaký nevyberete, řídí se jazykem televize.</item>
-        <item quantity="many">Jazyk všech nabídek a zpráv v OwnTV. <xliff:g id="count">%1$d</xliff:g> jazyků; dokud nějaký nevyberete, řídí se jazykem televize.</item>
-        <item quantity="other">Jazyk všech nabídek a zpráv v OwnTV. <xliff:g id="count">%1$d</xliff:g> jazyků; dokud nějaký nevyberete, řídí se jazykem televize.</item>
+        <item quantity="one">Jazyk všech nabídek a zpráv v Sportio. <xliff:g id="count">%1$d</xliff:g> jazyk; dokud nějaký nevyberete, řídí se jazykem televize.</item>
+        <item quantity="few">Jazyk všech nabídek a zpráv v Sportio. <xliff:g id="count">%1$d</xliff:g> jazyky; dokud nějaký nevyberete, řídí se jazykem televize.</item>
+        <item quantity="many">Jazyk všech nabídek a zpráv v Sportio. <xliff:g id="count">%1$d</xliff:g> jazyků; dokud nějaký nevyberete, řídí se jazykem televize.</item>
+        <item quantity="other">Jazyk všech nabídek a zpráv v Sportio. <xliff:g id="count">%1$d</xliff:g> jazyků; dokud nějaký nevyberete, řídí se jazykem televize.</item>
     </plurals>
     <plurals name="settings_profile_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> profil</item>
@@ -1724,8 +1714,8 @@
     <string name="settings_home_show_row">Zobrazit tento řádek</string>
     <string name="settings_home_move_row">Přesunout (▲ ▼, pak OK)</string>
     <string name="settings_line_remote_shortcuts_on">Vypnutí zachová vaše přiřazení</string>
-    <string name="settings_language_system_help">OwnTV používá jazyk televize (nyní <xliff:g id="language">%1$s</xliff:g>). Vyberte níže jazyk, který chcete používat jen v OwnTV.</string>
-    <string name="settings_language_pick_help">Používat <xliff:g id="language">%1$s</xliff:g> v OwnTV bez ohledu na jazyk televize.</string>
+    <string name="settings_language_system_help">Sportio používá jazyk televize (nyní <xliff:g id="language">%1$s</xliff:g>). Vyberte níže jazyk, který chcete používat jen v Sportio.</string>
+    <string name="settings_language_pick_help">Používat <xliff:g id="language">%1$s</xliff:g> v Sportio bez ohledu na jazyk televize.</string>
     <string name="settings_key_use">Použít</string>
     <string name="settings_line_metadata_source">Odkud pocházejí podrobnosti filmů a seriálů</string>
     <string name="settings_line_metadata_language">Děje, žánry a názvy z TMDB</string>
@@ -1780,7 +1770,7 @@
     <string name="settings_line_glass_bg">Pozadí, vzhled obrázku, sklo</string>
     <string name="settings_bg_background">Pozadí</string>
     <string name="settings_line_bg_background">Co je za každou obrazovkou</string>
-    <string name="settings_help_bg_background">Stage ukazuje vlastní jemné barvy OwnTV. Obrázek ukazuje váš obrázek za každou obrazovkou. Prosté je plochá tmavá výplň.</string>
+    <string name="settings_help_bg_background">Stage ukazuje vlastní jemné barvy Sportio. Obrázek ukazuje váš obrázek za každou obrazovkou. Prosté je plochá tmavá výplň.</string>
     <string name="settings_bg_stage">Stage</string>
     <string name="settings_bg_picture">Obrázek</string>
     <string name="settings_bg_plain">Prosté</string>

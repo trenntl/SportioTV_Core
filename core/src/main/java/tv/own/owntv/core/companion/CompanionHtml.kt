@@ -172,6 +172,13 @@ internal object CompanionHtml {
         val downloadHeading = s(R.string.companion_download_heading)
         val downloadDescription = s(R.string.companion_download_description)
         val downloadBackup = s(R.string.companion_download_backup)
+
+        val selectDescription = s(R.string.companion_select_description)
+        val selectSearch = s(R.string.companion_select_search)
+        val selectSave = s(R.string.companion_select_save)
+        val selectSentHeading = s(R.string.companion_select_sent_heading)
+        val selectSentBody = s(R.string.companion_select_sent_body)
+        val selectSentLink = s(R.string.companion_select_sent_link)
     }
 
     private fun page(context: Context, title: String, inner: String): String {
@@ -539,6 +546,61 @@ internal object CompanionHtml {
             <div class="card"><h1>${c.downloadHeading.h()}</h1>
               <p>${c.downloadDescription.h()}</p>
               <a class="go" href="/backup.own?pin=$pin" download="owntv-backup.own" style="display:block;text-align:center;text-decoration:none">${c.downloadBackup.h()}</a>
+            </div>
+        """.trimIndent())
+    }
+
+    /**
+     * A generic pick list ([CompanionMode.SELECT_ITEMS]): grouped checkboxes with a client-side
+     * search, posting the ticked ids as repeated `item` fields. Every label comes from resources or
+     * the host; nothing here is sport-specific.
+     */
+    fun selectItemsPage(context: Context, pin: String, title: String, items: List<CompanionSelectItem>): String {
+        val c = Copy(context)
+        val groups = LinkedHashMap<String, MutableList<CompanionSelectItem>>()
+        items.forEach { item -> groups.getOrPut(item.group) { ArrayList() }.add(item) }
+        val list = buildString {
+            groups.forEach { (group, rows) ->
+                if (group.isNotBlank()) append("<h2>${group.h()}</h2>")
+                append("<div class=\"checks\">")
+                rows.forEach { item ->
+                    append("<label class=\"check\"><input type=\"checkbox\" name=\"item\" value=\"${item.id.h()}\"")
+                    if (item.selected) append(" checked")
+                    append("> ${item.label.h()}</label>")
+                }
+                append("</div>")
+            }
+        }
+        return page(context, title, """
+            <div class="card">
+              <h1>${title.h()}</h1>
+              <p>${c.selectDescription.h()}</p>
+              <input type="search" id="q" autocomplete="off" placeholder="${c.selectSearch.h()}" aria-label="${c.selectSearch.h()}" oninput="flt(this.value)">
+              <form method="post" action="/select?pin=$pin">
+                <div id="list">$list</div>
+                <button class="go" type="submit">${c.selectSave.h()}</button>
+              </form>
+            </div>
+            <script>
+              function flt(q){ q=(q||'').toLowerCase();
+                document.querySelectorAll('#list .check').forEach(function(l){
+                  l.style.display = l.textContent.toLowerCase().indexOf(q) >= 0 ? '' : 'none'; });
+                document.querySelectorAll('#list h2').forEach(function(h){
+                  var n = h.nextElementSibling, any = false;
+                  if (n) { n.querySelectorAll('.check').forEach(function(l){ if (l.style.display !== 'none') any = true; }); }
+                  h.style.display = any ? '' : 'none'; });
+              }
+            </script>
+        """.trimIndent())
+    }
+
+    fun selectItemsSentPage(context: Context, pin: String, title: String): String {
+        val c = Copy(context)
+        return page(context, title, """
+            <div class="card">
+              <h1>${c.selectSentHeading.h()}</h1>
+              <p>${c.selectSentBody.h()}</p>
+              <p><a href="/?pin=$pin">${c.selectSentLink.h()}</a></p>
             </div>
         """.trimIndent())
     }

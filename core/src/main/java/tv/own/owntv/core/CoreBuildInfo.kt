@@ -70,9 +70,9 @@ object CoreBuildInfo {
      * names, so a single baked-in value would have had the phone offering the television's APK —
      * a different `applicationId`, which the system installer refuses, after a download.
      *
-     * Defaults to the TV app's repository so that app needs no change, the same reasoning as
+     * Defaults to the Sportio TV app's repository so that app needs no change, the same reasoning as
      * [tvHome]. **Asset matching needs nothing per app**: it selects on `.apk` plus the `x86_64`
      * marker, which both repositories' release names carry.
      */
-    var releaseRepo: String = "ahXN00/OwnTV"
+    var releaseRepo: String = "old-repo/SportioTV"
 }

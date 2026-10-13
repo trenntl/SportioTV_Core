@@ -36,7 +36,7 @@
     <string name="settings_dynamic">動態</string>
     <string name="settings_http_proxy">HTTP 代理伺服器</string>
     <string name="settings_use_proxy">使用代理伺服器</string>
-    <string name="settings_proxy_description">透過 HTTP 代理伺服器傳送所有 OwnTV 流量及播放內容。</string>
+    <string name="settings_proxy_description">透過 HTTP 代理伺服器傳送所有 Sportio 流量及播放內容。</string>
     <string name="settings_host">主機</string>
     <string name="settings_proxy_host_hint">proxy.example.com</string>
     <string name="settings_port">連接埠</string>
@@ -127,15 +127,15 @@
         <item quantity="other">剩餘 <xliff:g id="remaining">%1$d</xliff:g> / <xliff:g id="limit">%2$d</xliff:g></item>
     </plurals>
     <string name="settings_metadata_active_source">目前來源</string>
-    <string name="settings_metadata_shared_worker_description">OwnTV Worker · 無需設定</string>
+    <string name="settings_metadata_shared_worker_description">Sportio Worker · 無需設定</string>
     <string name="settings_metadata_connection">連線</string>
     <string name="settings_metadata_remote_advanced">取得進階 TMDB 資訊</string>
     <string name="settings_metadata_remote_advanced_description">使用你自己的 TMDB API 金鑰或自建 Worker，而不是共用的預設服務。</string>
     <string name="settings_metadata_key_label">金鑰</string>
     <string name="settings_metadata_server_label">伺服器</string>
     <string name="settings_metadata_clear_advanced_title">不再使用你自己的金鑰？</string>
-    <string name="settings_metadata_clear_advanced_message">你的 TMDB API 金鑰與自有伺服器位址將從此裝置刪除，OwnTV 將回到帶有每日額度的內建共用服務。</string>
-    <string name="settings_metadata_fair_share">內建中繼資料服務由所有 OwnTV 使用者共用，因此每部裝置每天都有自己的額度。用完額度後，海報與簡介會暫停顯示，直到額度恢復；播放清單自帶的資訊不受影響。加入你自己的 TMDB API 金鑰或伺服器即可解除此限制：它是免費的，而且個人金鑰幾乎沒有限制。</string>
+    <string name="settings_metadata_clear_advanced_message">你的 TMDB API 金鑰與自有伺服器位址將從此裝置刪除，Sportio 將回到帶有每日額度的內建共用服務。</string>
+    <string name="settings_metadata_fair_share">內建中繼資料服務由所有 Sportio 使用者共用，因此每部裝置每天都有自己的額度。用完額度後，海報與簡介會暫停顯示，直到額度恢復；播放清單自帶的資訊不受影響。加入你自己的 TMDB API 金鑰或伺服器即可解除此限制：它是免費的，而且個人金鑰幾乎沒有限制。</string>
     <string name="settings_metadata_limit_reached">今日中繼資料額度已用完 — 在「設定 → 中繼資料」中加入你自己的 TMDB 金鑰即可解除此限制。</string>
     <string name="settings_metadata_language">中繼資料語言</string>
     <string name="settings_metadata_language_description">TMDB 提供的劇情、類型與標題的語言。TMDB 未翻譯的欄位會保持英文。詳細資料會依語言分別快取，因此切換回來是立即的。</string>
@@ -271,7 +271,7 @@
     <string name="settings_network_group">網路</string>
     <string name="settings_app_group">應用程式</string>
     <string name="settings_app_startup">應用程式啟動</string>
-    <string name="settings_app_startup_description">OwnTV 啟動時開啟的內容</string>
+    <string name="settings_app_startup_description">Sportio 啟動時開啟的內容</string>
     <string name="settings_check_updates">檢查更新</string>
     <string name="settings_check_updates_description">從 GitHub Releases 取得最新版本</string>
     <string name="settings_update_startup">啟動時檢查更新</string>
@@ -300,7 +300,7 @@
     <string name="settings_use_color">使用此色彩</string>
     <string name="settings_about_version">版本 <xliff:g id="version">%1$s</xliff:g></string>
     <string name="settings_about_description_full_mobile">專屬於您的 Android IPTV 播放器 — 免費、開放原始碼且僅提供播放功能的應用程式。本應用程式不提供任何頻道或內容；請自行加入您可合法存取的來源。</string>
-    <string name="settings_about_license">© 2026 OwnTV · GPLv3 授權條款</string>
+    <string name="settings_about_license">© 2026 Sportio · GPLv3 授權條款</string>
     <string name="settings_join_telegram">加入我們的 Telegram</string>
     <string name="settings_telegram_qr">Telegram 群組 QR 圖碼</string>
     <string name="settings_telegram_scan">使用手機掃描 QR 圖碼即可加入，或開啟上方連結。</string>
@@ -458,9 +458,6 @@
     <string name="settings_hardware_decoding">硬體解碼</string>
     <string name="settings_hardware_decoding_description">使用電視的硬體解碼器。如果部分串流播放不順或出現影像瑕疵，請關閉此功能。</string>
     <string name="settings_hardware_decoding_description_mobile">使用裝置的硬體解碼器。如果部分串流播放不順或出現影像瑕疵，請關閉此功能。</string>
-    <string name="settings_software_decode_above_1080p">1080p 以上軟體解碼</string>
-    <string name="settings_software_decode_above_1080p_description">當電視的硬體解碼器關閉或失敗時，以軟體播放 4K 及其他 1080p 以上的影片。需要快速的處理器：在大多數電視上會卡頓。</string>
-    <string name="settings_software_decode_above_1080p_description_mobile">當裝置的硬體解碼器關閉或失敗時，以軟體播放 4K 及其他 1080p 以上的影片。需要快速的處理器：在許多裝置上會卡頓。</string>
     <string name="settings_movies_series_player">電影與影集播放器</string>
     <string name="settings_live_tv_player">電視直播播放器</string>
     <string name="settings_engine_order">先 <xliff:g id="first">%1$s</xliff:g>，後 <xliff:g id="second">%2$s</xliff:g></string>
@@ -537,7 +534,7 @@
     <string name="settings_open_subtitles_api_key">OpenSubtitles 應用程式 API 金鑰</string>
     <string name="settings_worker_server_url">Worker / 伺服器網址</string>
     <string name="settings_shared">共用</string>
-    <string name="settings_open_subtitles_access_priority">兩項都留空即使用 OwnTV 的共用 Worker。自訂 Worker 網址優先於直接填寫的 API 金鑰。帳號登入狀態仍依設定檔分別儲存。</string>
+    <string name="settings_open_subtitles_access_priority">兩項都留空即使用 Sportio 的共用 Worker。自訂 Worker 網址優先於直接填寫的 API 金鑰。帳號登入狀態仍依設定檔分別儲存。</string>
     <string name="settings_remove_custom_access">移除自訂存取</string>
     <string name="settings_preferred_audio_language">偏好的音訊語言</string>
     <string name="settings_audio_sync">音訊同步</string>
@@ -623,7 +620,7 @@
     <string name="settings_guide_synced">電視節目表已同步</string>
     <string name="settings_guide_sync_failed">電視節目表同步失敗</string>
     <string name="settings_restore_remote_title">從其他裝置還原</string>
-    <string name="settings_restore_remote_description">在同一 Wi-Fi 下任何有瀏覽器的裝置（手機、電腦或另一台電視）上掃描 QR 碼（或開啟網址），輸入此 PIN，選擇你的 OwnTV 備份檔案並傳送。接著在這裡選擇要還原的內容。</string>
+    <string name="settings_restore_remote_description">在同一 Wi-Fi 下任何有瀏覽器的裝置（手機、電腦或另一台電視）上掃描 QR 碼（或開啟網址），輸入此 PIN，選擇你的 Sportio 備份檔案並傳送。接著在這裡選擇要還原的內容。</string>
     <string name="settings_try_again">再試一次</string>
     <string name="settings_new_pin">使用新的 PIN 重新開始</string>
     <string name="settings_download_remote_title">在其他裝置上下載</string>
@@ -643,7 +640,7 @@
     </plurals>
     <string name="settings_catchup_timezone_device">裝置</string>
     <string name="settings_catchup_player_ask">一律詢問</string>
-    <string name="settings_catchup_player_internal">OwnTV 播放器</string>
+    <string name="settings_catchup_player_internal">Sportio 播放器</string>
     <string name="settings_catchup_player_external">外部播放器</string>
     <string name="settings_download_folder_title">選擇下載資料夾</string>
     <string name="settings_pick_background_title">選擇背景圖片</string>
@@ -775,9 +772,9 @@
     <string name="settings_sources_info">資訊</string>
     <string name="settings_sources_retest">重新測試</string>
     <string name="settings_sources_probe_title">測試此播放清單？</string>
-    <string name="settings_sources_probe_warning">許多供應商從不說明你可以同時觀看多少個頻道，因此 OwnTV 會開啟幾個頻道，看看哪些能持續播放來判斷。目前正在播放的內容會停止，此過程最多需要兩分鐘。</string>
+    <string name="settings_sources_probe_warning">許多供應商從不說明你可以同時觀看多少個頻道，因此 Sportio 會開啟幾個頻道，看看哪些能持續播放來判斷。目前正在播放的內容會停止，此過程最多需要兩分鐘。</string>
     <string name="settings_sources_probe_running">正在檢測此供應商允許的頻道數量…（<xliff:g id="current">%1$d</xliff:g>/<xliff:g id="total">%2$d</xliff:g>）</string>
-    <string name="settings_sources_probe_unknown">OwnTV 無法判斷此供應商允許多少個頻道。</string>
+    <string name="settings_sources_probe_unknown">Sportio 無法判斷此供應商允許多少個頻道。</string>
     <string name="settings_sources_probe_skip">略過</string>
     <string name="settings_sources_auto_refresh">⟳ <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="settings_sources_default">預設</string>
@@ -1007,7 +1004,7 @@
     <string name="settings_move_category_action">移動</string>
     <string name="settings_dns_description">使用自訂 DNS 伺服器進行網域查詢</string>
     <string name="settings_dns_custom">自訂 DNS</string>
-    <string name="settings_dns_toggle_description">透過自訂 DNS 伺服器解析 OwnTV 的所有網域查詢。</string>
+    <string name="settings_dns_toggle_description">透過自訂 DNS 伺服器解析 Sportio 的所有網域查詢。</string>
     <string name="settings_dns_use_custom">使用自訂 DNS</string>
     <string name="settings_dns_server_missing">自訂 DNS 已啟用，但尚未設定伺服器。請輸入伺服器位址並選取「儲存」，或關閉此功能。</string>
     <string name="settings_dns_server">DNS 伺服器</string>
@@ -1053,7 +1050,7 @@
     <string name="settings_live_preroll">直播串流預先緩衝</string>
     <string name="settings_live_preroll_description">在直播頻道開始播放前先緩衝這個數量的影片，發生卡頓後也會再緩衝一次。這是影片量，不是倒數計時。關閉可保持最快的啟動速度。</string>
     <string name="settings_live_tune_timeout">放棄頻道的等待時間</string>
-    <string name="settings_live_tune_timeout_description">若直播頻道在此時間內仍未出現畫面，OwnTV 會停止嘗試並告知你，而不是一邊逐一試遍所有播放器、一邊留著黑畫面。選擇「永不」會一直嘗試，在供應商已下架的頻道上可能遠超過一分鐘。供應商自己要求的等待時間不計入其中。</string>
+    <string name="settings_live_tune_timeout_description">若直播頻道在此時間內仍未出現畫面，Sportio 會停止嘗試並告知你，而不是一邊逐一試遍所有播放器、一邊留著黑畫面。選擇「永不」會一直嘗試，在供應商已下架的頻道上可能遠超過一分鐘。供應商自己要求的等待時間不計入其中。</string>
     <string name="settings_live_preroll_per_playlist">各播放清單的預先緩衝</string>
     <string name="settings_live_preroll_per_playlist_description">為某個播放清單覆寫上述設定，同時讓其他播放清單保持快速啟動。</string>
     <!-- Translators: Title of the per-playlist Live TV engine override row. -->
@@ -1078,7 +1075,7 @@
     <string name="settings_surround_auto_description_mobile">自動 — 嘗試播放 Dolby/DTS 環繞音效，如果揚聲器、耳機或連接的接收器無法播放，就會自動切回立體聲。建議使用。</string>
     <string name="settings_surround_stereo_description">僅立體聲 — 一律在應用程式內解碼，並傳送純 2.0 音效。電視喇叭或立體聲 Soundbar 請使用此選項；若聲音比畫面慢，也請使用此選項。</string>
     <string name="settings_surround_stereo_description_mobile">僅立體聲 — 一律在應用程式內解碼，並傳送純 2.0 音效。內建揚聲器、耳機或立體聲 Soundbar 請使用此選項；若聲音比畫面慢，也請使用此選項。</string>
-    <string name="settings_surround_forced_description">環繞音效 — 將 Dolby/DTS 傳送至實體的 5.1/7.1 環繞擴大機。如果出現無聲或卡頓，OwnTV 仍會自動切回立體聲並通知你。</string>
+    <string name="settings_surround_forced_description">環繞音效 — 將 Dolby/DTS 傳送至實體的 5.1/7.1 環繞擴大機。如果出現無聲或卡頓，Sportio 仍會自動切回立體聲並通知你。</string>
     <string name="settings_panel_width">面板寬度調整</string>
     <string name="settings_panel_width_description">在直播電視、電影與影集中調整分類、清單和預覽面板的大小。</string>
     <string name="settings_vod_layout">電影與影集版面</string>
@@ -1119,9 +1116,9 @@
     <string name="settings_panel_width_preview_panel"><xliff:g id="label">%1$s</xliff:g> 面板</string>
     <string name="settings_panel_width_total">總大小</string>
     <string name="settings_panel_width_invalid_total">總大小為 <xliff:g id="total">%1$d</xliff:g>%%。必須是 100%%，請調整。</string>
-    <string name="settings_language_help_translate">協助將 OwnTV 翻譯成你的語言</string>
-    <string name="settings_language_contribution_description">掃描 QR Code 或開啟連結，即可選擇任何可用語言，並在 OwnTV 全部六個翻譯元件中貢獻翻譯。</string>
-    <string name="settings_language_contribution_qr_description">OwnTV 翻譯專案總覽的 QR Code</string>
+    <string name="settings_language_help_translate">協助將 Sportio 翻譯成你的語言</string>
+    <string name="settings_language_contribution_description">掃描 QR Code 或開啟連結，即可選擇任何可用語言，並在 Sportio 全部六個翻譯元件中貢獻翻譯。</string>
+    <string name="settings_language_contribution_qr_description">Sportio 翻譯專案總覽的 QR Code</string>
     <string name="settings_language_contribution_qr_failed">無法產生 QR Code。請改用下方顯示的連結。</string>
     <string name="settings_language_contribution_copy">複製連結</string>
     <string name="settings_language_contribution_copied">已複製連結</string>
@@ -1130,8 +1127,8 @@
     <string name="settings_auto_frame_rate_warning_suffix">不建議在此電視上使用：在 Android 12 以下，更新率無法平滑切換。</string>
     <string name="settings_auto_frame_rate_warning_title">不建議在此電視上使用</string>
     <string name="settings_auto_frame_rate_warning_title_mobile">不建議在此裝置上使用</string>
-    <string name="settings_auto_frame_rate_warning_description">此裝置執行的是 Android <xliff:g id="android_version">%1$s</xliff:g>。在 Android 12 以下，電視無法告知 OwnTV 它可以順暢切換到哪些更新率，因此切換更新率可能會讓畫面變黑一兩秒——有時在節目播放期間還會發生不只一次。\n\n我們建議在此保持自動更新率關閉。如果你的電視切換得很順暢，不妨開啟試試看：你隨時都可以改回來。</string>
-    <string name="settings_auto_frame_rate_warning_description_mobile">此裝置執行的是 Android <xliff:g id="android_version">%1$s</xliff:g>。在 Android 12 以下，裝置無法告知 OwnTV 它可以順暢切換到哪些更新率，因此切換更新率可能會讓畫面變黑一兩秒——有時在節目播放期間還會發生不只一次。\n\n我們建議在此保持自動更新率關閉。如果你的螢幕切換得很順暢，不妨開啟試試看：你隨時都可以改回來。</string>
+    <string name="settings_auto_frame_rate_warning_description">此裝置執行的是 Android <xliff:g id="android_version">%1$s</xliff:g>。在 Android 12 以下，電視無法告知 Sportio 它可以順暢切換到哪些更新率，因此切換更新率可能會讓畫面變黑一兩秒——有時在節目播放期間還會發生不只一次。\n\n我們建議在此保持自動更新率關閉。如果你的電視切換得很順暢，不妨開啟試試看：你隨時都可以改回來。</string>
+    <string name="settings_auto_frame_rate_warning_description_mobile">此裝置執行的是 Android <xliff:g id="android_version">%1$s</xliff:g>。在 Android 12 以下，裝置無法告知 Sportio 它可以順暢切換到哪些更新率，因此切換更新率可能會讓畫面變黑一兩秒——有時在節目播放期間還會發生不只一次。\n\n我們建議在此保持自動更新率關閉。如果你的螢幕切換得很順暢，不妨開啟試試看：你隨時都可以改回來。</string>
     <string name="settings_auto_frame_rate_keep_off">保持關閉</string>
     <string name="settings_auto_frame_rate_turn_on_anyway">仍要開啟</string>
     <string name="settings_language_request_workflow">想要新增未列出的語言嗎？請先提出語言請求。維護者會註冊該語言並準備基礎翻譯檔案；一旦它出現在 Hosted Weblate 上，你就可以開始貢獻。</string>
@@ -1312,7 +1309,7 @@
     <string name="local_sync_received_items">已接收的項目: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="local_sync_sent">你的資料已傳送</string>
     <string name="local_sync_failed">同步失敗</string>
-    <string name="local_sync_error_unreachable">無法連線到該裝置。請在那部裝置上開啟 OwnTV → 設定 → 資料 → 本機同步，並開啟同步模式。兩部裝置必須連線同一個 Wi-Fi。</string>
+    <string name="local_sync_error_unreachable">無法連線到該裝置。請在那部裝置上開啟 Sportio → 設定 → 資料 → 本機同步，並開啟同步模式。兩部裝置必須連線同一個 Wi-Fi。</string>
     <string name="local_sync_error_unauthorized">另一部裝置拒絕了連線。可能是 PIN 碼不對，或它已忘記本機。</string>
     <string name="local_sync_error_bad_payload">無法讀取收到的內容。如果使用了密碼，請確認兩部裝置上的密碼相同。</string>
     <string name="local_sync_error_unknown">發生問題，請再試一次。</string>
@@ -1383,7 +1380,7 @@
     <string name="settings_multiview_keep_two">保持 2 個</string>
     <string name="settings_multiview_use_anyway">仍要使用</string>
     <string name="settings_app_icon">應用程式圖示</string>
-    <string name="settings_app_icon_summary">OwnTV 圖示和標誌的顏色</string>
+    <string name="settings_app_icon_summary">Sportio 圖示和標誌的顏色</string>
     <string name="settings_brand_accent">強調色標誌</string>
     <string name="app_icon_petrol">石油藍</string>
     <string name="app_icon_sunflower">向日葵</string>
@@ -1394,8 +1391,8 @@
     <string name="app_icon_olive">橄欖綠</string>
     <string name="app_icon_olive_cream">奶油橄欖綠</string>
     <string name="app_icon_pixel">Pixel</string>
-    <string name="app_icon_restart_title">要重新啟動 OwnTV 嗎？</string>
-    <string name="app_icon_restart_message">你選擇了新的圖示和標誌，重新啟動 OwnTV 後生效。</string>
+    <string name="app_icon_restart_title">要重新啟動 Sportio 嗎？</string>
+    <string name="app_icon_restart_message">你選擇了新的圖示和標誌，重新啟動 Sportio 後生效。</string>
     <string name="app_icon_restart_now">立即重新啟動</string>
     <string name="settings_navigation">導覽</string>
     <string name="settings_navigation_description">左側選單的運作方式</string>
@@ -1409,13 +1406,6 @@
     <string name="settings_nav_widen_desc">固定且精簡：導覽列取得焦點時在內容上方顯示名稱</string>
     <string name="settings_nav_menu_items">選單項目</string>
     <string name="settings_nav_menu_items_desc">動態：依播放清單內容 · 靜態：自行選擇</string>
-    <string name="settings_nav_bar">導覽列</string>
-    <string name="settings_nav_labels">顯示名稱</string>
-    <string name="settings_nav_icons_only">僅圖示</string>
-    <string name="settings_nav_hide_scrolling">捲動時隱藏</string>
-    <string name="settings_nav_hide_scrolling_desc">向下捲動時導覽列收起，向上捲動時恢復</string>
-    <string name="settings_sheet_counts">顯示數量</string>
-    <string name="settings_sheet_counts_desc">在面板中顯示頻道和影片數量</string>
     <string name="settings_search_keywords_navigation">導覽列, 側邊欄, 選單, 導覽, 隱藏, 懸浮, 固定, 大小, 精簡, 寬, 長度, 全高</string>
     <string name="settings_breadcrumb_eyebrow"><xliff:g id="section">%1$s</xliff:g> · <xliff:g id="group">%2$s</xliff:g></string>
     <string name="settings_nav_size_desc">精簡：圖示 · 標準：名稱 · 寬：名稱和數量 · 超寬：含詳細資訊</string>
@@ -1558,10 +1548,10 @@
     <string name="settings_help_epg_sources">透過連結新增 XMLTV 節目指南來源，或重新整理、移除它。這些來源會填入節目指南和直播電視中的節目資訊。</string>
     <string name="settings_help_guide_days">節目指南預先儲存多少天的節目。天數越少，指南重新整理越快，資料庫也越小。</string>
     <string name="settings_help_catchup">回看會播放供應商存檔中的節目。大多數供應商依電視本身的時鐘運作；如果回看開始時間不對，請選擇固定的 UTC 偏移。回看使用哪個播放器也在這裡選擇。</string>
-    <string name="settings_help_theme">OwnTV 是為深色主題設計的。「系統」在電視有相應設定時跟隨電視；淺色適合明亮的房間。</string>
+    <string name="settings_help_theme">Sportio 是為深色主題設計的。「系統」在電視有相應設定時跟隨電視；淺色適合明亮的房間。</string>
     <string name="settings_help_accent">為按鈕、焦點光暈、進度列和醒目提示統一上色。選擇一個預設，或按 OK 開啟調色盤並輸入任意十六進位代碼。</string>
     <string name="settings_help_focus">焦點項目周圍的外框。選擇它的顏色和粗細，讓你坐在沙發上也能看清楚。</string>
-    <string name="settings_help_fonts">OwnTV 全域使用的字型，以及文字顯示的大小。彈出視窗也使用同一字型。</string>
+    <string name="settings_help_fonts">Sportio 全域使用的字型，以及文字顯示的大小。彈出視窗也使用同一字型。</string>
     <string name="settings_help_popup_size">整體放大或縮小彈出視窗、選單和對話框。彈出視窗顯得擁擠或遮住太多畫面時可以調整。</string>
     <string name="settings_help_zoom">縮放畫面上的所有內容。放大後遠處更易閱讀；縮小後能顯示更多。低於 85%% 時，記憶體較小的電視盒可能記憶體不足。</string>
     <string name="settings_help_animations">開啟時，面板、選單和焦點會平滑移動。關閉後所有變化都會立即完成。</string>
@@ -1571,11 +1561,11 @@
     <string name="settings_help_vod_layout">劇院式在海報格狀檢視後方顯示焦點作品的圖片。分欄則把分類、作品和詳細資訊並排顯示。</string>
     <string name="settings_help_home">選擇首頁顯示哪些列、依什麼順序，以及「熱門趨勢」列的樣式。</string>
     <string name="settings_help_customize">隱藏你從不看的分類和項目，為分類取自己的名稱並依你的順序排列。隱藏的內容可在這裡還原，不會遺失。</string>
-    <string name="settings_help_app_icon">電視主畫面上的 OwnTV 圖示。啟動器可能需要片刻才會顯示變更。</string>
-    <string name="settings_help_brand_accent">選單、關於和設定精靈中的 OwnTV 標誌會以你的強調色顯示播放三角形。主畫面上的圖示保持原有顏色。</string>
-    <string name="settings_help_startup">OwnTV 啟動時顯示的內容：首頁、上次觀看的頻道、你的收藏，或你指定的頻道。</string>
-    <string name="settings_help_check_updates">立即在 GitHub 上尋找較新的 OwnTV 並提示安裝。你的播放清單、收藏和設定都會保留。</string>
-    <string name="settings_help_update_startup">每次啟動 OwnTV 時尋找新版本，有新版本時會告訴你。未經詢問不會安裝任何內容。</string>
+    <string name="settings_help_app_icon">電視主畫面上的 Sportio 圖示。啟動器可能需要片刻才會顯示變更。</string>
+    <string name="settings_help_brand_accent">選單、關於和設定精靈中的 Sportio 標誌會以你的強調色顯示播放三角形。主畫面上的圖示保持原有顏色。</string>
+    <string name="settings_help_startup">Sportio 啟動時顯示的內容：首頁、上次觀看的頻道、你的收藏，或你指定的頻道。</string>
+    <string name="settings_help_check_updates">立即在 GitHub 上尋找較新的 Sportio 並提示安裝。你的播放清單、收藏和設定都會保留。</string>
+    <string name="settings_help_update_startup">每次啟動 Sportio 時尋找新版本，有新版本時會告訴你。未經詢問不會安裝任何內容。</string>
     <string name="settings_help_dns">使用你選擇的 DNS 伺服器（而不是網路內建的）解析供應商的位址——當你的網路封鎖或重新導向這些位址時很有用。</string>
     <string name="settings_help_live_engine">ExoPlayer 開啟頻道快得多，也是唯一支援直播字幕的播放器。mpv 能播放 ExoPlayer 無法播放的頻道，包括一些特殊音訊。組合選項會在第一個播放器失敗時嘗試另一個。</string>
     <string name="settings_help_hw">使用電視的硬體解碼器：4K 流暢、發熱更少。只有在部分串流卡頓或出現馬賽克時才關閉，屆時由軟體解碼器處理。</string>
@@ -1599,7 +1589,7 @@
     <string name="settings_profile_add">新增設定檔</string>
     <string name="settings_profile_add_line">擁有獨立收藏、記錄和設定的觀眾</string>
     <plurals name="settings_help_language">
-        <item quantity="other">OwnTV 所有選單和訊息使用的語言。支援 <xliff:g id="count">%1$d</xliff:g> 種語言；在你選擇之前跟隨電視本身的語言。</item>
+        <item quantity="other">Sportio 所有選單和訊息使用的語言。支援 <xliff:g id="count">%1$d</xliff:g> 種語言；在你選擇之前跟隨電視本身的語言。</item>
     </plurals>
     <plurals name="settings_profile_count">
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> 個設定檔</item>
@@ -1634,8 +1624,8 @@
     <string name="settings_home_show_row">顯示此列</string>
     <string name="settings_home_move_row">移動（▲ ▼，然後按 OK）</string>
     <string name="settings_line_remote_shortcuts_on">關閉後保留按鍵指派</string>
-    <string name="settings_language_system_help">OwnTV 跟隨電視語言（目前為 <xliff:g id="language">%1$s</xliff:g>）。在下方選擇一種語言，只在 OwnTV 中使用。</string>
-    <string name="settings_language_pick_help">在 OwnTV 中使用 <xliff:g id="language">%1$s</xliff:g>，不受電視語言影響。</string>
+    <string name="settings_language_system_help">Sportio 跟隨電視語言（目前為 <xliff:g id="language">%1$s</xliff:g>）。在下方選擇一種語言，只在 Sportio 中使用。</string>
+    <string name="settings_language_pick_help">在 Sportio 中使用 <xliff:g id="language">%1$s</xliff:g>，不受電視語言影響。</string>
     <string name="settings_key_use">使用</string>
     <string name="settings_line_metadata_source">電影與影集詳細資料的來源</string>
     <string name="settings_line_metadata_language">來自 TMDB 的劇情、類型與標題</string>
@@ -1681,7 +1671,7 @@
     <string name="settings_line_glass_bg">背景、圖片效果、玻璃</string>
     <string name="settings_bg_background">背景</string>
     <string name="settings_line_bg_background">每個畫面後方的內容</string>
-    <string name="settings_help_bg_background">Stage 顯示 OwnTV 自帶的柔和色彩。圖片會在每個畫面後方顯示你自己的圖片。純色是平整的深色填滿。</string>
+    <string name="settings_help_bg_background">Stage 顯示 Sportio 自帶的柔和色彩。圖片會在每個畫面後方顯示你自己的圖片。純色是平整的深色填滿。</string>
     <string name="settings_bg_stage">Stage</string>
     <string name="settings_bg_picture">圖片</string>
     <string name="settings_bg_plain">純色</string>

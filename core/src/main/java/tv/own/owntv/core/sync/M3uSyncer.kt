@@ -59,7 +59,15 @@ internal class M3uSyncer(
     private val channelAdapter get() = support.channelAdapter
     private val movieAdapter get() = support.movieAdapter
 
-    suspend fun sync(s: SourceEntity, progress: SyncCounters, stats: SyncStatsCollector) {
+    suspend fun sync(
+        s: SourceEntity,
+        progress: SyncCounters,
+        stats: SyncStatsCollector,
+        // TV-only builds pass live-only here (via SyncManager's effective set): VOD/series entries
+        // are then skipped AND previously stored rows for them are cleared, so the catalogue stays
+        // in step without ever paying for the movie/series parse and insert.
+        contentTypes: SyncContentTypes = SyncContentTypes(),
+    ) {
         val channelsStart = System.currentTimeMillis()
         val elapsedStart = SystemClock.elapsedRealtime()
         val ctx = currentCoroutineContext()
@@ -405,10 +413,12 @@ internal class M3uSyncer(
                 progress.update(SyncPhase.SERIES, seriesProcessed)
             }
 
-            val onEntry: suspend (tv.own.owntv.core.parser.M3uEntry) -> Unit = { e ->
+            val onEntry: suspend (tv.own.owntv.core.parser.M3uEntry) -> Unit = onEntry@{ e ->
                 when {
                     // type="series" / tvg-type="series" → grouped into the Series tab.
                     e.isSeries -> {
+                        // TV-only pass: skip the row AND its category/group bookkeeping entirely.
+                        if (!contentTypes.series) return@onEntry
                         e.groupTitle?.let { queueCategory(MediaType.SERIES, it) }
                         val parsed = parseM3uEpisode(e.name)
                         val show = seriesAccumulator.getOrPut(parsed.show.lowercase()) {
@@ -431,6 +441,8 @@ internal class M3uSyncer(
                     }
                     // Other VOD tags (type="vod"/"movie", tvg-type="vod"/"movie") → the movie grid.
                     e.isVod -> {
+                        // TV-only pass: skip the row AND its category/group bookkeeping entirely.
+                        if (!contentTypes.movies) return@onEntry
                         e.groupTitle?.let { queueCategory(MediaType.MOVIE, it) }
                         movieBuffer.add(PendingM3uChannel(order = order++, entry = e))
                         if (movieBuffer.size >= chunkSize) {
@@ -483,6 +495,17 @@ internal class M3uSyncer(
                 }
                 seriesDao.deleteNullRemoteIds(s.id) // seasons/episodes cascade
                 support.pruneCategories(s.id, MediaType.SERIES, seenGroupsByType[MediaType.SERIES].orEmpty(), "M3U series", stats)
+            }
+            // TV-only pass: a disabled type never reaches its prune above (its counter stays 0),
+            // so drop whatever an earlier full sync left behind — rows, then their now-empty groups.
+            // Runs only after a fully successful parse, like the prune itself.
+            if (!contentTypes.movies) {
+                movieDao.clearSource(s.id)
+                support.pruneCategories(s.id, MediaType.MOVIE, emptySet(), "M3U movies", stats)
+            }
+            if (!contentTypes.series) {
+                seriesDao.clearSource(s.id)
+                support.pruneCategories(s.id, MediaType.SERIES, emptySet(), "M3U series", stats)
             }
 
             // "Hide new categories on resync" — same behavior as Xtream/Stalker's refreshCategories.
@@ -544,7 +567,31 @@ internal class M3uSyncer(
         val manifestType: String? = null,
     )
 
-    internal data class ParsedM3uEpisode(val show: String, val season: Int, val episode: Int, val title: String?)
+    private data class ParsedM3uEpisode(val show: String, val season: Int, val episode: Int, val title: String?)
+
+    /**
+     * Splits an M3U series entry title like "Stranger Things S01E05" / "Show 2x03 - Pilot" into
+     * show + season + episode (+ optional episode title). Entries without a recognizable pattern
+     * become season 1 with sequential episode numbers ("Tales From The Crypt (1989-90s)").
+     */
+    private fun parseM3uEpisode(rawName: String): ParsedM3uEpisode {
+        val name = rawName.trim()
+        M3U_EPISODE_SXXEYY.find(name)?.let { m ->
+            val show = name.substring(0, m.range.first).trim(' ', '-', '.', '_', ':')
+            val title = name.substring(m.range.last + 1).trim(' ', '-', '.', '_', ':').takeIf { it.isNotEmpty() }
+            if (show.isNotEmpty()) {
+                return ParsedM3uEpisode(show, m.groupValues[1].toInt(), m.groupValues[2].toInt(), title)
+            }
+        }
+        M3U_EPISODE_NXN.find(name)?.let { m ->
+            val show = name.substring(0, m.range.first).trim(' ', '-', '.', '_', ':')
+            val title = name.substring(m.range.last + 1).trim(' ', '-', '.', '_', ':').takeIf { it.isNotEmpty() }
+            if (show.isNotEmpty()) {
+                return ParsedM3uEpisode(show, m.groupValues[1].toInt(), m.groupValues[2].toInt(), title)
+            }
+        }
+        return ParsedM3uEpisode(show = name, season = 1, episode = 0, title = null) // episode 0 → sequential
+    }
 
     /**
      * Size of a local playlist, for the progress log — read without opening the stream, so the
@@ -580,33 +627,10 @@ internal class M3uSyncer(
         private const val TAG = SyncSupport.TAG
 
         /** "S01E05" / "s1 e5" — the common episode marker in M3U series playlists. */
-        /** Up to four digits each: a year as the season ("S2019E05") and long anime runs ("E1050"). */
-        private val M3U_EPISODE_SXXEYY = Regex("""(?i)\bS(\d{1,4})\s*[.\-_ ]?\s*E(\d{1,4})\b""")
-
-        /** "Season 1 Episode 5" / "Season 1 - Ep. 5" — the marker written out in words. */
-        private val M3U_EPISODE_WORDS = Regex("""(?i)\bSeason\s*(\d{1,4})\s*[.,:\-_ ]*\s*(?:Episode|Ep\.?)\s*(\d{1,4})\b""")
+        private val M3U_EPISODE_SXXEYY = Regex("""(?i)\bS(\d{1,2})\s*[.\-_ ]?\s*E(\d{1,3})\b""")
 
         /** "1x05" alternative marker. */
         private val M3U_EPISODE_NXN = Regex("""(?i)\b(\d{1,2})x(\d{1,3})\b""")
-
-        /**
-         * Splits an M3U series entry title like "Stranger Things S01E05" / "Show Season 2 Episode 3" /
-         * "Show 2x03 - Pilot" into show + season + episode (+ optional episode title). Entries without
-         * a recognizable pattern become season 1 with sequential episode numbers ("Tales From The
-         * Crypt (1989-90s)").
-         */
-        internal fun parseM3uEpisode(rawName: String): ParsedM3uEpisode {
-            val name = rawName.trim()
-            for (pattern in listOf(M3U_EPISODE_SXXEYY, M3U_EPISODE_WORDS, M3U_EPISODE_NXN)) {
-                val m = pattern.find(name) ?: continue
-                val show = name.substring(0, m.range.first).trim(' ', '-', '.', '_', ':')
-                val title = name.substring(m.range.last + 1).trim(' ', '-', '.', '_', ':').takeIf { it.isNotEmpty() }
-                if (show.isNotEmpty()) {
-                    return ParsedM3uEpisode(show, m.groupValues[1].toInt(), m.groupValues[2].toInt(), title)
-                }
-            }
-            return ParsedM3uEpisode(show = name, season = 1, episode = 0, title = null) // episode 0 → sequential
-        }
 
         /** Bound on the in-memory series accumulator (S5) — episode rows buffered before an early
          *  flush. Matched to the bulk-insert chunk so a flush is one normal-sized DB batch. */

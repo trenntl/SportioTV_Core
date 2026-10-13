@@ -30,7 +30,7 @@
     <string name="content_genre_scifi">科幻</string>
     <string name="content_genre_series">剧集</string>
     <string name="content_genre_sport">体育</string>
-    <string name="content_exit_owntv">退出 OwnTV？</string>
+    <string name="content_exit_owntv">退出 Sportio？</string>
     <string name="content_exit_confirmation">确定要关闭此应用吗？</string>
     <string name="content_restore_incomplete_title">恢复未完成</string>
     <string name="content_restore_incomplete_message">应用在恢复 <xliff:g id="description">%1$s</xliff:g> 时关闭，因此部分内容可能缺失。没有删除任何内容——请前往设置 → 备份与恢复，再次执行相同的恢复操作以补全其余内容。</string>
@@ -208,7 +208,7 @@
     <string name="content_storage_choose_folder">选择其他文件夹…</string>
     <string name="content_storage_chosen_folder">所选文件夹</string>
     <string name="content_storage_folder_lost">该文件夹已不可用。请重新选择该文件夹，或选择其他文件夹。</string>
-    <string name="content_storage_folder_fallback">下载文件夹当前不可用，因此在它恢复之前，下载内容会保存到 OwnTV 自己的文件夹。</string>
+    <string name="content_storage_folder_fallback">下载文件夹当前不可用，因此在它恢复之前，下载内容会保存到 Sportio 自己的文件夹。</string>
     <string name="content_downloads_completed">已下载 <xliff:g id="size">%1$s</xliff:g></string>
     <string name="content_downloads_failure_message">下载失败——无法连接到源。请点击“重试”。</string>
     <string name="content_downloads_queued">已排队…</string>
@@ -227,28 +227,6 @@
     <string name="content_downloads_group_on_tv">已存于本电视</string>
     <string name="content_downloads_ready">可以观看</string>
     <string name="content_downloads_paused">已暂停</string>
-    <string name="content_downloads_file_missing">文件丢失：它已不在驱动器上</string>
-    <string name="content_downloads_reason_account_busy">账户繁忙：另一个串流正在使用该连接</string>
-    <string name="content_downloads_reason_refused">服务器拒绝了该链接</string>
-    <string name="content_downloads_reason_not_found">服务器上已没有此文件</string>
-    <string name="content_downloads_reason_server_error">服务器错误</string>
-    <string name="content_downloads_reason_http">服务器未发送该文件</string>
-    <string name="content_downloads_reason_connection_lost">连接已断开</string>
-    <string name="content_downloads_reason_folder">下载文件夹不可用</string>
-    <string name="content_downloads_reason_no_space">空间不足</string>
-    <string name="content_downloads_reason_too_large">文件对此驱动器来说过大：它无法存储超过 4 GB 的文件。请选择其他下载文件夹，或将驱动器格式化为 exFAT</string>
-    <string name="content_downloads_reason_waiting_watching">等待中：停止观看后开始</string>
-    <string name="content_downloads_reason_paused_watching">观看期间已暂停</string>
-    <string name="content_downloads_reason_with_code"><xliff:g id="reason">%1$s</xliff:g> (HTTP <xliff:g id="code">%2$d</xliff:g>)</string>
-    <string name="content_download_watch_title">此播放列表只允许一个串流</string>
-    <string name="content_download_watch_body">来自 <xliff:g id="playlist">%1$s</xliff:g> 的下载正在使用它，因此已暂时暂停。要观看，还是关闭播放器继续下载？</string>
-    <string name="content_download_watch_watch">暂停下载并观看</string>
-    <string name="content_download_watch_keep">继续下载</string>
-    <string name="content_download_watch_remember">不再询问</string>
-    <string name="content_download_watch_setting">下载时观看</string>
-    <string name="content_download_watch_setting_description">适用于只允许一个串流的播放列表：开始播放时如何处理正在进行的下载。</string>
-    <string name="content_download_watch_ask">每次询问</string>
-    <string name="content_download_watch_pause">暂停下载</string>
     <string name="content_downloads_starts_after">排队中 · 在<xliff:g id="title">%1$s</xliff:g>之后开始</string>
     <string name="content_downloads_speed"><xliff:g id="size">%1$s</xliff:g> MB/秒</string>
     <string name="content_epg_create_profile">创建用户档案以查看节目指南。</string>
@@ -320,7 +298,7 @@
     <string name="content_epg_favourite">收藏</string>
     <string name="content_epg_unfavourite">取消收藏</string>
     <string name="content_epg_player_choice_description">前往设置 › 回看以设置永久选项。</string>
-    <string name="content_epg_own_player">OwnTV 播放器</string>
+    <string name="content_epg_own_player">Sportio 播放器</string>
     <string name="content_epg_external_player">外部播放器</string>
     <string name="content_epg_time_offset">电子节目指南时间偏移</string>
     <string name="content_epg_shift_minutes"><xliff:g id="sign">%1$s</xliff:g><xliff:g id="minutes">%2$s</xliff:g>分钟</string>
@@ -332,7 +310,6 @@
     <string name="content_epg_offset_use_global">使用全局</string>
     <string name="content_preview_single_stream">预览已关闭——你的提供商一次只允许一个流。</string>
     <string name="content_playlist_picker_subtitle">在所有界面生效并会被记住</string>
-    <string name="content_playlist_marks_note">选择“所有播放列表”时，每一行都会显示其所属播放列表的标记。</string>
     <string name="content_action_next_episode">下一集</string>
     <string name="content_search_in">搜索<xliff:g id="name">%1$s</xliff:g></string>
     <string name="content_live_guide_view">节目指南视图</string>
@@ -380,15 +357,12 @@
     <string name="content_key_menu">菜单</string>
     <string name="content_key_enter">进入</string>
     <string name="content_key_select">选择</string>
-    <string name="content_key_unselect">取消选择</string>
     <string name="content_key_page">翻页</string>
     <string name="content_history_overlay_hint">最近观看的频道，最新的在前</string>
     <string name="content_watched_duration">已看 <xliff:g id="value">%1$s</xliff:g></string>
     <string name="content_menu_group_show">显示</string>
     <string name="content_epg_show_empty">无节目指南的频道</string>
     <string name="content_epg_show_preview">视频预览</string>
-    <string name="content_epg_view_timeline">时间线</string>
-    <string name="content_menu_group_view">视图</string>
     <string name="content_vod_providers">提供商</string>
     <string name="content_sort_movies_title">电影排序</string>
     <string name="content_sort_series_title">剧集排序</string>

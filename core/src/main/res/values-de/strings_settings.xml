@@ -36,7 +36,7 @@
     <string name="settings_dynamic">Dynamisch</string>
     <string name="settings_http_proxy">HTTP-Proxy</string>
     <string name="settings_use_proxy">Proxy verwenden</string>
-    <string name="settings_proxy_description">Den gesamten Datenverkehr und die gesamte Wiedergabe von OwnTV über einen HTTP-Proxy leiten.</string>
+    <string name="settings_proxy_description">Den gesamten Datenverkehr und die gesamte Wiedergabe von Sportio über einen HTTP-Proxy leiten.</string>
     <string name="settings_host">Host</string>
     <string name="settings_proxy_host_hint">proxy.example.com</string>
     <string name="settings_port">Port</string>
@@ -128,15 +128,15 @@
         <item quantity="other"><xliff:g id="remaining">%1$d</xliff:g> / <xliff:g id="limit">%2$d</xliff:g> übrig</item>
     </plurals>
     <string name="settings_metadata_active_source">Aktive Quelle</string>
-    <string name="settings_metadata_shared_worker_description">OwnTV Worker · keine Einrichtung</string>
+    <string name="settings_metadata_shared_worker_description">Sportio Worker · keine Einrichtung</string>
     <string name="settings_metadata_connection">Verbindung</string>
     <string name="settings_metadata_remote_advanced">Erweiterte TMDB-Daten abrufen</string>
     <string name="settings_metadata_remote_advanced_description">Verwende deinen eigenen TMDB-API-Schlüssel oder einen selbst gehosteten Worker statt der gemeinsamen Standardeinstellung.</string>
     <string name="settings_metadata_key_label">Schlüssel</string>
     <string name="settings_metadata_server_label">Server</string>
     <string name="settings_metadata_clear_advanced_title">Eigenen Schlüssel nicht mehr verwenden?</string>
-    <string name="settings_metadata_clear_advanced_message">Ihr TMDB-API-Schlüssel und die Adresse Ihres eigenen Servers werden von diesem Gerät gelöscht, und OwnTV kehrt zum integrierten gemeinsamen Dienst mit seinem Tagesanteil zurück.</string>
-    <string name="settings_metadata_fair_share">Der integrierte Metadatendienst wird von allen OwnTV-Nutzern gemeinsam genutzt, daher erhält jedes Gerät täglich seinen eigenen Anteil. Wenn Ihr Anteil aufgebraucht ist, pausieren Poster und Beschreibungen, bis er wieder aufgefüllt wird — die Informationen aus Ihrer eigenen Playlist funktionieren weiterhin normal. Ein eigener TMDB-API-Schlüssel oder Server hebt diese Beschränkung auf: Er ist kostenlos, und ein persönlicher Schlüssel hat praktisch kein Limit.</string>
+    <string name="settings_metadata_clear_advanced_message">Ihr TMDB-API-Schlüssel und die Adresse Ihres eigenen Servers werden von diesem Gerät gelöscht, und Sportio kehrt zum integrierten gemeinsamen Dienst mit seinem Tagesanteil zurück.</string>
+    <string name="settings_metadata_fair_share">Der integrierte Metadatendienst wird von allen Sportio-Nutzern gemeinsam genutzt, daher erhält jedes Gerät täglich seinen eigenen Anteil. Wenn Ihr Anteil aufgebraucht ist, pausieren Poster und Beschreibungen, bis er wieder aufgefüllt wird — die Informationen aus Ihrer eigenen Playlist funktionieren weiterhin normal. Ein eigener TMDB-API-Schlüssel oder Server hebt diese Beschränkung auf: Er ist kostenlos, und ein persönlicher Schlüssel hat praktisch kein Limit.</string>
     <string name="settings_metadata_limit_reached">Tagesanteil an Metadaten aufgebraucht — fügen Sie unter Einstellungen → Metadaten Ihren eigenen TMDB-Schlüssel hinzu, um diese Beschränkung aufzuheben.</string>
     <string name="settings_metadata_language">Metadatensprache</string>
     <string name="settings_metadata_language_description">Sprache für Handlungen, Genres und Titel von TMDB. Felder, die TMDB nicht übersetzt hat, bleiben auf Englisch. Details werden pro Sprache zwischengespeichert, das Zurückwechseln erfolgt daher sofort.</string>
@@ -207,7 +207,7 @@
     <string name="settings_accent">Akzentfarbe</string>
     <string name="settings_accent_description">Oberfläche einfärben — Voreinstellungen, Palette oder Hexadezimalcode</string>
     <string name="settings_focus_highlight">Fokus-Hervorhebung</string>
-    <string name="settings_focus_highlight_description">Farbe und Stärke des Rahmens um das ausgewählte Element</string>
+    <string name="settings_focus_highlight_description">Stärke des Rahmens um das ausgewählte Element</string>
     <string name="settings_focus_highlight_chip"><xliff:g id="color">%1$s</xliff:g> · <xliff:g id="thickness">%2$s</xliff:g></string>
     <string name="settings_focus_thickness">Stärke</string>
     <string name="settings_focus_width_thin">Dünn</string>
@@ -273,7 +273,7 @@
     <string name="settings_network_group">Netzwerk</string>
     <string name="settings_app_group">App</string>
     <string name="settings_app_startup">App-Start</string>
-    <string name="settings_app_startup_description">Was OwnTV beim Start öffnet</string>
+    <string name="settings_app_startup_description">Was Sportio beim Start öffnet</string>
     <string name="settings_check_updates">Auf Updates prüfen</string>
     <string name="settings_check_updates_description">Die neueste Version von GitHub Releases abrufen</string>
     <string name="settings_update_startup">Beim Start auf Updates prüfen</string>
@@ -302,7 +302,7 @@
     <string name="settings_use_color">Diese Farbe verwenden</string>
     <string name="settings_about_version">Version <xliff:g id="version">%1$s</xliff:g></string>
     <string name="settings_about_description_full_mobile">Ihr eigener IPTV-Player für Android — eine kostenlose, quelloffene App, die ausschließlich als Player dient. Sie stellt weder Sender noch Inhalte bereit; Sie nutzen Ihre eigenen legal zugänglichen Quellen.</string>
-    <string name="settings_about_license">© 2026 OwnTV · GPLv3-Lizenz</string>
+    <string name="settings_about_license">© 2026 Sportio · GPLv3-Lizenz</string>
     <string name="settings_join_telegram">Auf Telegram beitreten</string>
     <string name="settings_telegram_qr">QR-Code der Telegram-Gruppe</string>
     <string name="settings_telegram_scan">Scannen Sie den QR-Code, um der Gruppe über Ihr Smartphone beizutreten, oder öffnen Sie den Link oben.</string>
@@ -331,6 +331,7 @@
     <string name="settings_accent_violet">Violett</string>
     <string name="settings_accent_green">Grün</string>
     <string name="settings_accent_amber">Bernstein</string>
+    <string name="settings_accent_sportio">Sportio-Grün</string>
     <string name="settings_group_profile">Profil</string>
     <string name="settings_group_sources">Quellen und Programm</string>
     <string name="settings_group_layout">Layout</string>
@@ -341,9 +342,9 @@
     <string name="settings_group_app">App</string>
     <string name="settings_group_summary_profile">Profile und wer was sehen darf</string>
     <string name="settings_group_summary_sources">Playlists, Programmdaten und deren Uhrzeiten</string>
-    <string name="settings_group_summary_appearance">Design, Akzent, Glas, Bewegung und Textgröße</string>
+    <string name="settings_group_summary_appearance">Design, Glas, Bewegung und Textgröße</string>
     <string name="settings_group_summary_layout">Seitenleiste, Bereiche, Listen und Startbildschirm</string>
-    <string name="settings_group_summary_content_metadata">Benennung, Bildmaterial und Untertiteldienste</string>
+    <string name="settings_group_summary_content_metadata">Benennung und Untertiteldienste</string>
     <string name="settings_group_summary_playback">Der Videoplayer und sein Fehlerprotokoll</string>
     <!-- Translators: Video player settings: name of the section holding volume, audio language and surround settings. -->
     <string name="settings_vp_section_sound">Ton</string>
@@ -460,9 +461,6 @@
     <string name="settings_hardware_decoding">Hardwaredecodierung</string>
     <string name="settings_hardware_decoding_description">Den Hardwaredecoder des Fernsehers verwenden. Deaktivieren Sie diese Option, wenn einige Streams ruckeln oder Bildfehler zeigen.</string>
     <string name="settings_hardware_decoding_description_mobile">Den Hardwaredecoder des Geräts verwenden. Deaktivieren Sie diese Option, wenn einige Streams ruckeln oder Bildfehler zeigen.</string>
-    <string name="settings_software_decode_above_1080p">Softwaredecodierung über 1080p</string>
-    <string name="settings_software_decode_above_1080p_description">Spielt 4K und anderes Video über 1080p per Software ab, wenn der Hardwaredecoder des Fernsehers aus ist oder versagt. Braucht einen schnellen Prozessor: Auf den meisten Fernsehern ruckelt es.</string>
-    <string name="settings_software_decode_above_1080p_description_mobile">Spielt 4K und anderes Video über 1080p per Software ab, wenn der Hardwaredecoder des Geräts aus ist oder versagt. Braucht einen schnellen Prozessor: Auf vielen Geräten ruckelt es.</string>
     <string name="settings_movies_series_player">Player für Filme und Serien</string>
     <string name="settings_live_tv_player">Player für Live-TV</string>
     <string name="settings_engine_order"><xliff:g id="first">%1$s</xliff:g>, dann <xliff:g id="second">%2$s</xliff:g></string>
@@ -539,7 +537,7 @@
     <string name="settings_open_subtitles_api_key">OpenSubtitles-Anwendungs-API-Schlüssel</string>
     <string name="settings_worker_server_url">Worker-/Server-URL</string>
     <string name="settings_shared">Gemeinsam</string>
-    <string name="settings_open_subtitles_access_priority">Lasse beide Felder leer, um den gemeinsamen Worker von OwnTV zu nutzen. Eine eigene Worker-URL hat Vorrang vor einem direkten API-Schlüssel. Kontositzungen bleiben profilspezifisch.</string>
+    <string name="settings_open_subtitles_access_priority">Lasse beide Felder leer, um den gemeinsamen Worker von Sportio zu nutzen. Eine eigene Worker-URL hat Vorrang vor einem direkten API-Schlüssel. Kontositzungen bleiben profilspezifisch.</string>
     <string name="settings_remove_custom_access">Eigenen Zugang entfernen</string>
     <string name="settings_preferred_audio_language">Bevorzugte Audiosprache</string>
     <string name="settings_audio_sync">Audio-Synchronisierung</string>
@@ -579,7 +577,7 @@
     <string name="settings_custom_live_buffer">Benutzerdefinierter Live-Puffer</string>
     <string name="settings_live_buffer_seconds"><xliff:g id="seconds">%1$d</xliff:g> s</string>
     <string name="settings_audio_delay"><xliff:g id="delay">%1$d</xliff:g> ms</string>
-    <string name="settings_external_player_description">Auswählen, welche Bereiche in einer externen App geöffnet werden.</string>
+    <string name="settings_external_player_description">Live-TV in einer externen App statt im integrierten Player wiedergeben.</string>
     <string name="settings_audio_delay_value"><xliff:g id="delay">%1$d</xliff:g> ms</string>
     <string name="settings_movies_player_description">mpv (empfohlen) bietet die umfassendste Formatunterstützung — DTS/TrueHD-Audio, ungewöhnliche Dateien. ExoPlayer gibt auf bestimmten Fernsehern einige Streams wieder, die mpv nicht schafft, kann jedoch kein DTS/TrueHD-Audio decodieren. Die kombinierten Optionen probieren automatisch den anderen Player, wenn der erste scheitert; die Optionen mit nur einem Player tun das nie, was ein paar Sekunden Schwarzbild spart, falls der zweite Player auf deinem Fernseher ohnehin nicht funktioniert.</string>
     <string name="settings_movies_player_description_mobile">mpv (empfohlen) bietet die umfassendste Formatunterstützung — DTS/TrueHD-Audio, ungewöhnliche Dateien. ExoPlayer gibt auf bestimmten Geräten einige Streams wieder, die mpv nicht schafft, kann jedoch kein DTS/TrueHD-Audio decodieren. Die kombinierten Optionen probieren automatisch den anderen Player, wenn der erste scheitert; die Optionen mit nur einem Player tun das nie, was ein paar Sekunden Schwarzbild spart, falls der zweite Player auf deinem Gerät ohnehin nicht funktioniert.</string>
@@ -601,7 +599,7 @@
     <string name="settings_forget_stream_fixes_description">Der Player lernt, was die Streams eines Anbieters brauchen – mpv statt ExoPlayer, ein anderes Format, Software-Decodierung für Catch-up. Vergiss das, wenn ein Anbieter seine Streams repariert hat. Catch-up-Erkenntnisse werden außerdem nach 14 Tagen von selbst vergessen.</string>
     <string name="settings_forget_stream_fixes_confirm">Gelernte Stream-Korrekturen vergessen?</string>
     <string name="settings_forget_stream_fixes_confirm_description">Sender öffnen wieder auf dem normalen Weg, und der Player lernt neu, was ein Anbieter noch braucht. Der erste Start eines betroffenen Senders kann ein paar Sekunden länger dauern.</string>
-    <string name="settings_external_player_row_description">Streams in einer externen App (VLC, MX Player) statt im integrierten Player öffnen, separat für jeden Bereich auswählbar. Nützlich für Streams, die diese App nicht decodieren kann, oder wenn du einen anderen Player bevorzugst. Die Fortsetzungsposition und „Zurück/Weiter“ sind bei externer Wiedergabe nicht verfügbar; Streams, die einen benutzerdefinierten User-Agent oder Referer benötigen, werden möglicherweise nicht wiedergegeben.</string>
+    <string name="settings_external_player_row_description">Live-Streams in einer externen App (VLC, MX Player) statt im integrierten Player öffnen. Nützlich für Streams, die diese App nicht decodieren kann, oder wenn du einen anderen Player bevorzugst. Die Fortsetzungsposition und „Zurück/Weiter“ sind bei externer Wiedergabe nicht verfügbar; Streams, die einen benutzerdefinierten User-Agent oder Referer benötigen, werden möglicherweise nicht wiedergegeben.</string>
     <string name="settings_resume_always">Immer fortsetzen</string>
     <string name="settings_resume_ask">Vor dem Fortsetzen fragen</string>
     <string name="settings_resume_never">Nie fortsetzen</string>
@@ -626,7 +624,7 @@
     <string name="settings_guide_synced">Programmübersicht synchronisiert</string>
     <string name="settings_guide_sync_failed">Synchronisierung der Programmübersicht fehlgeschlagen</string>
     <string name="settings_restore_remote_title">Von einem anderen Gerät wiederherstellen</string>
-    <string name="settings_restore_remote_description">Scannen Sie auf einem beliebigen Gerät mit Browser im selben WLAN – Smartphone, Computer oder ein anderer Fernseher – den QR-Code (oder öffnen Sie die URL), geben Sie diese PIN ein, wählen Sie Ihre OwnTV-Sicherungsdatei und senden Sie sie. Was wiederhergestellt wird, wählen Sie dann hier.</string>
+    <string name="settings_restore_remote_description">Scannen Sie auf einem beliebigen Gerät mit Browser im selben WLAN – Smartphone, Computer oder ein anderer Fernseher – den QR-Code (oder öffnen Sie die URL), geben Sie diese PIN ein, wählen Sie Ihre Sportio-Sicherungsdatei und senden Sie sie. Was wiederhergestellt wird, wählen Sie dann hier.</string>
     <string name="settings_try_again">Erneut versuchen</string>
     <string name="settings_new_pin">Mit einer neuen PIN neu starten</string>
     <string name="settings_download_remote_title">Auf einem anderen Gerät herunterladen</string>
@@ -647,7 +645,7 @@
     </plurals>
     <string name="settings_catchup_timezone_device">Gerät</string>
     <string name="settings_catchup_player_ask">Immer fragen</string>
-    <string name="settings_catchup_player_internal">OwnTV-Player</string>
+    <string name="settings_catchup_player_internal">Sportio-Player</string>
     <string name="settings_catchup_player_external">Externer Player</string>
     <string name="settings_download_folder_title">Download-Ordner auswählen</string>
     <string name="settings_pick_background_title">Hintergrundbild auswählen</string>
@@ -781,9 +779,9 @@
     <string name="settings_sources_info">Info</string>
     <string name="settings_sources_retest">Erneut testen</string>
     <string name="settings_sources_probe_title">Diese Playlist testen?</string>
-    <string name="settings_sources_probe_warning">Viele Anbieter verraten nie, wie viele Kanäle Sie gleichzeitig sehen dürfen. OwnTV findet es deshalb heraus, indem es einige öffnet und beobachtet, welche bestehen bleiben. Alles, was gerade läuft, wird beendet, und das kann bis zu zwei Minuten dauern.</string>
+    <string name="settings_sources_probe_warning">Viele Anbieter verraten nie, wie viele Kanäle Sie gleichzeitig sehen dürfen. Sportio findet es deshalb heraus, indem es einige öffnet und beobachtet, welche bestehen bleiben. Alles, was gerade läuft, wird beendet, und das kann bis zu zwei Minuten dauern.</string>
     <string name="settings_sources_probe_running">Es wird geprüft, wie viele Kanäle dieser Anbieter erlaubt… (<xliff:g id="current">%1$d</xliff:g> von <xliff:g id="total">%2$d</xliff:g>)</string>
-    <string name="settings_sources_probe_unknown">OwnTV konnte nicht ermitteln, wie viele Kanäle dieser Anbieter erlaubt.</string>
+    <string name="settings_sources_probe_unknown">Sportio konnte nicht ermitteln, wie viele Kanäle dieser Anbieter erlaubt.</string>
     <string name="settings_sources_probe_skip">Überspringen</string>
     <string name="settings_sources_auto_refresh">⟳ <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="settings_sources_default">STANDARD</string>
@@ -1026,7 +1024,7 @@
     <string name="settings_move_category_action">Verschieben</string>
     <string name="settings_dns_description">Einen benutzerdefinierten DNS-Server für Domainabfragen verwenden</string>
     <string name="settings_dns_custom">Benutzerdefiniertes DNS</string>
-    <string name="settings_dns_toggle_description">Alle Domainabfragen von OwnTV über einen benutzerdefinierten DNS-Server auflösen.</string>
+    <string name="settings_dns_toggle_description">Alle Domainabfragen von Sportio über einen benutzerdefinierten DNS-Server auflösen.</string>
     <string name="settings_dns_use_custom">Benutzerdefiniertes DNS verwenden</string>
     <string name="settings_dns_server_missing">Benutzerdefiniertes DNS ist aktiviert, aber es wurde kein Server konfiguriert. Geben Sie eine Serveradresse ein und wählen Sie „Speichern“ oder deaktivieren Sie diese Option.</string>
     <string name="settings_dns_server">DNS-Server</string>
@@ -1072,7 +1070,7 @@
     <string name="settings_live_preroll">Live-Streams vorpuffern</string>
     <string name="settings_live_preroll_description">Legt fest, wie viel Videomaterial vor dem Start eines Live-Senders und nach einem Ruckler erneut vorgepuffert wird. Es handelt sich um eine Menge an Videomaterial, nicht um einen Countdown. Bei „Aus“ startet die Wiedergabe so schnell wie möglich.</string>
     <string name="settings_live_tune_timeout">Sender aufgeben nach</string>
-    <string name="settings_live_tune_timeout_description">Zeigt ein Live-Sender bis dahin kein Bild, hört OwnTV auf und sagt Ihnen Bescheid, statt einen schwarzen Bildschirm stehen zu lassen, während nacheinander alle Player durchprobiert werden. „Nie“ probiert weiter, was bei einem vom Anbieter entfernten Sender deutlich über eine Minute dauern kann. Wartezeiten, die Ihr Anbieter selbst verlangt, zählen nicht mit.</string>
+    <string name="settings_live_tune_timeout_description">Zeigt ein Live-Sender bis dahin kein Bild, hört Sportio auf und sagt Ihnen Bescheid, statt einen schwarzen Bildschirm stehen zu lassen, während nacheinander alle Player durchprobiert werden. „Nie“ probiert weiter, was bei einem vom Anbieter entfernten Sender deutlich über eine Minute dauern kann. Wartezeiten, die Ihr Anbieter selbst verlangt, zählen nicht mit.</string>
     <string name="settings_live_preroll_per_playlist">Pro Playlist vorpuffern</string>
     <string name="settings_live_preroll_per_playlist_description">Überschreibt die obige Einstellung für eine Playlist, während die anderen Playlists schnell starten.</string>
     <!-- Translators: Title of the per-playlist Live TV engine override row. -->
@@ -1098,7 +1096,7 @@
     <string name="settings_surround_auto_description_mobile">Auto — Dolby/DTS-Surround ausprobieren und automatisch wieder zu Stereo wechseln, wenn der Lautsprecher, die Kopfhörer oder der verbundene Receiver den Ton nicht wiedergeben können. Empfohlen.</string>
     <string name="settings_surround_stereo_description">Nur Stereo — immer in der App dekodieren und reinen 2.0-Ton ausgeben. Verwende diese Option bei TV-Lautsprechern oder einer Stereo-Soundbar oder wenn der Ton dem Bild hinterherhinkt.</string>
     <string name="settings_surround_stereo_description_mobile">Nur Stereo — immer in der App dekodieren und reinen 2.0-Ton ausgeben. Verwende diese Option beim eingebauten Lautsprecher, bei Kopfhörern oder einer Stereo-Soundbar oder wenn der Ton dem Bild hinterherhinkt.</string>
-    <string name="settings_surround_forced_description">Surround — Dolby/DTS an einen echten 5.1/7.1-Receiver ausgeben. Wenn der Ton ausfällt oder ruckelt, wechselt OwnTV trotzdem zu Stereo und informiert dich.</string>
+    <string name="settings_surround_forced_description">Surround — Dolby/DTS an einen echten 5.1/7.1-Receiver ausgeben. Wenn der Ton ausfällt oder ruckelt, wechselt Sportio trotzdem zu Stereo und informiert dich.</string>
     <string name="settings_panel_width">Panelbreite anpassen</string>
     <string name="settings_panel_width_description">Die Kategorie-, Listen- und Vorschau-Panels für Live-TV sowie Filme &amp; Serien in der Größe ändern.</string>
     <string name="settings_vod_layout">Layout für Filme und Serien</string>
@@ -1139,9 +1137,9 @@
     <string name="settings_panel_width_preview_panel"><xliff:g id="label">%1$s</xliff:g> Panel</string>
     <string name="settings_panel_width_total">Gesamtgröße</string>
     <string name="settings_panel_width_invalid_total">Die Gesamtgröße beträgt <xliff:g id="total">%1$d</xliff:g> %%. Sie muss 100 %% betragen – bitte anpassen.</string>
-    <string name="settings_language_help_translate">Hilf mit, OwnTV in deine Sprache zu übersetzen</string>
-    <string name="settings_language_contribution_description">Scannen Sie den QR-Code oder öffnen Sie den Link, um eine beliebige verfügbare Sprache auszuwählen und in allen sechs Übersetzungsbereichen von OwnTV mitzuwirken.</string>
-    <string name="settings_language_contribution_qr_description">QR-Code für die Übersicht des OwnTV-Übersetzungsprojekts</string>
+    <string name="settings_language_help_translate">Hilf mit, Sportio in deine Sprache zu übersetzen</string>
+    <string name="settings_language_contribution_description">Scannen Sie den QR-Code oder öffnen Sie den Link, um eine beliebige verfügbare Sprache auszuwählen und in allen sechs Übersetzungsbereichen von Sportio mitzuwirken.</string>
+    <string name="settings_language_contribution_qr_description">QR-Code für die Übersicht des Sportio-Übersetzungsprojekts</string>
     <string name="settings_language_contribution_qr_failed">Der QR-Code konnte nicht generiert werden. Verwenden Sie stattdessen den unten angezeigten Link.</string>
     <string name="settings_language_contribution_copy">Link kopieren</string>
     <string name="settings_language_contribution_copied">Link kopiert</string>
@@ -1150,8 +1148,8 @@
     <string name="settings_auto_frame_rate_warning_suffix">Auf diesem Fernseher nicht empfohlen: Vor Android 12 lässt sich die Bildwiederholrate nicht fließend ändern.</string>
     <string name="settings_auto_frame_rate_warning_title">Auf diesem Fernseher nicht empfohlen</string>
     <string name="settings_auto_frame_rate_warning_title_mobile">Auf diesem Gerät nicht empfohlen</string>
-    <string name="settings_auto_frame_rate_warning_description">Auf diesem Gerät läuft Android <xliff:g id="android_version">%1$s</xliff:g>. Vor Android 12 kann der Fernseher OwnTV nicht mitteilen, zu welchen Bildwiederholraten er fließend wechseln kann. Daher kann der Bildschirm beim Wechsel der Bildwiederholrate für ein oder zwei Sekunden schwarz werden – manchmal mehr als einmal während einer Sendung.\n\nWir empfehlen, die automatische Bildwiederholrate hier deaktiviert zu lassen. Wenn Ihr Fernseher sauber umschaltet, aktivieren Sie sie und sehen Sie selbst: Sie können die Einstellung jederzeit wieder ändern.</string>
-    <string name="settings_auto_frame_rate_warning_description_mobile">Auf diesem Gerät läuft Android <xliff:g id="android_version">%1$s</xliff:g>. Vor Android 12 kann das Gerät OwnTV nicht mitteilen, zu welchen Bildwiederholraten es fließend wechseln kann. Daher kann der Bildschirm beim Wechsel der Bildwiederholrate für ein oder zwei Sekunden schwarz werden – manchmal mehr als einmal während einer Sendung.\n\nWir empfehlen, die automatische Bildwiederholrate hier deaktiviert zu lassen. Wenn Ihr Bildschirm sauber umschaltet, aktivieren Sie sie und sehen Sie selbst: Sie können die Einstellung jederzeit wieder ändern.</string>
+    <string name="settings_auto_frame_rate_warning_description">Auf diesem Gerät läuft Android <xliff:g id="android_version">%1$s</xliff:g>. Vor Android 12 kann der Fernseher Sportio nicht mitteilen, zu welchen Bildwiederholraten er fließend wechseln kann. Daher kann der Bildschirm beim Wechsel der Bildwiederholrate für ein oder zwei Sekunden schwarz werden – manchmal mehr als einmal während einer Sendung.\n\nWir empfehlen, die automatische Bildwiederholrate hier deaktiviert zu lassen. Wenn Ihr Fernseher sauber umschaltet, aktivieren Sie sie und sehen Sie selbst: Sie können die Einstellung jederzeit wieder ändern.</string>
+    <string name="settings_auto_frame_rate_warning_description_mobile">Auf diesem Gerät läuft Android <xliff:g id="android_version">%1$s</xliff:g>. Vor Android 12 kann das Gerät Sportio nicht mitteilen, zu welchen Bildwiederholraten es fließend wechseln kann. Daher kann der Bildschirm beim Wechsel der Bildwiederholrate für ein oder zwei Sekunden schwarz werden – manchmal mehr als einmal während einer Sendung.\n\nWir empfehlen, die automatische Bildwiederholrate hier deaktiviert zu lassen. Wenn Ihr Bildschirm sauber umschaltet, aktivieren Sie sie und sehen Sie selbst: Sie können die Einstellung jederzeit wieder ändern.</string>
     <string name="settings_auto_frame_rate_keep_off">Deaktiviert lassen</string>
     <string name="settings_auto_frame_rate_turn_on_anyway">Trotzdem aktivieren</string>
     <string name="settings_language_request_workflow">Möchtest du eine Sprache hinzufügen, die nicht aufgeführt ist? Stelle zuerst eine Sprachanfrage. Ein Maintainer registriert sie und bereitet die Basis-Übersetzungsdateien vor; sobald sie auf Hosted Weblate erscheint, kannst du mit dem Übersetzen beginnen.</string>
@@ -1334,7 +1332,7 @@
     <string name="local_sync_received_items">Empfangene Einträge: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="local_sync_sent">Deine Daten wurden gesendet</string>
     <string name="local_sync_failed">Synchronisierung fehlgeschlagen</string>
-    <string name="local_sync_error_unreachable">Dieses Gerät war nicht erreichbar. Öffne dort OwnTV → Einstellungen → Daten → Lokale Synchronisierung und schalte den Synchronisierungsmodus ein. Beide Geräte müssen im selben WLAN sein.</string>
+    <string name="local_sync_error_unreachable">Dieses Gerät war nicht erreichbar. Öffne dort Sportio → Einstellungen → Daten → Lokale Synchronisierung und schalte den Synchronisierungsmodus ein. Beide Geräte müssen im selben WLAN sein.</string>
     <string name="local_sync_error_unauthorized">Das andere Gerät hat abgelehnt. Vielleicht ist die PIN falsch, oder es hat dieses Gerät vergessen.</string>
     <string name="local_sync_error_bad_payload">Das Empfangene konnte nicht gelesen werden. Falls du ein Passwort verwendet hast, prüfe, ob es auf beiden Geräten gleich ist.</string>
     <string name="local_sync_error_unknown">Etwas ist schiefgelaufen. Versuche es erneut.</string>
@@ -1368,9 +1366,9 @@
     <string name="more_settings_search">Alle Einstellungen durchsuchen</string>
     <string name="settings_card_profile">Zuschauer, Kindermodus, PIN-Sperren</string>
     <string name="settings_card_sources">Playlists, EPG, Erinnerungen, Catch-up</string>
-    <string name="settings_card_appearance">Design, Akzent, Glas, Text</string>
+    <string name="settings_card_appearance">Design, Glas, Text</string>
     <string name="settings_card_layout">Navigation, Bereiche, Start, Menüs</string>
-    <string name="settings_card_content">Kategorien, TMDB, Untertitel</string>
+    <string name="settings_card_content">Kategorien, Untertitel</string>
     <string name="settings_card_player">Welcher Player, Streaming</string>
     <string name="settings_card_picture">Decoder, HDR, Zoom, Bildrate</string>
     <string name="settings_card_sound">Lautstärke, Surround, Sprachen</string>
@@ -1409,7 +1407,7 @@
     <string name="settings_multiview_keep_two">Bei 2 bleiben</string>
     <string name="settings_multiview_use_anyway">Trotzdem verwenden</string>
     <string name="settings_app_icon">App-Symbol</string>
-    <string name="settings_app_icon_summary">Farbe des OwnTV-Symbols und -Logos</string>
+    <string name="settings_app_icon_summary">Farbe des Sportio-Symbols und -Logos</string>
     <string name="settings_brand_accent">Logo in Akzentfarbe</string>
     <string name="app_icon_petrol">Petrol</string>
     <string name="app_icon_sunflower">Sonnenblume</string>
@@ -1420,8 +1418,9 @@
     <string name="app_icon_olive">Oliv</string>
     <string name="app_icon_olive_cream">Oliv auf Creme</string>
     <string name="app_icon_pixel">Pixel</string>
-    <string name="app_icon_restart_title">OwnTV neu starten?</string>
-    <string name="app_icon_restart_message">Sie haben ein neues Symbol und Logo gewählt. Die Änderung wird nach einem Neustart von OwnTV wirksam.</string>
+    <string name="app_icon_sportio">Sportio-Grün</string>
+    <string name="app_icon_restart_title">Sportio neu starten?</string>
+    <string name="app_icon_restart_message">Sie haben ein neues Symbol und Logo gewählt. Die Änderung wird nach einem Neustart von Sportio wirksam.</string>
     <string name="app_icon_restart_now">Jetzt neu starten</string>
     <string name="settings_navigation">Navigation</string>
     <string name="settings_navigation_description">Wie sich das Menü links verhält</string>
@@ -1435,13 +1434,6 @@
     <string name="settings_nav_widen_desc">Angedockt und Kompakt: zeigt die Namen über dem Inhalt, solange die Leiste den Fokus hat</string>
     <string name="settings_nav_menu_items">Menüeinträge</string>
     <string name="settings_nav_menu_items_desc">Dynamisch: folgt dem Inhalt der Playlist · Statisch: selbst auswählen</string>
-    <string name="settings_nav_bar">Leiste</string>
-    <string name="settings_nav_labels">Beschriftung</string>
-    <string name="settings_nav_icons_only">Nur Symbole</string>
-    <string name="settings_nav_hide_scrolling">Beim Scrollen ausblenden</string>
-    <string name="settings_nav_hide_scrolling_desc">Die Leiste verschwindet beim Herunterscrollen und kommt beim Hochscrollen zurück</string>
-    <string name="settings_sheet_counts">Anzahl anzeigen</string>
-    <string name="settings_sheet_counts_desc">Anzahl der Sender und Titel in den Auswahllisten</string>
     <string name="settings_search_keywords_navigation">Leiste, Seitenleiste, Menü, Navigation, ausblenden, schwebend, angedockt, Größe, kompakt, breit, Länge, volle Höhe</string>
     <string name="settings_breadcrumb_eyebrow"><xliff:g id="section">%1$s</xliff:g> · <xliff:g id="group">%2$s</xliff:g></string>
     <string name="settings_nav_size_desc">Kompakt: Symbole · Normal: Namen · Breit: Namen und Anzahl · Extrabreit: mit Details</string>
@@ -1585,10 +1577,10 @@
     <string name="settings_help_epg_sources">Fügen Sie einen XMLTV-Guide per Link hinzu, aktualisieren oder entfernen Sie ihn. Die Quellen füllen den TV-Guide und die Sendungszeilen in Live-TV.</string>
     <string name="settings_help_guide_days">Wie viele Tage Sendungen der Guide im Voraus speichert. Weniger Tage machen Aktualisierungen schneller und die Datenbank kleiner.</string>
     <string name="settings_help_catchup">Catch-up spielt Sendungen aus dem Archiv Ihres Anbieters ab. Die meisten Anbieter richten sich nach der Uhr des Fernsehers; wählen Sie einen festen UTC-Versatz, wenn Catch-up zur falschen Zeit beginnt. Hier wählen Sie auch den Player für Catch-up.</string>
-    <string name="settings_help_theme">OwnTV ist für Dunkel gestaltet. System folgt der Einstellung des Fernsehers, sofern vorhanden; Hell passt zu einem hellen Raum.</string>
+    <string name="settings_help_theme">Sportio ist für Dunkel gestaltet. System folgt der Einstellung des Fernsehers, sofern vorhanden; Hell passt zu einem hellen Raum.</string>
     <string name="settings_help_accent">Färbt Schaltflächen, das Fokusleuchten, Fortschrittsbalken und Hervorhebungen überall. Wählen Sie eine Vorgabe oder drücken Sie OK für die Palette und einen beliebigen Hex-Code.</string>
     <string name="settings_help_focus">Der Ring um das, was den Fokus hat. Wählen Sie Farbe und Stärke, damit er vom Sofa aus gut zu verfolgen ist.</string>
-    <string name="settings_help_fonts">Die Schrift in ganz OwnTV und wie groß Text erscheint. Pop-ups verwenden dieselbe Schrift.</string>
+    <string name="settings_help_fonts">Die Schrift in ganz Sportio und wie groß Text erscheint. Pop-ups verwenden dieselbe Schrift.</string>
     <string name="settings_help_popup_size">Macht Pop-ups, Menüs und Dialoge insgesamt größer oder kleiner. Nützlich, wenn sie beengt wirken oder zu viel vom Bild verdecken.</string>
     <string name="settings_help_zoom">Skaliert alles auf dem Bildschirm. Größer liest sich aus der Ferne leichter, kleiner zeigt mehr. Unter 85 %% kann TV-Boxen mit wenig Speicher der Speicher ausgehen.</string>
     <string name="settings_help_animations">Eingeschaltet bewegen sich Leisten, Menüs und Fokus fließend. Aus macht jede Änderung sofort.</string>
@@ -1598,11 +1590,11 @@
     <string name="settings_help_vod_layout">Kino zeigt das Bild des fokussierten Titels hinter einem Posterraster. Getrennt zeigt Kategorien, Titel und Details nebeneinander.</string>
     <string name="settings_help_home">Wählen Sie, welche Zeilen die Startseite in welcher Reihenfolge zeigt und wie die Zeile „Gerade angesagt“ aussieht.</string>
     <string name="settings_help_customize">Blenden Sie Kategorien und Einträge aus, die Sie nie ansehen, geben Sie Kategorien eigene Namen und bringen Sie sie in Ihre Reihenfolge. Ausgeblendetes holen Sie hier zurück — nichts geht verloren.</string>
-    <string name="settings_help_app_icon">Das OwnTV-Symbol auf dem Startbildschirm des Fernsehers. Der Launcher braucht eventuell einen Moment, bis er die Änderung zeigt.</string>
-    <string name="settings_help_brand_accent">Das OwnTV-Logo im Menü, unter „Über“ und in der Einrichtung zeigt sein Play-Dreieck in deiner Akzentfarbe. Das Symbol auf dem Startbildschirm behält seine eigenen Farben.</string>
-    <string name="settings_help_startup">Was OwnTV beim Start zeigt: die Startseite, den zuletzt gesehenen Sender, Ihre Favoriten oder einen Sender Ihrer Wahl.</string>
-    <string name="settings_help_check_updates">Sucht jetzt auf GitHub nach einer neueren OwnTV-Version und bietet die Installation an. Playlists, Favoriten und Einstellungen bleiben, wie sie sind.</string>
-    <string name="settings_help_update_startup">Sucht bei jedem Start von OwnTV nach einer neuen Version und meldet sich, wenn es eine gibt. Ohne Rückfrage wird nichts installiert.</string>
+    <string name="settings_help_app_icon">Das Sportio-Symbol auf dem Startbildschirm des Fernsehers. Der Launcher braucht eventuell einen Moment, bis er die Änderung zeigt.</string>
+    <string name="settings_help_brand_accent">Das Sportio-Logo im Menü, unter „Über“ und in der Einrichtung zeigt sein Play-Dreieck in deiner Akzentfarbe. Das Symbol auf dem Startbildschirm behält seine eigenen Farben.</string>
+    <string name="settings_help_startup">Was Sportio beim Start zeigt: die Startseite, den zuletzt gesehenen Sender, Ihre Favoriten oder einen Sender Ihrer Wahl.</string>
+    <string name="settings_help_check_updates">Sucht jetzt auf GitHub nach einer neueren Sportio-Version und bietet die Installation an. Playlists, Favoriten und Einstellungen bleiben, wie sie sind.</string>
+    <string name="settings_help_update_startup">Sucht bei jedem Start von Sportio nach einer neuen Version und meldet sich, wenn es eine gibt. Ohne Rückfrage wird nichts installiert.</string>
     <string name="settings_help_dns">Löst die Adressen Ihres Anbieters über einen DNS-Server Ihrer Wahl statt über den Ihres Netzes auf — hilfreich, wenn Ihr Netz sie sperrt oder umleitet.</string>
     <string name="settings_help_live_engine">ExoPlayer öffnet Sender viel schneller und kann als einziger Live-Untertitel. mpv spielt Sender, die ExoPlayer nicht schafft, auch manche ungewöhnliche Tonspur. Die kombinierten Optionen versuchen den anderen Player, wenn der erste scheitert.</string>
     <string name="settings_help_hw">Nutzt den Hardware-Decoder des Fernsehers: flüssiges 4K und weniger Wärme. Schalten Sie ihn nur aus, wenn Streams ruckeln oder Blöcke zeigen; dann übernimmt der Software-Decoder.</string>
@@ -1626,8 +1618,8 @@
     <string name="settings_profile_add">Profil hinzufügen</string>
     <string name="settings_profile_add_line">Eine Person mit eigenen Favoriten, eigenem Verlauf und eigenen Einstellungen</string>
     <plurals name="settings_help_language">
-        <item quantity="one">Die Sprache aller Menüs und Meldungen in OwnTV. <xliff:g id="count">%1$d</xliff:g> Sprache; folgt der Sprache des Fernsehers, bis Sie eine wählen.</item>
-        <item quantity="other">Die Sprache aller Menüs und Meldungen in OwnTV. <xliff:g id="count">%1$d</xliff:g> Sprachen; folgt der Sprache des Fernsehers, bis Sie eine wählen.</item>
+        <item quantity="one">Die Sprache aller Menüs und Meldungen in Sportio. <xliff:g id="count">%1$d</xliff:g> Sprache; folgt der Sprache des Fernsehers, bis Sie eine wählen.</item>
+        <item quantity="other">Die Sprache aller Menüs und Meldungen in Sportio. <xliff:g id="count">%1$d</xliff:g> Sprachen; folgt der Sprache des Fernsehers, bis Sie eine wählen.</item>
     </plurals>
     <plurals name="settings_profile_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> Profil</item>
@@ -1664,8 +1656,8 @@
     <string name="settings_home_show_row">Diese Zeile einblenden</string>
     <string name="settings_home_move_row">Verschieben (▲ ▼, dann OK)</string>
     <string name="settings_line_remote_shortcuts_on">Aus behält Ihre Belegungen</string>
-    <string name="settings_language_system_help">OwnTV folgt der Sprache des Fernsehers (derzeit <xliff:g id="language">%1$s</xliff:g>). Wählen Sie unten eine Sprache, um sie nur in OwnTV zu verwenden.</string>
-    <string name="settings_language_pick_help"><xliff:g id="language">%1$s</xliff:g> in OwnTV verwenden, unabhängig von der Sprache des Fernsehers.</string>
+    <string name="settings_language_system_help">Sportio folgt der Sprache des Fernsehers (derzeit <xliff:g id="language">%1$s</xliff:g>). Wählen Sie unten eine Sprache, um sie nur in Sportio zu verwenden.</string>
+    <string name="settings_language_pick_help"><xliff:g id="language">%1$s</xliff:g> in Sportio verwenden, unabhängig von der Sprache des Fernsehers.</string>
     <string name="settings_key_use">Verwenden</string>
     <string name="settings_line_metadata_source">Woher die Details zu Filmen &amp; Serien kommen</string>
     <string name="settings_line_metadata_language">Handlungen, Genres und Titel von TMDB</string>
@@ -1714,7 +1706,7 @@
     <string name="settings_line_glass_bg">Hintergrund, Bildwirkung, Glas</string>
     <string name="settings_bg_background">Hintergrund</string>
     <string name="settings_line_bg_background">Was hinter jedem Bildschirm liegt</string>
-    <string name="settings_help_bg_background">Stage zeigt die eigenen sanften Farben von OwnTV. Bild zeigt ein eigenes Bild hinter jedem Bildschirm. Schlicht ist eine flache dunkle Fläche.</string>
+    <string name="settings_help_bg_background">Stage zeigt die eigenen sanften Farben von Sportio. Bild zeigt ein eigenes Bild hinter jedem Bildschirm. Schlicht ist eine flache dunkle Fläche.</string>
     <string name="settings_bg_stage">Stage</string>
     <string name="settings_bg_picture">Bild</string>
     <string name="settings_bg_plain">Schlicht</string>

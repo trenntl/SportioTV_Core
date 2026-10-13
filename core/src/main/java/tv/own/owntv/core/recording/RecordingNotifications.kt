@@ -34,7 +34,7 @@ internal object RecordingNotifications {
         ensureChannel(context, localized)
 
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.owntv_notification)
+            .setSmallIcon(R.drawable.sportio_notification)
             .setContentTitle(localized.getString(R.string.recording_notification_title))
             .setContentText(progress?.title ?: localized.getString(R.string.app_name))
             .setOngoing(true)

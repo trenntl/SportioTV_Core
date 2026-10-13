@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Publish Maven artifacts into OwnTV's public, tokenless Maven repository.
+"""Publish Maven artifacts into Sportio's public, tokenless Maven repository.
 
     PAGES_TOKEN=... python3 tools/publish_pages.py <staging-dir> [--keep ARTIFACT=N ...]
 
-The repository is the `gh-pages` branch of ahXN00/OwnTV_Core, served by GitHub Pages at
-https://ahxn00.github.io/OwnTV_Core/maven — no login needed to download. Both OwnTV_Core and
-OwnTV_libmpv publish through this script; the two copies (tools/publish_pages.py in each repo) are
-identical and must stay so.
+The repository is the `gh-pages` branch of old-repo/SportioTV_Core, served by GitHub Pages at
+https://old-repo.github.io/SportioTV_Core/maven — no login needed to download. This script
+is a fork of OwnTV_Core's tools/publish_pages.py (upstream: ahXN00/OwnTV_Core); the two copies are
+no longer kept identical. OwnTV_libmpv (upstream) still publishes its libmpv engine to its own
+repository — only tv.own.owntv:core and :player-core go out through here.
 
 <staging-dir> is a local Maven repository Gradle has just published into. Every version found there
 is copied in; publishing a version that already exists fails (published versions are immutable).
@@ -28,9 +29,9 @@ import tempfile
 import time
 import urllib.request
 
-REPO = "ahXN00/OwnTV_Core"
+REPO = "old-repo/SportioTV_Core"
 BRANCH = "gh-pages"
-SITE = "https://ahxn00.github.io/OwnTV_Core/maven"
+SITE = "https://old-repo.github.io/SportioTV_Core/maven"
 GROUP_PATH = "tv/own/owntv"
 GROUP = "tv.own.owntv"
 CHECKSUMS = ("md5", "sha1", "sha256", "sha512")
@@ -103,7 +104,7 @@ def attempt(staging, keep, token):
     summary = ", ".join(f"{a} {' '.join(vs)}" for a, vs in new.items())
     git("checkout", "-q", "--orphan", "publish", cwd=work)
     git("add", "-A", cwd=work)
-    git("-c", "user.name=OwnTV", "-c", "user.email=xiannero@gmail.com",
+    git("-c", "user.name=Sportio", "-c", "user.email=old-repo@users.noreply.github.com",
         "commit", "-q", "-m", f"Maven repository: {summary}", cwd=work)
     push = subprocess.run(
         ["git", "push", "-q", f"--force-with-lease={BRANCH}:{base_sha}", "origin", f"publish:{BRANCH}"], cwd=work)

@@ -43,7 +43,7 @@
     <string name="search_movie">Film</string>
     <string name="search_series">Dizi</string>
     <string name="search_channels">Kanallar</string>
-    <string name="search_on_tv">TV Programları</string>
+    <string name="search_on_tv">TV\'de</string>
     <string name="search_go_to_channel">Kanala git</string>
     <string name="search_go_to_movie">Filme git</string>
     <string name="search_clear_recent">Son aramaları temizle</string>
@@ -122,14 +122,14 @@
     <string name="update_not_enough_space">Güncelleme için yeterli depolama alanı yok. Yaklaşık <xliff:g id="size">%1$s</xliff:g> yer açıp tekrar deneyin.</string>
     <string name="update_damaged_download">Güncelleme tam olarak indirilmedi. Bağlantınızı kontrol edip tekrar deneyin.</string>
     <string name="update_install_rejected">Sistem yükleyicisi güncellemeyi reddetti: <xliff:g id="reason">%1$s</xliff:g></string>
-    <string name="update_ready">OwnTV v<xliff:g id="available">%1$s</xliff:g> hazır (sizde v<xliff:g id="current">%2$s</xliff:g> yüklü).</string>
-    <string name="recovery_title">OwnTV veritabanını açamadı</string>
+    <string name="update_ready">Sportio v<xliff:g id="available">%1$s</xliff:g> hazır (sizde v<xliff:g id="current">%2$s</xliff:g> yüklü).</string>
+    <string name="recovery_title">Sportio veritabanını açamadı</string>
     <string name="recovery_data_safe_full">Profilleriniz, oynatma listeleriniz, favorileriniz ve geçmişiniz SİLİNMEDİ — bu bir veritabanı yükseltme hatasıdır ve veriler hâlâ bu cihazdadır.\n\nLütfen düzeltilebilmesi için bu sorunu bildirin ve aşağıdaki mesajı ekleyin.</string>
     <string name="recovery_retry">Tekrar deneyin</string>
     <string name="recovery_backup_hint">Bir yedekleme dosyanız varsa uygulamayı sıfırlayıp ardından bu dosyadan geri yükleyebilirsiniz. Sıfırlama işlemi bu cihazda depolanan her şeyi siler.</string>
     <string name="recovery_confirm_reset">Onay: tüm uygulama verilerini sil</string>
     <string name="recovery_reset">Uygulama verilerini sıfırla (son çare)</string>
-    <string name="home_row_now_trending">Şu anda popüler</string>
+    <string name="home_row_now_trending">Şu Anda Popüler</string>
     <string name="home_row_trending_description">Yalnızca TMDB trend başlıkları sağlayıcı kataloğunuzdaki film veya dizilerle eşleştiğinde 4–10 öğe gösterir.</string>
     <string name="home_trending_style">Trend düzeni</string>
     <string name="home_trending_style_hero">Ayrıntılı kart</string>
@@ -180,8 +180,7 @@
     <string name="home_trending_open_episodes">Bölümleri aç</string>
     <string name="home_trending_trailer">Fragman</string>
     <string name="home_trending_more_details">Daha Fazla Ayrıntı</string>
-    <string name="home_trending_all_versions">Tüm sürümler</string>
-    <string name="home_trending_why_menu">Bu başlık neden burada</string>
+    <string name="home_trending_all_versions">Tüm Sürümler</string>
     <string name="home_trending_previous">Önceki</string>
     <string name="home_trending_pause">Duraklat</string>
     <string name="home_trending_resume">Devam Et</string>
@@ -225,13 +224,13 @@
     <string name="settings_recording_pre_roll_description">Belirtilen başlangıç saatinden bu kadar önce başla; böylece biraz erken giden bir rehber açılışı kaçırmaz.</string>
     <string name="settings_recording_post_roll">Bitişten sonra devam et</string>
     <string name="settings_recording_post_roll_description">Belirtilen bitiş saatinden bu kadar sonra devam et; böylece uzayan bir program kesilmez.</string>
-    <string name="settings_recording_timers_inexact">Bu cihaz OwnTV’nin tam zamanlı alarm kurmasına izin vermiyor, bu yüzden bir kayıt birkaç dakika geç başlayabilir. Kayıtlar bunu telafi etmek için erken başlar.</string>
+    <string name="settings_recording_timers_inexact">Bu cihaz Sportio’nin tam zamanlı alarm kurmasına izin vermiyor, bu yüzden bir kayıt birkaç dakika geç başlayabilir. Kayıtlar bunu telafi etmek için erken başlar.</string>
     <plurals name="recording_minutes">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> dakika</item>
         <item quantity="other"><xliff:g id="count">%1$d</xliff:g> dakika</item>
     </plurals>
     <string name="recording_failed_encrypted">Bu kanal şifreli olduğu için kaydedilemez</string>
-    <string name="recording_failed_drm">Bu kanal DRM korumalı olduğundan izlenebilir ancak kaydedilemez. Bu koruma OwnTV\'den değil, sağlayıcınızdan geliyor.</string>
+    <string name="recording_failed_drm">Bu kanal DRM korumalı olduğundan izlenebilir ancak kaydedilemez. Bu koruma Sportio\'den değil, sağlayıcınızdan geliyor.</string>
     <string name="recording_failed_metered">Mobil veriyle kaydedilmedi</string>
     <string name="recording_card_empty_title">Henüz kayıt yok</string>
     <string name="recording_card_body">TV rehberinde bir program seçip Kaydet’i seçin ya da bir kanala uzun basıp bir saat zamanlayın. Siz başka bir şey izlerken bile buraya gelir.</string>

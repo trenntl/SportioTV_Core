@@ -61,7 +61,7 @@ internal object EpgSyncNotifications {
         ensureChannel(context, localized)
 
         val notification = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.owntv_notification)
+            .setSmallIcon(R.drawable.sportio_notification)
             .setContentTitle(localized.getString(R.string.settings_syncing_guide))
             // The source's own name, which is the user's own words and never translated. Blank only
             // for a source that vanished between enqueue and run, and then the title stands alone.

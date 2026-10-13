@@ -36,7 +36,7 @@
     <string name="settings_dynamic">Dynamisk</string>
     <string name="settings_http_proxy">HTTP-proxy</string>
     <string name="settings_use_proxy">Brug proxy</string>
-    <string name="settings_proxy_description">Send al trafik og afspilning fra OwnTV gennem en HTTP-proxy.</string>
+    <string name="settings_proxy_description">Send al trafik og afspilning fra Sportio gennem en HTTP-proxy.</string>
     <string name="settings_host">Vært</string>
     <string name="settings_proxy_host_hint">proxy.example.com</string>
     <string name="settings_port">Port</string>
@@ -128,15 +128,15 @@
         <item quantity="other"><xliff:g id="remaining">%1$d</xliff:g> / <xliff:g id="limit">%2$d</xliff:g> tilbage</item>
     </plurals>
     <string name="settings_metadata_active_source">Aktiv kilde</string>
-    <string name="settings_metadata_shared_worker_description">OwnTV Worker · ingen opsætning</string>
+    <string name="settings_metadata_shared_worker_description">Sportio Worker · ingen opsætning</string>
     <string name="settings_metadata_connection">Forbindelse</string>
     <string name="settings_metadata_remote_advanced">Hent avancerede TMDB-oplysninger</string>
     <string name="settings_metadata_remote_advanced_description">Brug din egen TMDB-API-nøgle eller en selvhostet Worker i stedet for den delte standard.</string>
     <string name="settings_metadata_key_label">Nøgle</string>
     <string name="settings_metadata_server_label">Server</string>
     <string name="settings_metadata_clear_advanced_title">Vil du holde op med at bruge din egen nøgle?</string>
-    <string name="settings_metadata_clear_advanced_message">Din TMDB API-nøgle og adressen på din egen server slettes fra denne enhed, og OwnTV vender tilbage til den indbyggede fælles tjeneste med dens daglige andel.</string>
-    <string name="settings_metadata_fair_share">Den indbyggede metadatatjeneste deles af alle, der bruger OwnTV, så hver enhed får sin egen andel hver dag. Hvis du bruger din andel op, sættes plakater og beskrivelser på pause, indtil den fyldes op igen — oplysningerne fra din egen playliste fungerer som normalt. At tilføje din egen TMDB API-nøgle eller server fjerner grænsen: det er gratis, og en personlig nøgle har praktisk talt ingen grænse.</string>
+    <string name="settings_metadata_clear_advanced_message">Din TMDB API-nøgle og adressen på din egen server slettes fra denne enhed, og Sportio vender tilbage til den indbyggede fælles tjeneste med dens daglige andel.</string>
+    <string name="settings_metadata_fair_share">Den indbyggede metadatatjeneste deles af alle, der bruger Sportio, så hver enhed får sin egen andel hver dag. Hvis du bruger din andel op, sættes plakater og beskrivelser på pause, indtil den fyldes op igen — oplysningerne fra din egen playliste fungerer som normalt. At tilføje din egen TMDB API-nøgle eller server fjerner grænsen: det er gratis, og en personlig nøgle har praktisk talt ingen grænse.</string>
     <string name="settings_metadata_limit_reached">Din daglige metadataandel er brugt op — tilføj din egen TMDB-nøgle under Indstillinger → Metadata for at fjerne denne grænse.</string>
     <string name="settings_metadata_language">Metadatasprog</string>
     <string name="settings_metadata_language_description">Sprog for handling, genrer og titler fra TMDB. Felter, som TMDB ikke har oversat, forbliver på engelsk. Detaljer caches pr. sprog, så det er øjeblikkeligt at skifte tilbage.</string>
@@ -273,7 +273,7 @@
     <string name="settings_network_group">Netværk</string>
     <string name="settings_app_group">App</string>
     <string name="settings_app_startup">Start af app</string>
-    <string name="settings_app_startup_description">Hvad OwnTV åbner ved start</string>
+    <string name="settings_app_startup_description">Hvad Sportio åbner ved start</string>
     <string name="settings_check_updates">Søg efter opdateringer</string>
     <string name="settings_check_updates_description">Hent den nyeste version fra GitHub Releases</string>
     <string name="settings_update_startup">Søg efter opdateringer ved start</string>
@@ -302,7 +302,7 @@
     <string name="settings_use_color">Brug denne farve</string>
     <string name="settings_about_version">Version <xliff:g id="version">%1$s</xliff:g></string>
     <string name="settings_about_description_full_mobile">Din egen IPTV-afspiller til Android — en gratis app med åben kildekode, der udelukkende fungerer som afspiller. Den leverer ingen kanaler eller indhold; du bruger dine egne kilder, som du har lovlig adgang til.</string>
-    <string name="settings_about_license">© 2026 OwnTV · GPLv3-licens</string>
+    <string name="settings_about_license">© 2026 Sportio · GPLv3-licens</string>
     <string name="settings_join_telegram">Deltag i vores gruppe på Telegram</string>
     <string name="settings_telegram_qr">QR-kode til Telegram-gruppen</string>
     <string name="settings_telegram_scan">Scan QR-koden for at deltage fra din telefon, eller åbn linket ovenfor.</string>
@@ -460,9 +460,6 @@
     <string name="settings_hardware_decoding">Hardwareafkodning</string>
     <string name="settings_hardware_decoding_description">Brug tv\'ets hardwaredekoder. Slå dette fra, hvis nogle streams hakker eller viser billedfejl.</string>
     <string name="settings_hardware_decoding_description_mobile">Brug enhedens hardwaredekoder. Slå dette fra, hvis nogle streams hakker eller viser billedfejl.</string>
-    <string name="settings_software_decode_above_1080p">Softwareafkodning over 1080p</string>
-    <string name="settings_software_decode_above_1080p_description">Afspiller 4K og anden video over 1080p i software, når tv\'ets hardwaredekoder er slået fra eller fejler. Kræver en hurtig processor: på de fleste tv\'er hakker det.</string>
-    <string name="settings_software_decode_above_1080p_description_mobile">Afspiller 4K og anden video over 1080p i software, når enhedens hardwaredekoder er slået fra eller fejler. Kræver en hurtig processor: på mange enheder hakker det.</string>
     <string name="settings_movies_series_player">Afspiller til film og serier</string>
     <string name="settings_live_tv_player">Afspiller til live-tv</string>
     <string name="settings_engine_order"><xliff:g id="first">%1$s</xliff:g>, derefter <xliff:g id="second">%2$s</xliff:g></string>
@@ -539,7 +536,7 @@
     <string name="settings_open_subtitles_api_key">OpenSubtitles applikations-API-nøgle</string>
     <string name="settings_worker_server_url">Worker-/server-URL</string>
     <string name="settings_shared">Delt</string>
-    <string name="settings_open_subtitles_access_priority">Lad begge felter være tomme for at bruge OwnTV’s delte Worker. En egen Worker-URL har forrang for en direkte API-nøgle. Kontosessioner er fortsat profilspecifikke.</string>
+    <string name="settings_open_subtitles_access_priority">Lad begge felter være tomme for at bruge Sportio’s delte Worker. En egen Worker-URL har forrang for en direkte API-nøgle. Kontosessioner er fortsat profilspecifikke.</string>
     <string name="settings_remove_custom_access">Fjern tilpasset adgang</string>
     <string name="settings_preferred_audio_language">Foretrukket lydsprog</string>
     <string name="settings_audio_sync">Lydsynkronisering</string>
@@ -626,7 +623,7 @@
     <string name="settings_guide_synced">Tv-guiden er synkroniseret</string>
     <string name="settings_guide_sync_failed">Synkronisering af tv-guiden mislykkedes</string>
     <string name="settings_restore_remote_title">Gendan fra en anden enhed</string>
-    <string name="settings_restore_remote_description">På en vilkårlig enhed med browser på samme wi-fi – telefon, computer eller et andet tv – scan QR-koden (eller åbn URL’en), indtast denne PIN-kode, vælg din OwnTV-sikkerhedskopi, og send den. Du vælger derefter her, hvad der skal gendannes.</string>
+    <string name="settings_restore_remote_description">På en vilkårlig enhed med browser på samme wi-fi – telefon, computer eller et andet tv – scan QR-koden (eller åbn URL’en), indtast denne PIN-kode, vælg din Sportio-sikkerhedskopi, og send den. Du vælger derefter her, hvad der skal gendannes.</string>
     <string name="settings_try_again">Prøv igen</string>
     <string name="settings_new_pin">Start igen med en ny PIN</string>
     <string name="settings_download_remote_title">Download på en anden enhed</string>
@@ -647,7 +644,7 @@
     </plurals>
     <string name="settings_catchup_timezone_device">Enhed</string>
     <string name="settings_catchup_player_ask">Spørg altid</string>
-    <string name="settings_catchup_player_internal">OwnTV-afspiller</string>
+    <string name="settings_catchup_player_internal">Sportio-afspiller</string>
     <string name="settings_catchup_player_external">Ekstern afspiller</string>
     <string name="settings_download_folder_title">Vælg downloadmappen</string>
     <string name="settings_pick_background_title">Vælg et baggrundsbillede</string>
@@ -781,9 +778,9 @@
     <string name="settings_sources_info">Info</string>
     <string name="settings_sources_retest">Test igen</string>
     <string name="settings_sources_probe_title">Vil du teste denne playliste?</string>
-    <string name="settings_sources_probe_warning">Mange udbydere oplyser aldrig, hvor mange kanaler du må se samtidig, så OwnTV finder ud af det ved at åbne nogle stykker og se, hvilke der overlever. Alt, der afspilles nu, stopper, og det kan tage op til to minutter.</string>
+    <string name="settings_sources_probe_warning">Mange udbydere oplyser aldrig, hvor mange kanaler du må se samtidig, så Sportio finder ud af det ved at åbne nogle stykker og se, hvilke der overlever. Alt, der afspilles nu, stopper, og det kan tage op til to minutter.</string>
     <string name="settings_sources_probe_running">Kontrollerer, hvor mange kanaler denne udbyder tillader… (<xliff:g id="current">%1$d</xliff:g> af <xliff:g id="total">%2$d</xliff:g>)</string>
-    <string name="settings_sources_probe_unknown">OwnTV kunne ikke finde ud af, hvor mange kanaler denne udbyder tillader.</string>
+    <string name="settings_sources_probe_unknown">Sportio kunne ikke finde ud af, hvor mange kanaler denne udbyder tillader.</string>
     <string name="settings_sources_probe_skip">Spring over</string>
     <string name="settings_sources_auto_refresh">⟳ <xliff:g id="mode">%1$s</xliff:g></string>
     <string name="settings_sources_default">STANDARD</string>
@@ -1026,7 +1023,7 @@
     <string name="settings_move_category_action">Flyt</string>
     <string name="settings_dns_description">Brug en brugerdefineret DNS-server til domæneopslag</string>
     <string name="settings_dns_custom">Brugerdefineret DNS</string>
-    <string name="settings_dns_toggle_description">Foretag alle OwnTV-domæneopslag via en brugerdefineret DNS-server.</string>
+    <string name="settings_dns_toggle_description">Foretag alle Sportio-domæneopslag via en brugerdefineret DNS-server.</string>
     <string name="settings_dns_use_custom">Brug brugerdefineret DNS</string>
     <string name="settings_dns_server_missing">Brugerdefineret DNS er aktiveret, men der er ikke konfigureret nogen server. Indtast en serveradresse, og vælg Gem, eller slå funktionen fra.</string>
     <string name="settings_dns_server">DNS-server</string>
@@ -1072,7 +1069,7 @@
     <string name="settings_live_preroll">Forudbuffer live-streams</string>
     <string name="settings_live_preroll_description">Saml så meget video op, før en live-kanal begynder at afspille, og igen efter et hak i afspilningen. Det er en mængde video, ikke en nedtælling. Fra giver den hurtigst mulige start.</string>
     <string name="settings_live_tune_timeout">Opgiv en kanal efter</string>
-    <string name="settings_live_tune_timeout_description">Hvis en live-kanal ikke har vist billede inden for denne tid, holder OwnTV op med at prøve og siger det til dig i stedet for at efterlade en sort skærm, mens den arbejder sig gennem alle sine afspillere. “Aldrig” bliver ved med at prøve, hvilket kan tage langt over et minut på en kanal, din udbyder har fjernet. Ventetid, som udbyderen selv beder om, tælles ikke med.</string>
+    <string name="settings_live_tune_timeout_description">Hvis en live-kanal ikke har vist billede inden for denne tid, holder Sportio op med at prøve og siger det til dig i stedet for at efterlade en sort skærm, mens den arbejder sig gennem alle sine afspillere. “Aldrig” bliver ved med at prøve, hvilket kan tage langt over et minut på en kanal, din udbyder har fjernet. Ventetid, som udbyderen selv beder om, tælles ikke med.</string>
     <string name="settings_live_preroll_per_playlist">Forudbuffer pr. playliste</string>
     <string name="settings_live_preroll_per_playlist_description">Overstyr indstillingen ovenfor for én playliste, så dine andre playlister forbliver hurtige.</string>
     <!-- Translators: Title of the per-playlist Live TV engine override row. -->
@@ -1098,7 +1095,7 @@
     <string name="settings_surround_auto_description_mobile">Auto – prøv Dolby/DTS-surround, og skift automatisk tilbage til stereo, hvis højttaleren, hovedtelefonerne eller den tilsluttede receiver ikke kan afspille det. Anbefalet.</string>
     <string name="settings_surround_stereo_description">Kun stereo – afkod altid i appen og send almindelig 2.0-lyd. Brug dette på tv-højttalere eller en stereo-soundbar, eller hvis lyden halter efter billedet.</string>
     <string name="settings_surround_stereo_description_mobile">Kun stereo – afkod altid i appen og send almindelig 2.0-lyd. Brug dette til den indbyggede højttaler, hovedtelefoner eller en stereo-soundbar, eller hvis lyden halter efter billedet.</string>
-    <string name="settings_surround_forced_description">Surround – send Dolby/DTS til en ægte 5.1/7.1-modtager. Hvis lyden forsvinder eller hakker, falder OwnTV stadig tilbage til stereo og fortæller dig det.</string>
+    <string name="settings_surround_forced_description">Surround – send Dolby/DTS til en ægte 5.1/7.1-modtager. Hvis lyden forsvinder eller hakker, falder Sportio stadig tilbage til stereo og fortæller dig det.</string>
     <string name="settings_panel_width">Panelbreddejustering</string>
     <string name="settings_panel_width_description">Ændr størrelsen på kategori-, liste- og forhåndsvisningspanelerne i live-tv, film og serier.</string>
     <string name="settings_vod_layout">Layout for Film og Serier</string>
@@ -1139,9 +1136,9 @@
     <string name="settings_panel_width_preview_panel"><xliff:g id="label">%1$s</xliff:g>-panel</string>
     <string name="settings_panel_width_total">Samlet størrelse</string>
     <string name="settings_panel_width_invalid_total">Den samlede størrelse er <xliff:g id="total">%1$d</xliff:g>%%. Den skal være 100 %% – justér den venligst.</string>
-    <string name="settings_language_help_translate">Hjælp med at oversætte OwnTV til dit sprog</string>
-    <string name="settings_language_contribution_description">Scan QR-koden, eller åbn linket for at vælge et hvilket som helst tilgængeligt sprog og bidrage på tværs af alle seks OwnTV-oversættelseskomponenter.</string>
-    <string name="settings_language_contribution_qr_description">QR-kode til OwnTV-oversættelsesprojektets oversigt</string>
+    <string name="settings_language_help_translate">Hjælp med at oversætte Sportio til dit sprog</string>
+    <string name="settings_language_contribution_description">Scan QR-koden, eller åbn linket for at vælge et hvilket som helst tilgængeligt sprog og bidrage på tværs af alle seks Sportio-oversættelseskomponenter.</string>
+    <string name="settings_language_contribution_qr_description">QR-kode til Sportio-oversættelsesprojektets oversigt</string>
     <string name="settings_language_contribution_qr_failed">QR-koden kunne ikke genereres. Brug i stedet linket nedenfor.</string>
     <string name="settings_language_contribution_copy">Kopier link</string>
     <string name="settings_language_contribution_copied">Link kopieret</string>
@@ -1150,8 +1147,8 @@
     <string name="settings_auto_frame_rate_warning_suffix">Ikke anbefalet på dette TV: under Android 12 kan billedhastigheden ikke ændres problemfrit.</string>
     <string name="settings_auto_frame_rate_warning_title">Ikke anbefalet på dette TV</string>
     <string name="settings_auto_frame_rate_warning_title_mobile">Ikke anbefalet på denne enhed</string>
-    <string name="settings_auto_frame_rate_warning_description">Denne enhed kører Android <xliff:g id="android_version">%1$s</xliff:g>. Under Android 12 kan TV\'et ikke fortælle OwnTV, hvilke opdateringshastigheder det kan skifte problemfrit imellem, så en ændring af hastigheden kan få skærmen til at blive sort i et sekund eller to — sommetider mere end én gang under et program.\n\nVi anbefaler at lade Auto-billedhastighed være slået fra her. Hvis dit TV skifter problemfrit, kan du slå det til og se: du kan altid skifte tilbage.</string>
-    <string name="settings_auto_frame_rate_warning_description_mobile">Denne enhed kører Android <xliff:g id="android_version">%1$s</xliff:g>. Under Android 12 kan enheden ikke fortælle OwnTV, hvilke opdateringshastigheder den kan skifte problemfrit imellem, så en ændring af hastigheden kan få skærmen til at blive sort i et sekund eller to — sommetider mere end én gang under et program.\n\nVi anbefaler at lade Auto-billedhastighed være slået fra her. Hvis din skærm skifter problemfrit, kan du slå det til og se: du kan altid skifte tilbage.</string>
+    <string name="settings_auto_frame_rate_warning_description">Denne enhed kører Android <xliff:g id="android_version">%1$s</xliff:g>. Under Android 12 kan TV\'et ikke fortælle Sportio, hvilke opdateringshastigheder det kan skifte problemfrit imellem, så en ændring af hastigheden kan få skærmen til at blive sort i et sekund eller to — sommetider mere end én gang under et program.\n\nVi anbefaler at lade Auto-billedhastighed være slået fra her. Hvis dit TV skifter problemfrit, kan du slå det til og se: du kan altid skifte tilbage.</string>
+    <string name="settings_auto_frame_rate_warning_description_mobile">Denne enhed kører Android <xliff:g id="android_version">%1$s</xliff:g>. Under Android 12 kan enheden ikke fortælle Sportio, hvilke opdateringshastigheder den kan skifte problemfrit imellem, så en ændring af hastigheden kan få skærmen til at blive sort i et sekund eller to — sommetider mere end én gang under et program.\n\nVi anbefaler at lade Auto-billedhastighed være slået fra her. Hvis din skærm skifter problemfrit, kan du slå det til og se: du kan altid skifte tilbage.</string>
     <string name="settings_auto_frame_rate_keep_off">Hold slået fra</string>
     <string name="settings_auto_frame_rate_turn_on_anyway">Slå til alligevel</string>
     <string name="settings_language_request_workflow">Vil du tilføje et sprog, der ikke er på listen? Åbn først en sprogforespørgsel. En vedligeholder registrerer det og forbereder de grundlæggende oversættelsesfiler; når det dukker op på Hosted Weblate, kan du begynde at bidrage.</string>
@@ -1334,7 +1331,7 @@
     <string name="local_sync_received_items">Modtagne emner: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="local_sync_sent">Dine data blev sendt</string>
     <string name="local_sync_failed">Synkroniseringen mislykkedes</string>
-    <string name="local_sync_error_unreachable">Enheden kunne ikke nås. Åbn OwnTV → Indstillinger → Data → Lokal synkronisering på den, og slå Synkroniseringstilstand til. Begge enheder skal være på samme Wi-Fi.</string>
+    <string name="local_sync_error_unreachable">Enheden kunne ikke nås. Åbn Sportio → Indstillinger → Data → Lokal synkronisering på den, og slå Synkroniseringstilstand til. Begge enheder skal være på samme Wi-Fi.</string>
     <string name="local_sync_error_unauthorized">Den anden enhed afviste. PIN-koden kan være forkert, eller den kan have glemt denne enhed.</string>
     <string name="local_sync_error_bad_payload">Det modtagne kunne ikke læses. Hvis du brugte en adgangskode, så tjek, at den er ens på begge enheder.</string>
     <string name="local_sync_error_unknown">Noget gik galt. Prøv igen.</string>
@@ -1409,7 +1406,7 @@
     <string name="settings_multiview_keep_two">Behold 2</string>
     <string name="settings_multiview_use_anyway">Brug alligevel</string>
     <string name="settings_app_icon">Appikon</string>
-    <string name="settings_app_icon_summary">Farve på OwnTV-ikonet og -logoet</string>
+    <string name="settings_app_icon_summary">Farve på Sportio-ikonet og -logoet</string>
     <string name="settings_brand_accent">Logo i accentfarve</string>
     <string name="app_icon_petrol">Petrol</string>
     <string name="app_icon_sunflower">Solsikke</string>
@@ -1420,8 +1417,8 @@
     <string name="app_icon_olive">Oliven</string>
     <string name="app_icon_olive_cream">Oliven på creme</string>
     <string name="app_icon_pixel">Pixel</string>
-    <string name="app_icon_restart_title">Genstart OwnTV?</string>
-    <string name="app_icon_restart_message">Du har valgt et nyt ikon og logo. De træder i kraft, når OwnTV genstartes.</string>
+    <string name="app_icon_restart_title">Genstart Sportio?</string>
+    <string name="app_icon_restart_message">Du har valgt et nyt ikon og logo. De træder i kraft, når Sportio genstartes.</string>
     <string name="app_icon_restart_now">Genstart nu</string>
     <string name="settings_navigation">Navigation</string>
     <string name="settings_navigation_description">Hvordan menuen til venstre opfører sig</string>
@@ -1435,13 +1432,6 @@
     <string name="settings_nav_widen_desc">Fastgjort og kompakt: viser navnene over indholdet, mens menuen har fokus</string>
     <string name="settings_nav_menu_items">Menupunkter</string>
     <string name="settings_nav_menu_items_desc">Dynamisk: følger playlistens indhold · Fast: du vælger selv</string>
-    <string name="settings_nav_bar">Bjælke</string>
-    <string name="settings_nav_labels">Navne</string>
-    <string name="settings_nav_icons_only">Kun ikoner</string>
-    <string name="settings_nav_hide_scrolling">Skjul under rulning</string>
-    <string name="settings_nav_hide_scrolling_desc">Bjælken glider væk, når du ruller ned, og kommer tilbage, når du ruller op</string>
-    <string name="settings_sheet_counts">Vis antal</string>
-    <string name="settings_sheet_counts_desc">Antal kanaler og titler i panelerne</string>
     <string name="settings_search_keywords_navigation">bjælke, sidebjælke, menu, navigation, skjul, svævende, fast, størrelse, kompakt, bred, længde, fuld højde</string>
     <string name="settings_breadcrumb_eyebrow"><xliff:g id="section">%1$s</xliff:g> · <xliff:g id="group">%2$s</xliff:g></string>
     <string name="settings_nav_size_desc">Kompakt: ikoner · Normal: navne · Bred: navne og antal · Ekstra bred: med detaljer</string>
@@ -1585,10 +1575,10 @@
     <string name="settings_help_epg_sources">Tilføj en XMLTV-guidekilde via dens link, opdater den, eller fjern den. Kilderne fylder tv-guiden og programlinjerne i Live-tv.</string>
     <string name="settings_help_guide_days">Hvor mange dages programmer guiden gemmer frem. Færre dage giver hurtigere opdatering og en mindre database.</string>
     <string name="settings_help_catchup">Catch-up afspiller udsendelser fra udbyderens arkiv. De fleste udbydere følger tv’ets eget ur; vælg en fast UTC-forskydning, hvis catch-up starter på det forkerte tidspunkt. Her vælger du også, hvilken afspiller catch-up bruger.</string>
-    <string name="settings_help_theme">OwnTV er designet til mørk. System følger tv’ets egen indstilling, hvis den findes; lys passer til et lyst rum.</string>
+    <string name="settings_help_theme">Sportio er designet til mørk. System følger tv’ets egen indstilling, hvis den findes; lys passer til et lyst rum.</string>
     <string name="settings_help_accent">Farver knapper, fokusskæret, statuslinjer og fremhævninger overalt. Vælg en forudindstilling, eller tryk på OK for paletten og en vilkårlig hex-kode.</string>
     <string name="settings_help_focus">Ringen om det, der har fokus. Vælg farve og tykkelse, så den er nem at følge fra sofaen.</string>
-    <string name="settings_help_fonts">Skrifttypen i hele OwnTV og tekstens størrelse. Pop op-vinduer bruger samme skrifttype.</string>
+    <string name="settings_help_fonts">Skrifttypen i hele Sportio og tekstens størrelse. Pop op-vinduer bruger samme skrifttype.</string>
     <string name="settings_help_popup_size">Gør pop op-vinduer, menuer og dialoger større eller mindre som helhed. Brug det, når de føles trange eller dækker for meget af skærmen.</string>
     <string name="settings_help_zoom">Skalerer alt på skærmen. Større er nemmere at læse på afstand; mindre får mere med. Under 85 %% kan tv-bokse med lidt hukommelse løbe tør.</string>
     <string name="settings_help_animations">Når den er slået til, bevæger ark, menuer og fokus sig blødt. Fra gør hver ændring øjeblikkelig.</string>
@@ -1598,11 +1588,11 @@
     <string name="settings_help_vod_layout">Filmisk viser den valgte titels billede bag et gitter af plakater. Separat viser kategorier, titler og detaljer side om side.</string>
     <string name="settings_help_home">Vælg, hvilke rækker Hjem viser og i hvilken rækkefølge, og hvordan rækken Populært nu ser ud.</string>
     <string name="settings_help_customize">Skjul kategorier og elementer, du aldrig ser, giv kategorier dine egne navne, og sæt dem i din rækkefølge. Skjulte ting kommer tilbage her, de går aldrig tabt.</string>
-    <string name="settings_help_app_icon">OwnTV-ikonet på tv’ets startskærm. Det kan tage et øjeblik, før startskærmen viser ændringen.</string>
-    <string name="settings_help_brand_accent">OwnTV-logoet i menuen, Om og opsætningen viser afspilningstrekanten i din accentfarve. Ikonet på startskærmen beholder sine egne farver.</string>
-    <string name="settings_help_startup">Hvad OwnTV viser ved start: Hjem, den kanal, du så sidst, dine favoritter eller en kanal, du vælger.</string>
-    <string name="settings_help_check_updates">Søger nu på GitHub efter en nyere OwnTV og tilbyder at installere den. Dine playlister, favoritter og indstillinger forbliver, som de er.</string>
-    <string name="settings_help_update_startup">Søger efter en ny version, hver gang OwnTV starter, og fortæller dig, når der er en. Intet installeres uden at spørge.</string>
+    <string name="settings_help_app_icon">Sportio-ikonet på tv’ets startskærm. Det kan tage et øjeblik, før startskærmen viser ændringen.</string>
+    <string name="settings_help_brand_accent">Sportio-logoet i menuen, Om og opsætningen viser afspilningstrekanten i din accentfarve. Ikonet på startskærmen beholder sine egne farver.</string>
+    <string name="settings_help_startup">Hvad Sportio viser ved start: Hjem, den kanal, du så sidst, dine favoritter eller en kanal, du vælger.</string>
+    <string name="settings_help_check_updates">Søger nu på GitHub efter en nyere Sportio og tilbyder at installere den. Dine playlister, favoritter og indstillinger forbliver, som de er.</string>
+    <string name="settings_help_update_startup">Søger efter en ny version, hver gang Sportio starter, og fortæller dig, når der er en. Intet installeres uden at spørge.</string>
     <string name="settings_help_dns">Slår udbyderens adresser op med en DNS-server efter eget valg i stedet for netværkets egen — nyttigt, når dit netværk blokerer eller omdirigerer dem.</string>
     <string name="settings_help_live_engine">ExoPlayer åbner kanaler meget hurtigere og er den eneste med live-undertekster. mpv afspiller kanaler, ExoPlayer ikke kan, også noget usædvanlig lyd. De kombinerede valg prøver den anden afspiller, når den første fejler.</string>
     <string name="settings_help_hw">Bruger tv’ets hardwaredekoder: jævn 4K og mindre varme. Slå den kun fra, hvis nogle streams hakker eller viser blokke; så klarer softwaredekoderen arbejdet.</string>
@@ -1626,8 +1616,8 @@
     <string name="settings_profile_add">Tilføj en profil</string>
     <string name="settings_profile_add_line">En seer med egne favoritter, historik og indstillinger</string>
     <plurals name="settings_help_language">
-        <item quantity="one">Sproget i alle menuer og beskeder i OwnTV. <xliff:g id="count">%1$d</xliff:g> sprog; følger tv’ets eget sprog, indtil du vælger et.</item>
-        <item quantity="other">Sproget i alle menuer og beskeder i OwnTV. <xliff:g id="count">%1$d</xliff:g> sprog; følger tv’ets eget sprog, indtil du vælger et.</item>
+        <item quantity="one">Sproget i alle menuer og beskeder i Sportio. <xliff:g id="count">%1$d</xliff:g> sprog; følger tv’ets eget sprog, indtil du vælger et.</item>
+        <item quantity="other">Sproget i alle menuer og beskeder i Sportio. <xliff:g id="count">%1$d</xliff:g> sprog; følger tv’ets eget sprog, indtil du vælger et.</item>
     </plurals>
     <plurals name="settings_profile_count">
         <item quantity="one"><xliff:g id="count">%1$d</xliff:g> profil</item>
@@ -1664,8 +1654,8 @@
     <string name="settings_home_show_row">Vis denne række</string>
     <string name="settings_home_move_row">Flyt (▲ ▼, derefter OK)</string>
     <string name="settings_line_remote_shortcuts_on">Fra beholder dine tildelinger</string>
-    <string name="settings_language_system_help">OwnTV følger tv’ets sprog (nu <xliff:g id="language">%1$s</xliff:g>). Vælg et nedenfor for kun at bruge det i OwnTV.</string>
-    <string name="settings_language_pick_help">Brug <xliff:g id="language">%1$s</xliff:g> i OwnTV, uanset tv’ets sprog.</string>
+    <string name="settings_language_system_help">Sportio følger tv’ets sprog (nu <xliff:g id="language">%1$s</xliff:g>). Vælg et nedenfor for kun at bruge det i Sportio.</string>
+    <string name="settings_language_pick_help">Brug <xliff:g id="language">%1$s</xliff:g> i Sportio, uanset tv’ets sprog.</string>
     <string name="settings_key_use">Brug</string>
     <string name="settings_line_metadata_source">Hvor detaljer om film og serier kommer fra</string>
     <string name="settings_line_metadata_language">Handlinger, genrer og titler fra TMDB</string>
@@ -1714,7 +1704,7 @@
     <string name="settings_line_glass_bg">Baggrund, billedudseende, glas</string>
     <string name="settings_bg_background">Baggrund</string>
     <string name="settings_line_bg_background">Det, der ligger bag hver skærm</string>
-    <string name="settings_help_bg_background">Stage viser OwnTVs egne bløde farver. Billede viser dit eget billede bag hver skærm. Ensfarvet er en flad mørk flade.</string>
+    <string name="settings_help_bg_background">Stage viser Sportios egne bløde farver. Billede viser dit eget billede bag hver skærm. Ensfarvet er en flad mørk flade.</string>
     <string name="settings_bg_stage">Stage</string>
     <string name="settings_bg_picture">Billede</string>
     <string name="settings_bg_plain">Ensfarvet</string>
