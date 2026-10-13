@@ -143,8 +143,8 @@ maven {
 }
 
 // build.gradle.kts
-implementation("tv.own.owntv:core:1.0.69")
-implementation("tv.own.owntv:player-core:1.0.69")
+implementation("tv.own.owntv:core:1.0.70")
+implementation("tv.own.owntv:player-core:1.0.70")
 ```
 
 The repository is this repo's `gh-pages` branch, written only by the publish workflows (the newest 30
@@ -211,7 +211,7 @@ python tools/i18n/check_text_overflow.py
 ## 🔢 Versioning
 
 Core versions are **independent of the TV app's releases** and must never be confused with them.
-Tags are prefixed — `core-1.0.69` — and pushing one publishes both modules from CI. The
+Tags are prefixed — `core-1.0.70` — and pushing one publishes both modules from CI. The
 **Release core** workflow (Actions tab → Run workflow) pushes that tag for you: it reads `coreVersion`
 from `main` and refuses if the tag already exists or `CHANGELOG.md` has no section for it.
 

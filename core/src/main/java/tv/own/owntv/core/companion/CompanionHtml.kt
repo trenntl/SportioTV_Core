@@ -70,6 +70,40 @@ internal object CompanionHtml {
       .err{color:var(--danger); font-size:14px; margin:0 0 12px}
       .hint{font-size:13px; color:var(--muted); margin-top:6px}
       a{color:var(--accent)}
+      /* Pick list (SELECT_ITEMS): three levels in one document, one sticky save bar. */
+      [hidden]{display:none!important}
+      .picker{display:grid; gap:16px; padding-bottom:104px}
+      .lv{display:grid; gap:12px}
+      .appbar{position:sticky; top:0; z-index:3; display:flex; align-items:center; gap:8px; padding:10px 0;
+        background:linear-gradient(180deg,rgba(4,14,11,.97) 0%,rgba(4,14,11,.88) 70%,rgba(4,14,11,0) 100%)}
+      .apptitle{font-size:20px; margin:0 2px}
+      .back{border:1px solid var(--line); background:var(--card-2); color:var(--text); font:inherit;
+        font-size:14px; font-weight:600; border-radius:10px; padding:9px 12px; cursor:pointer}
+      .desc{color:var(--muted); margin:0}
+      .rows{display:grid; gap:8px}
+      .row{display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none;
+        background:var(--card); border:1px solid var(--line); border-radius:14px; padding:12px 14px}
+      .row .grow{flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+      .row .chev{color:var(--muted); font-size:20px; line-height:1}
+      [dir=rtl] .chev{transform:scaleX(-1)}
+      .count{background:var(--card-2); border:1px solid var(--line); color:var(--muted);
+        border-radius:999px; padding:2px 9px; font-size:12px; font-weight:600}
+      .lv .check{font-size:16px; padding:10px 2px; gap:12px; border-bottom:1px solid rgba(63,73,69,.5)}
+      .lv .check:last-child{border-bottom:0}
+      .acc{border:1px solid var(--line); border-radius:14px; background:var(--card); padding:0 14px}
+      .acc>summary{cursor:pointer; padding:13px 0; font-weight:700; list-style:none}
+      .acc>summary::-webkit-details-marker{display:none}
+      .acc[open]>summary{border-bottom:1px solid var(--line)}
+      .acc .rows{padding:12px 0}
+      .quick{display:flex; gap:8px; margin:0 0 2px}
+      .mini{border:1px solid var(--line); background:var(--card-2); color:var(--muted); font:inherit;
+        font-size:13px; border-radius:10px; padding:8px 12px; cursor:pointer}
+      .tabs.fit{grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); margin-bottom:0}
+      .savebar{position:fixed; left:0; right:0; bottom:0; z-index:4; display:flex; align-items:center; gap:10px;
+        padding:12px 20px calc(12px + env(safe-area-inset-bottom));
+        background:linear-gradient(0deg,rgba(4,14,11,.98) 0%,rgba(4,14,11,.92) 70%,rgba(4,14,11,0) 100%)}
+      .savebar .go{flex:1; margin:0}
+      .savebar.dirty .go{box-shadow:0 0 0 3px rgba(140,238,43,.25)}
       @media (max-width:640px){.grid,.checks,.tabs{grid-template-columns:1fr}}
     """
 
@@ -176,6 +210,11 @@ internal object CompanionHtml {
         val selectDescription = s(R.string.companion_select_description)
         val selectSearch = s(R.string.companion_select_search)
         val selectSave = s(R.string.companion_select_save)
+        val selectBack = s(R.string.companion_select_back)
+        val selectManageAll = s(R.string.companion_select_manage_all)
+        val selectAll = s(R.string.companion_select_all)
+        val selectNone = s(R.string.companion_select_none)
+        val selectEmpty = s(R.string.companion_select_empty)
         val selectSentHeading = s(R.string.companion_select_sent_heading)
         val selectSentBody = s(R.string.companion_select_sent_body)
         val selectSentLink = s(R.string.companion_select_sent_link)
@@ -551,47 +590,32 @@ internal object CompanionHtml {
     }
 
     /**
-     * A generic pick list ([CompanionMode.SELECT_ITEMS]): grouped checkboxes with a client-side
-     * search, posting the ticked ids as repeated `item` fields. Every label comes from resources or
-     * the host; nothing here is sport-specific.
+     * A generic pick list ([CompanionMode.SELECT_ITEMS]): the remote browser ticks rows and posts
+     * the chosen ids as repeated `item` fields. [CompanionSelectHtml] builds the three-level body —
+     * rows with children drill down, the rest stays on the "manage all" level — and every label
+     * comes from resources or the host; nothing here is sport-specific.
      */
     fun selectItemsPage(context: Context, pin: String, title: String, items: List<CompanionSelectItem>): String {
         val c = Copy(context)
-        val groups = LinkedHashMap<String, MutableList<CompanionSelectItem>>()
-        items.forEach { item -> groups.getOrPut(item.group) { ArrayList() }.add(item) }
-        val list = buildString {
-            groups.forEach { (group, rows) ->
-                if (group.isNotBlank()) append("<h2>${group.h()}</h2>")
-                append("<div class=\"checks\">")
-                rows.forEach { item ->
-                    append("<label class=\"check\"><input type=\"checkbox\" name=\"item\" value=\"${item.id.h()}\"")
-                    if (item.selected) append(" checked")
-                    append("> ${item.label.h()}</label>")
-                }
-                append("</div>")
-            }
-        }
-        return page(context, title, """
-            <div class="card">
-              <h1>${title.h()}</h1>
-              <p>${c.selectDescription.h()}</p>
-              <input type="search" id="q" autocomplete="off" placeholder="${c.selectSearch.h()}" aria-label="${c.selectSearch.h()}" oninput="flt(this.value)">
-              <form method="post" action="/select?pin=$pin">
-                <div id="list">$list</div>
-                <button class="go" type="submit">${c.selectSave.h()}</button>
-              </form>
-            </div>
-            <script>
-              function flt(q){ q=(q||'').toLowerCase();
-                document.querySelectorAll('#list .check').forEach(function(l){
-                  l.style.display = l.textContent.toLowerCase().indexOf(q) >= 0 ? '' : 'none'; });
-                document.querySelectorAll('#list h2').forEach(function(h){
-                  var n = h.nextElementSibling, any = false;
-                  if (n) { n.querySelectorAll('.check').forEach(function(l){ if (l.style.display !== 'none') any = true; }); }
-                  h.style.display = any ? '' : 'none'; });
-              }
-            </script>
-        """.trimIndent())
+        return page(
+            context,
+            title,
+            CompanionSelectHtml.body(
+                pin = pin,
+                title = title,
+                items = items,
+                labels = CompanionSelectHtml.Labels(
+                    description = c.selectDescription,
+                    search = c.selectSearch,
+                    save = c.selectSave,
+                    back = c.selectBack,
+                    manageAll = c.selectManageAll,
+                    all = c.selectAll,
+                    none = c.selectNone,
+                    empty = c.selectEmpty,
+                ),
+            ),
+        )
     }
 
     fun selectItemsSentPage(context: Context, pin: String, title: String): String {

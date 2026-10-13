@@ -9,6 +9,12 @@
 > in one bolded line of its own (e.g. **Database v46 · Backup v24 · Breaking**). The detail — what,
 > why, files and verification — belongs in the commit message, never here.
 
+## core-1.0.70 — 2026-10-13
+
+### New features
+
+- **Companion pick lists in three levels: a row with children opens its own page with tabs**
+
 ## core-1.0.69 — 2026-10-13
 
 ### New features

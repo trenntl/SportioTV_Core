@@ -432,6 +432,13 @@
     <string name="companion_select_description">Choose what the TV should show. Ticked entries are kept.</string>
     <string name="companion_select_search">Search</string>
     <string name="companion_select_save">Save selection</string>
+    <!-- Translators: Pick-list navigation: back button, the level that holds every entry, the
+         select-all / clear shortcuts inside a list, and the empty state when nothing is chosen. -->
+    <string name="companion_select_back">Back</string>
+    <string name="companion_select_manage_all">Manage all</string>
+    <string name="companion_select_all">Select all</string>
+    <string name="companion_select_none">Clear</string>
+    <string name="companion_select_empty">Nothing chosen yet. Open Manage all to pick entries for the TV.</string>
     <string name="companion_select_sent_heading">Saved</string>
     <string name="companion_select_sent_body">Your TV updated the selection.</string>
     <string name="companion_select_sent_link">Choose again</string>

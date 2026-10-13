@@ -218,6 +218,11 @@
     <string name="companion_select_description">Wähle aus, was der TV anzeigen soll. Angehakte Einträge bleiben erhalten.</string>
     <string name="companion_select_search">Suchen</string>
     <string name="companion_select_save">Auswahl speichern</string>
+    <string name="companion_select_back">Zurück</string>
+    <string name="companion_select_manage_all">Alle verwalten</string>
+    <string name="companion_select_all">Alle auswählen</string>
+    <string name="companion_select_none">Auswahl aufheben</string>
+    <string name="companion_select_empty">Noch nichts ausgewählt. Öffne „Alle verwalten“ und wähle Einträge für den TV aus.</string>
     <string name="companion_select_sent_heading">Gespeichert</string>
     <string name="companion_select_sent_body">Dein TV hat die Auswahl übernommen.</string>
     <string name="companion_select_sent_link">Erneut auswählen</string>

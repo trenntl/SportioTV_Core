@@ -24,13 +24,20 @@ enum class CompanionMode { ADD_SOURCE, BACKUP_RESTORE, BACKUP_DOWNLOAD, IMAGE_UP
 
 /**
  * One row in a [CompanionMode.SELECT_ITEMS] pick list: a stable [id], a display [label], an optional
- * [group] heading, and whether it starts ticked.
+ * [group] heading, whether it starts ticked, and which row it belongs to.
+ *
+ * [parentId] turns the flat list into a two-level picker: a row **with** children is shown as a
+ * tappable entry whose children open on their own level, and the `group` of those children becomes
+ * the tab label inside it (e.g. the league row "Bundesliga" with its "Teams" and "Players" tabs).
+ * `null` means a top-level row. The contract for a submit is unchanged: every ticked row still
+ * arrives as `item=<id>` on `POST /select`.
  */
 data class CompanionSelectItem(
     val id: String,
     val label: String,
     val group: String = "",
     val selected: Boolean = false,
+    val parentId: String? = null,
 )
 
 /**
