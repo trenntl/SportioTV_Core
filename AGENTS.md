@@ -35,7 +35,7 @@ Two Android libraries, published together as one version:
 
 The **`SportioTV`** app repo depends on this library as a **pinned Maven artifact**
 (`tv.own.owntv:core` / `:player-core`). Core is published to its own public Maven repo
-(`https://old-repo.github.io/SportioTV_Core/maven`, the `gh-pages` branch of this repo).
+(`https://trenntl.github.io/SportioTV_Core/maven`, the `gh-pages` branch of this repo).
 
 For local work on both at once, the app sets `owntv.corePath` in `~/.gradle/gradle.properties` and
 **composite-builds** this repo from source. CI in the app repo leaves it unset and uses the pin.
@@ -116,8 +116,8 @@ player-core/src/main/java/tv/own/owntv/player/
 ```
 
 The **live + player-core** internals are documented in the app repo:
-[`docs/LIVE_TV.md`](https://github.com/old-repo/SportioTV/blob/main/docs/LIVE_TV.md) and
-[`docs/PLAYBACK_ENGINES.md`](https://github.com/old-repo/SportioTV/blob/main/docs/PLAYBACK_ENGINES.md).
+[`docs/LIVE_TV.md`](https://github.com/trenntl/SportioTV/blob/main/docs/LIVE_TV.md) and
+[`docs/PLAYBACK_ENGINES.md`](https://github.com/trenntl/SportioTV/blob/main/docs/PLAYBACK_ENGINES.md).
 
 ---
 

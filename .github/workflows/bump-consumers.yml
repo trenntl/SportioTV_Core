@@ -10,7 +10,7 @@ name: Bump consumers
 # a newly finished language is stripped out of the APK with every check green.
 #
 # This workflow only OPENS the PR; it never merges. Merging is the consumer repo's business, and the
-# TV app decides to do it itself: `automerge-core-bump.yml` in old-repo/SportioTV merges the PR once every
+# TV app decides to do it itself: `automerge-core-bump.yml` in trenntl/SportioTV merges the PR once every
 # check on it is green, guarded on the branch name, the author, and a diff touching only the two
 # files below. A consumer without that workflow simply gets a PR that waits for a human.
 #
@@ -64,7 +64,7 @@ jobs:
       matrix:
         consumer:
           # Sportio is TV-only: a single consumer. There is no mobile app on this core.
-          - old-repo/SportioTV
+          - trenntl/SportioTV
 
     steps:
       # Check out the RELEASED commit, not whatever main has drifted to. `tools/i18n/locales.json`
@@ -150,7 +150,7 @@ jobs:
           EOF
 
           cat > ../pr-body.md <<EOF
-          Core \`${VERSION}\` has been published to Sportio's Maven repository (https://old-repo.github.io/SportioTV_Core/maven).
+          Core \`${VERSION}\` has been published to Sportio's Maven repository (https://trenntl.github.io/SportioTV_Core/maven).
 
           - \`owntvCore\` moved to \`${VERSION}\` in \`gradle/libs.versions.toml\`
           - \`tools/i18n/locales.json\` refreshed from core
@@ -162,8 +162,8 @@ jobs:
           Merge once the checks are green. See the core changelog for what \`${VERSION}\` contains.
           EOF
 
-          git config user.name  "old-repo"
-          git config user.email "old-repo@users.noreply.github.com"
+          git config user.name  "trenntl"
+          git config user.email "trenntl@users.noreply.github.com"
           git commit -a --file ../commit-message.txt
 
           git push --force-with-lease origin "$BRANCH"

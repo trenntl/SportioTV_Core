@@ -20,7 +20,7 @@
 # category technical: Reviewed non-user-facing technical literal.
 
 2	empty	core/src/main/java/tv/own/owntv/core/CoreBuildInfo.kt	\0
-1	technical	core/src/main/java/tv/own/owntv/core/CoreBuildInfo.kt	old-repo/SportioTV
+1	technical	core/src/main/java/tv/own/owntv/core/CoreBuildInfo.kt	trenntl/SportioTV
 1	log	core/src/main/java/tv/own/owntv/core/CorePerf.kt	OwnTVPerf
 3	technical	core/src/main/java/tv/own/owntv/core/backup/BackupContainer.kt	..
 1	technical	core/src/main/java/tv/own/owntv/core/backup/BackupContainer.kt	Corrupt backup header

@@ -221,7 +221,7 @@ core's strings as a bare `R.string.*`.
 <!-- i18n-contribution:start -->
 ## Help translate Sportio
 
-Sportio inherits its strings from upstream OwnTV and is rebranded on top. Found a bad Sportio string in your language, or want to add a language? Head to [Hosted Weblate](https://hosted.weblate.org/projects/owntv/) — that is where the translations live, and this fork merges them down. If your language is not listed there, [open a language request ticket](https://github.com/old-repo/SportioTV/issues/new?template=feature_request.yml&title=%5BLanguage%5D%20Add%20) first. Once the language appears on Hosted Weblate, you can start translating it there. See the [language contributor guide](tools/i18n/README.md) for identifiers, validation, and promotion policy.
+Sportio inherits its strings from upstream OwnTV and is rebranded on top. Found a bad Sportio string in your language, or want to add a language? Head to [Hosted Weblate](https://hosted.weblate.org/projects/owntv/) — that is where the translations live, and this fork merges them down. If your language is not listed there, [open a language request ticket](https://github.com/trenntl/SportioTV/issues/new?template=feature_request.yml&title=%5BLanguage%5D%20Add%20) first. Once the language appears on Hosted Weblate, you can start translating it there. See the [language contributor guide](tools/i18n/README.md) for identifiers, validation, and promotion policy.
 <!-- i18n-contribution:end -->
 
 New user-visible text is never English-only: a string is not finished until it exists in every

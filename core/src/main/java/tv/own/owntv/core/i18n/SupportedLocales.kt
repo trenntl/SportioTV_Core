@@ -42,7 +42,7 @@ object SupportedLocales {
     const val CONTRIBUTION_PROJECT_URL: String = "https://hosted.weblate.org/projects/owntv/"
 
     /** Canonical issue form for requesting a locale before its base files exist. */
-    const val LANGUAGE_REQUEST_URL: String = "https://github.com/old-repo/SportioTV/issues/new?template=feature_request.yml&title=%5BLanguage%5D%20Add%20"
+    const val LANGUAGE_REQUEST_URL: String = "https://github.com/trenntl/SportioTV/issues/new?template=feature_request.yml&title=%5BLanguage%5D%20Add%20"
 
     /** Tag meaning "follow the current device locale list" (see ``LocaleStore``). */
     const val SYSTEM_DEFAULT_TAG: String = ""

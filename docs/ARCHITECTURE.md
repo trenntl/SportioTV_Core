@@ -2,8 +2,8 @@
 
 Sportio Core is the data and playback half of Sportio. This document maps the packages and the paths
 data takes. For the two user-facing features see the **app** repo's
-[`docs/LIVE_TV.md`](https://github.com/old-repo/SportioTV/blob/main/docs/LIVE_TV.md) and
-[`docs/SPORTS_HUB.md`](https://github.com/old-repo/SportioTV/blob/main/docs/SPORTS_HUB.md).
+[`docs/LIVE_TV.md`](https://github.com/trenntl/SportioTV/blob/main/docs/LIVE_TV.md) and
+[`docs/SPORTS_HUB.md`](https://github.com/trenntl/SportioTV/blob/main/docs/SPORTS_HUB.md).
 
 ---
 
@@ -102,7 +102,7 @@ schema file and a migration.
 ## 6. The live layer (`core/.../core/live/`)
 
 This is the data half of Live TV. The behaviour is documented in the app repo's
-[`docs/LIVE_TV.md`](https://github.com/old-repo/SportioTV/blob/main/docs/LIVE_TV.md); this is
+[`docs/LIVE_TV.md`](https://github.com/trenntl/SportioTV/blob/main/docs/LIVE_TV.md); this is
 the map.
 
 | Area | Files | Notes |
@@ -141,7 +141,7 @@ tune orchestrator shared by the TV and phone apps; `LiveLadder` walks the fallba
 recover a hostile stream.
 
 The full treatment is in the app repo's
-[`docs/PLAYBACK_ENGINES.md`](https://github.com/old-repo/SportioTV/blob/main/docs/PLAYBACK_ENGINES.md).
+[`docs/PLAYBACK_ENGINES.md`](https://github.com/trenntl/SportioTV/blob/main/docs/PLAYBACK_ENGINES.md).
 
 ---
 

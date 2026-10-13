@@ -3,8 +3,8 @@
 
     PAGES_TOKEN=... python3 tools/publish_pages.py <staging-dir> [--keep ARTIFACT=N ...]
 
-The repository is the `gh-pages` branch of old-repo/SportioTV_Core, served by GitHub Pages at
-https://old-repo.github.io/SportioTV_Core/maven — no login needed to download. This script
+The repository is the `gh-pages` branch of trenntl/SportioTV_Core, served by GitHub Pages at
+https://trenntl.github.io/SportioTV_Core/maven — no login needed to download. This script
 is a fork of OwnTV_Core's tools/publish_pages.py (upstream: ahXN00/OwnTV_Core); the two copies are
 no longer kept identical. OwnTV_libmpv (upstream) still publishes its libmpv engine to its own
 repository — only tv.own.owntv:core and :player-core go out through here.
@@ -29,9 +29,9 @@ import tempfile
 import time
 import urllib.request
 
-REPO = "old-repo/SportioTV_Core"
+REPO = "trenntl/SportioTV_Core"
 BRANCH = "gh-pages"
-SITE = "https://old-repo.github.io/SportioTV_Core/maven"
+SITE = "https://trenntl.github.io/SportioTV_Core/maven"
 GROUP_PATH = "tv/own/owntv"
 GROUP = "tv.own.owntv"
 CHECKSUMS = ("md5", "sha1", "sha256", "sha512")
@@ -104,7 +104,7 @@ def attempt(staging, keep, token):
     summary = ", ".join(f"{a} {' '.join(vs)}" for a, vs in new.items())
     git("checkout", "-q", "--orphan", "publish", cwd=work)
     git("add", "-A", cwd=work)
-    git("-c", "user.name=Sportio", "-c", "user.email=old-repo@users.noreply.github.com",
+    git("-c", "user.name=Sportio", "-c", "user.email=trenntl@users.noreply.github.com",
         "commit", "-q", "-m", f"Maven repository: {summary}", cwd=work)
     push = subprocess.run(
         ["git", "push", "-q", f"--force-with-lease={BRANCH}:{base_sha}", "origin", f"publish:{BRANCH}"], cwd=work)

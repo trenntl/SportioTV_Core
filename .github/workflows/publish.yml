@@ -1,7 +1,7 @@
 name: Publish core
 
 # Publishes tv.own.owntv:core and tv.own.owntv:player-core to Sportio's public Maven repository (this
-# repo's gh-pages branch, https://old-repo.github.io/SportioTV_Core/maven — no login to download) when a
+# repo's gh-pages branch, https://trenntl.github.io/SportioTV_Core/maven — no login to download) when a
 # core-* tag is pushed, then publishes the GitHub Release for that tag. Both modules always go out together on the
 # same version, taken from `coreVersion` in the root build file — the tag must match it, and the job
 # checks that before publishing anything.
@@ -93,7 +93,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v6
 
       # Staged locally, then copied into gh-pages by tools/publish_pages.py (this fork's own copy,
-      # retargeted at old-repo/SportioTV_Core). It refuses an already-published version, keeps the newest 30, and
+      # retargeted at trenntl/SportioTV_Core). It refuses an already-published version, keeps the newest 30, and
       # waits until Pages actually serves the new POMs — so the release below, and the pin-bump
       # pull requests it triggers, never run ahead of the files.
       - name: Publish to the Sportio Maven repository
@@ -141,7 +141,7 @@ jobs:
 
           if [ ! -s notes.md ]; then
             echo "::warning::No CHANGELOG.md section for $TAG — publishing the release without notes."
-            printf 'Published to https://old-repo.github.io/SportioTV_Core/maven (no login) as `tv.own.owntv:core:%s` and `tv.own.owntv:player-core:%s`.\n' \
+            printf 'Published to https://trenntl.github.io/SportioTV_Core/maven (no login) as `tv.own.owntv:core:%s` and `tv.own.owntv:player-core:%s`.\n' \
               "${TAG#core-}" "${TAG#core-}" > notes.md
           fi
 
