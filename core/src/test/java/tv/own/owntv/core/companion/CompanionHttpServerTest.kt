@@ -231,4 +231,49 @@ class CompanionHttpServerTest {
         // org.json is stubbed in unit tests; parsePayload must swallow it, not crash the accept thread.
         assertNull(protocol.parsePayload("application/json", "{ this is not json", SourceType.XTREAM))
     }
+
+    // ---- source message analysis ----
+
+    private fun encode(value: String): String = java.net.URLEncoder.encode(value, "UTF-8")
+
+    @Test
+    fun `the analysis request carries the message and the picked url`() {
+        val body = "message=" + encode("hallo welt") + "&url=" + encode("http://h:8080")
+
+        val request = protocol.parseAnalysisRequest(body)!!
+
+        assertEquals("hallo welt", request.message)
+        assertEquals("http://h:8080", request.preferredUrl)
+    }
+
+    @Test
+    fun `an analysis request without a message is rejected`() {
+        assertNull(protocol.parseAnalysisRequest("message="))
+        assertNull(protocol.parseAnalysisRequest(""))
+    }
+
+    @Test
+    fun `an analysis request without a picked url has none`() {
+        val request = protocol.parseAnalysisRequest("message=" + encode("hallo"))!!
+
+        assertNull(request.preferredUrl)
+    }
+
+    @Test
+    fun `an analysis request may also be json`() {
+        val body = """{"message":"hallo welt","url":"http://h:8080"}"""
+
+        val request = protocol.parseAnalysisRequest(body)!!
+
+        assertEquals("hallo welt", request.message)
+        assertEquals("http://h:8080", request.preferredUrl)
+    }
+
+    @Test
+    fun `the consent is read from the request`() {
+        assertFalse(protocol.parseAnalysisRequest("message=" + encode("hallo"))!!.consented)
+        assertFalse(protocol.parseAnalysisRequest("message=" + encode("hallo") + "&consent=0")!!.consented)
+        assertTrue(protocol.parseAnalysisRequest("message=" + encode("hallo") + "&consent=1")!!.consented)
+        assertTrue(protocol.parseAnalysisRequest("""{"message":"hallo","consent":"1"}""")!!.consented)
+    }
 }

@@ -82,12 +82,20 @@ class CompanionHttpServer(
     @Volatile private var onBackup: (String) -> Unit = {}
     @Volatile private var onImage: (bytes: ByteArray, extension: String) -> Unit = { _, _ -> }
     @Volatile private var onTmdbKey: (String) -> Unit = {}
+    @Volatile private var onApiKey: (String) -> Unit = {}
     @Volatile private var onServiceConfig: (CompanionServiceConfig) -> Unit = {}
 
     /** [CompanionMode.SELECT_ITEMS] only: the pick list's heading, its rows and the chosen ids. */
     @Volatile private var selectTitle: String = ""
     @Volatile private var selectItems: List<CompanionSelectItem> = emptyList()
     @Volatile private var onSelection: (Set<String>) -> Unit = {}
+
+    /**
+     * Optional reader for a pasted provider message. Set by [start]; null when the host app has
+     * none (no AI key, no network), in which case the analysis endpoint answers 503 and the page
+     * falls back to the fields the user types in.
+     */
+    @Volatile private var onAnalyze: CompanionSourceAnalyzer? = null
 
     /** The backup file served at `/backup.json` in [CompanionMode.BACKUP_DOWNLOAD] mode. */
     @Volatile private var downloadFile: File? = null
@@ -118,10 +126,12 @@ class CompanionHttpServer(
         onBackup: (String) -> Unit = {},
         onImage: (bytes: ByteArray, extension: String) -> Unit = { _, _ -> },
         onTmdbKey: (String) -> Unit = {},
+        onApiKey: (String) -> Unit = {},
         onServiceConfig: (CompanionServiceConfig) -> Unit = {},
         selectTitle: String = "",
         selectItems: List<CompanionSelectItem> = emptyList(),
         onSelection: (Set<String>) -> Unit = {},
+        onAnalyze: CompanionSourceAnalyzer? = null,
         downloadFile: File? = null,
         syncInfo: () -> String = { "{}" },
         onPair: (name: String, address: String, deviceId: String) -> String? = { _, _, _ -> null },
@@ -138,10 +148,12 @@ class CompanionHttpServer(
         this.onBackup = onBackup
         this.onImage = onImage
         this.onTmdbKey = onTmdbKey
+        this.onApiKey = onApiKey
         this.onServiceConfig = onServiceConfig
         this.selectTitle = selectTitle
         this.selectItems = selectItems
         this.onSelection = onSelection
+        this.onAnalyze = onAnalyze
         this.downloadFile = downloadFile
         this.syncInfo = syncInfo
         this.onPair = onPair
@@ -165,6 +177,7 @@ class CompanionHttpServer(
         selectTitle = ""
         selectItems = emptyList()
         onSelection = {}
+        onAnalyze = null
         downloadFile = null
         syncInfo = { "{}" }
         onPair = { _, _, _ -> null }
@@ -360,6 +373,22 @@ class CompanionHttpServer(
                 return sendHtml(socket, 200, CompanionHtml.tmdbKeySentPage(pageContext, pin))
             }
 
+            // AI provider key handover (AI_KEY mode) — PIN required. Body is the bare key as text.
+            // Deliberately wider than the TMDB shape check: providers differ (DeepSeek keys look like
+            // `sk-…`), so this only rejects the obviously-wrong (blank, whitespace inside, absurd length).
+            if (method == "POST" && path == "/apikey") {
+                val headerPin = headers["x-companion-pin"].orEmpty()
+                if (!requirePin(queryPin.ifBlank { headerPin })) return sendText(socket, 401, localized(R.string.companion_error_unauthorized))
+                val body = CompanionHttpProtocol.readBody(input, headers, CompanionHttpProtocol.maxBodyBytes(path))
+                    ?: return sendText(socket, 413, localized(R.string.companion_error_body_too_large))
+                val key = body.trim()
+                if (!Regex("^[A-Za-z0-9._:-]{8,256}$").matches(key)) {
+                    return sendText(socket, 400, localized(R.string.companion_ai_key_invalid))
+                }
+                onApiKey(key)
+                return sendHtml(socket, 200, CompanionHtml.aiKeySentPage(pageContext, pin))
+            }
+
             if (method == "POST" && path == "/serviceconfig") {
                 val headerPin = headers["x-companion-pin"].orEmpty()
                 if (!requirePin(queryPin.ifBlank { headerPin })) return sendText(socket, 401, localized(R.string.companion_error_unauthorized))
@@ -403,6 +432,63 @@ class CompanionHttpServer(
                 val chosen = CompanionHttpProtocol.parseQueryValues(body)["item"].orEmpty().toSet()
                 onSelection(chosen)
                 return sendHtml(socket, 200, CompanionHtml.selectItemsSentPage(pageContext, pin, selectTitle))
+            }
+
+            // Source-message analysis — PIN required. The remote device posts a pasted provider
+            // message; the TV reads it. The AI client lives in the app, so core asks the host for
+            // the result (see CompanionController.sourceAnalyzer) and never calls a model itself.
+            if (method == "POST" && path == "/source/analyze") {
+                // Only the add-source page has a message to read, and only that page's session
+                // should be able to spend the user's AI credit.
+                if (mode != CompanionMode.ADD_SOURCE) return sendText(socket, 404, localized(R.string.companion_error_not_found))
+                val headerPin = headers["x-companion-pin"].orEmpty()
+                if (!requirePin(queryPin.ifBlank { headerPin })) return sendText(socket, 401, localized(R.string.companion_error_unauthorized))
+                val body = CompanionHttpProtocol.readBody(input, headers, CompanionHttpProtocol.maxBodyBytes(path))
+                    ?: return sendText(socket, 413, localized(R.string.companion_error_body_too_large))
+                val request = CompanionHttpProtocol.parseAnalysisRequest(body)
+                    ?: return sendText(socket, 400, localized(R.string.companion_error_missing_fields))
+                // No reader in the host app: there is nothing this page could do.
+                val analyzer = onAnalyze
+                    ?: return sendText(socket, 404, localized(R.string.companion_error_not_found))
+                // Without the consent the message goes nowhere: not to the AI, not anywhere. The
+                // page comes back with the text the user pasted, so nothing is lost.
+                if (!request.consented) {
+                    return sendHtml(
+                        socket,
+                        200,
+                        CompanionHtml.formPage(
+                            pageContext,
+                            pin,
+                            CompanionMessagePanel(
+                                available = true,
+                                message = request.message,
+                                active = true,
+                                error = localized(R.string.companion_import_consent_missing),
+                            ),
+                        ),
+                    )
+                }
+                // The message itself is never logged — it carries the user's own credentials.
+                val analysis = try {
+                    analyzer(request.message, request.preferredUrl)
+                } catch (e: java.util.concurrent.CancellationException) {
+                    throw e
+                } catch (e: Exception) {
+                    // A failing reader must not take the page down: the fields are simply empty.
+                    null
+                }
+                val confidence = analysis?.confidence?.name ?: NoAnalysis
+                Log.d(TAG, "Source message analysed ($confidence)")
+                return sendHtml(
+                    socket,
+                    200,
+                    CompanionHtml.sourceConfirmPage(
+                        pageContext,
+                        pin,
+                        analysis ?: CompanionSourceAnalysis(),
+                        request.message,
+                    ),
+                )
             }
 
             // Source submissions — PIN required (query or header), else 401.
@@ -484,11 +570,17 @@ class CompanionHttpServer(
 
     /** The page served after a valid PIN, for the current [mode]. */
     private fun authedPage(context: Context): String = when (mode) {
-        CompanionMode.ADD_SOURCE -> CompanionHtml.formPage(context, pin)
+        // The "From message" tab only exists when the host app can read messages at all.
+        CompanionMode.ADD_SOURCE -> CompanionHtml.formPage(
+            context,
+            pin,
+            CompanionMessagePanel(available = onAnalyze != null),
+        )
         CompanionMode.BACKUP_RESTORE -> CompanionHtml.backupUploadPage(context, pin)
         CompanionMode.BACKUP_DOWNLOAD -> CompanionHtml.backupDownloadPage(context, pin)
         CompanionMode.IMAGE_UPLOAD -> CompanionHtml.imageUploadPage(context, pin)
         CompanionMode.TMDB_KEY -> CompanionHtml.tmdbKeyPage(context, pin)
+        CompanionMode.AI_KEY -> CompanionHtml.aiKeyPage(context, pin)
         CompanionMode.TMDB_CONFIG -> CompanionHtml.serviceConfigPage(context, pin, openSubtitles = false)
         CompanionMode.OPEN_SUBTITLES_CONFIG -> CompanionHtml.serviceConfigPage(context, pin, openSubtitles = true)
         CompanionMode.SELECT_ITEMS -> CompanionHtml.selectItemsPage(context, pin, selectTitle, selectItems)
@@ -595,6 +687,9 @@ class CompanionHttpServer(
 
     companion object {
         private const val TAG = "CompanionServer"
+
+        /** Logged instead of a confidence value when the analysis found nothing at all. */
+        private const val NoAnalysis = "none"
 
         /** Kept as compatibility aliases; protocol-only tests use [CompanionHttpProtocol] directly. */
         internal const val UPLOAD_BODY_LIMIT = CompanionHttpProtocol.UPLOAD_BODY_LIMIT

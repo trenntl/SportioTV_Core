@@ -346,6 +346,22 @@
     <string name="companion_tmdb_sent_body">Your TMDB key is now on the TV. Press Save there to start using it.</string>
     <!-- Translators: Link back to the form to send another key. -->
     <string name="companion_tmdb_sent_link">Send a different key</string>
+    <!-- Translators: Browser tab title for the page the remote device uses to send an AI (DeepSeek) API key to the TV. -->
+    <string name="companion_ai_key_page_title">Send API key</string>
+    <!-- Translators: Heading on that page. -->
+    <string name="companion_ai_key_heading">Send your API key</string>
+    <!-- Translators: Instructions on that page. The key belongs to the AI recommendations in the Sports hub. -->
+    <string name="companion_ai_key_description">Paste the API key for the AI recommendations here and send it to your TV. A key is free to create at platform.deepseek.com.</string>
+    <!-- Translators: Link to DeepSeek's API key page, where the key is created. "DeepSeek" is a brand name. -->
+    <string name="companion_ai_key_get_key">Open the DeepSeek API keys page</string>
+    <!-- Translators: Input label for the key on that page. -->
+    <string name="companion_ai_key_label">API key</string>
+    <!-- Translators: Error when the pasted text does not look like an API key. -->
+    <string name="companion_ai_key_invalid">That does not look like an API key. Copy the value from platform.deepseek.com.</string>
+    <!-- Translators: Confirmation shown on the remote device after the key reaches the TV. -->
+    <string name="companion_ai_key_sent_body">Your API key is now on the TV. Press Save there to start using it.</string>
+    <!-- Translators: Link back to the form to send another key. -->
+    <string name="companion_ai_key_sent_link">Send a different key</string>
     <string name="companion_service_config_empty">Enter an API key, a Worker URL, or both.</string>
     <string name="companion_service_config_invalid_key">That API key does not look valid.</string>
     <string name="companion_service_config_invalid_url">Enter a valid HTTPS Worker URL.</string>
@@ -370,6 +386,54 @@
     <string name="companion_sync_xtream_hint">What to sync \u2014 Now imports first, Later syncs in the background, Off is never fetched.</string>
     <!-- Translators: Tooltip/hint text on the companion add-source page explaining the Stalker sync scope defaults. -->
     <string name="companion_sync_stalker_hint">What to sync \u2014 Live defaults to Now; Movies/Series default to Later (Stalker VOD is slow).</string>
+    <!-- Translators: Tab label on the companion add-source page for pasting a provider message. -->
+    <string name="companion_import_tab">From message</string>
+    <!-- Translators: Heading on the companion page where a provider message is pasted. -->
+    <string name="companion_import_heading">Paste the provider\'s message</string>
+    <!-- Translators: Description on the companion page where a provider message is pasted. -->
+    <string name="companion_import_description">Paste the message with your access data. The TV reads it and fills the form \u2014 you check the result before it is sent.</string>
+    <!-- Translators: Label for the message input on the companion page. -->
+    <string name="companion_import_message_label">Message</string>
+    <!-- Translators: Consent checkbox on the companion page. The message, including the access data, is sent to the AI provider for the analysis. -->
+    <string name="companion_import_consent">I agree that this message, including my access data (server, user, password), is sent to DeepSeek to be read. Without the AI the TV uses its own rules and sends nothing.</string>
+    <!-- Translators: Error on the companion page when the message was submitted without the consent checkbox. -->
+    <string name="companion_import_consent_missing">Please confirm that the message may be sent to the AI.</string>
+    <!-- Translators: Button on the companion page that starts the analysis of the pasted message. -->
+    <string name="companion_import_analyze">Analyze</string>
+    <!-- Translators: Status line on the companion page while the message is being read. -->
+    <string name="companion_import_analyzing">Reading the message \u2026</string>
+    <!-- Translators: Page title in the companion browser tab where the analysed message is checked. "Sportio" is a brand name. -->
+    <string name="companion_import_confirm_title">Sportio \u2014 Check the data</string>
+    <!-- Translators: Heading on the companion page where the analysed message is checked before it goes to the TV. -->
+    <string name="companion_import_confirm_heading">Check the data before it goes to the TV</string>
+    <!-- Translators: Description on the companion page where the analysed message is checked. -->
+    <string name="companion_import_confirm_description">These values were read from your message. Correct what is wrong \u2014 the TV only fills its form with them.</string>
+    <!-- Translators: Label for the source-type selector on the companion confirm page. -->
+    <string name="companion_import_type_label">Type</string>
+    <!-- Translators: Heading above the list of addresses found in a message that holds more than one. -->
+    <string name="companion_import_choose_url">Which address? Your message holds more than one \u2014 pick the one you want.</string>
+    <!-- Translators: Button on the companion confirm page that shows the values of the picked address. -->
+    <string name="companion_import_show_url">Show this address</string>
+    <!-- Translators: Hint on the companion confirm page saying that the AI read the values. -->
+    <string name="companion_import_read_by_ai">The values were read by the AI.</string>
+    <!-- Translators: Hint on the companion confirm page saying that the TV read the values with its own rules. -->
+    <string name="companion_import_read_by_rules">The values were read by the TV\'s own rules.</string>
+    <!-- Translators: Hint on the companion confirm page when no AI key is set, so the message was read with the TV's own rules. It names where the key belongs. -->
+    <string name="companion_import_ai_no_key">No AI key is set, so the TV read the message with its own rules. Set the key on the TV under Sport settings \u2192 AI and the AI reads the message for you.</string>
+    <!-- Translators: Hint on the companion confirm page when the AI provider rejected the key. -->
+    <string name="companion_import_ai_invalid_key">The AI provider rejected the key, so the TV read the message with its own rules. Check the key on the TV under Sport settings \u2192 AI.</string>
+    <!-- Translators: Hint on the companion confirm page when the AI provider has no credit left. -->
+    <string name="companion_import_ai_no_credit">There is no credit left with the AI provider, so the TV read the message with its own rules.</string>
+    <!-- Translators: Hint on the companion confirm page when the AI could not be reached or did not answer. -->
+    <string name="companion_import_ai_failed">The AI could not be reached or did not answer, so the TV read the message with its own rules.</string>
+    <!-- Translators: Hint on the companion confirm page when the AI functions are switched off on the TV, so nothing was sent. It names where the switch is. -->
+    <string name="companion_import_ai_disabled">The AI functions are switched off on the TV, so the message was read with the TV\'s own rules. Turn them on under Settings \u2192 App.</string>
+    <!-- Translators: Hint on the companion confirm page saying that some values were only guessed. -->
+    <string name="companion_import_guessed">Some values were only guessed \u2014 please check them.</string>
+    <!-- Translators: Hint on the companion confirm page when the message held nothing that could be read. -->
+    <string name="companion_import_nothing_found">Nothing readable was found in the message \u2014 fill in the fields yourself.</string>
+    <!-- Translators: Error on the companion confirm page when a field the source needs is empty. -->
+    <string name="companion_import_missing_fields">Fill in everything the source needs \u2014 an incomplete source is not accepted.</string>
     <!-- Translators: Page title in the companion browser tab after a source was sent successfully. "Sportio" is a brand name. -->
     <string name="companion_saved_page_title">Sportio \u2014 Sent</string>
     <!-- Translators: Heading on the companion success page after sending a source. The checkmark is a visual indicator. -->

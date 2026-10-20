@@ -19,6 +19,23 @@ internal object CompanionHttpProtocol {
     /** PIN posts and source forms — a few hundred bytes in practice. */
     const val FORM_BODY_LIMIT = 64 * 1024
 
+    /** Field names of the analysis request. */
+    private const val MessageField = "message"
+    private const val UrlField = "url"
+    private const val ConsentField = "consent"
+    private const val ConsentGivenField = "consentGiven"
+    private const val JsonObjectStart = "{"
+    private const val AvailableField = "available"
+    private const val FoundField = "found"
+    private const val TypeField = "type"
+    private const val ServerField = "server"
+    private const val UsernameField = "username"
+    private const val PasswordField = "password"
+    private const val MacField = "mac"
+    private const val UrlsField = "urls"
+    private const val ConfidenceField = "confidence"
+    private const val FromAiField = "fromAi"
+
     private const val INITIAL_BODY_BUFFER = 64 * 1024
     private const val BODY_CHUNK = 16 * 1024
 
@@ -148,6 +165,30 @@ internal object CompanionHttpProtocol {
             syncMovies = scopeChoice(fields, "syncMovies", "sync_movies", SyncScopeChoice.Now),
             syncSeries = scopeChoice(fields, "syncSeries", "sync_series", SyncScopeChoice.Now),
             isDefault = bool(fields, "isDefault", "is_default", default = false),
+        )
+    }
+
+    /**
+     * Parse the body of an analysis request: the pasted message and the URL candidate the page
+     * picked (empty when the user has not chosen one yet). Null when the message is empty — there
+     * is nothing to read then.
+     *
+     * Form-encoded and JSON are both accepted, like the source endpoints: the page may post either.
+     */
+    fun parseAnalysisRequest(body: String): CompanionAnalysisRequest? {
+        val fields = if (body.trimStart().startsWith(JsonObjectStart)) {
+            // A malformed JSON body must not crash the accept thread.
+            runCatching { parseJsonFields(body) }.getOrDefault(emptyMap())
+        } else {
+            parseQuery(body)
+        }
+        val message = fields[MessageField].orEmpty().trim()
+        if (message.isEmpty()) return null
+        val preferred = fields[UrlField].orEmpty().trim().ifEmpty { null }
+        return CompanionAnalysisRequest(
+            message = message,
+            preferredUrl = preferred,
+            consented = bool(fields, ConsentField, ConsentGivenField, default = false),
         )
     }
 

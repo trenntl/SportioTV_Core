@@ -3139,6 +3139,8 @@
     <string name="settings_line_add_type_here">Xtream, M3U or Stalker with the remote</string>
     <!-- Translators: Panel text for From your phone. -->
     <string name="settings_help_add_from_phone">Open the address or scan the code in a browser on any device on the same Wi-Fi — a phone, a computer or another TV — fill in your playlist there and send it here. Much faster than typing a URL with the remote.</string>
+    <!-- Translators: Second paragraph of the From your phone help: the companion page can read a pasted provider message. -->
+    <string name="settings_help_add_from_message">The page on your phone has a tab for a pasted provider message: put the message there and the TV reads the server, user and password for you — you still check them before the import starts.</string>
     <!-- Translators: Panel text for Type it here. -->
     <string name="settings_help_add_type_here">Type an Xtream login, an M3U address or a Stalker portal with the remote, then start the import from the panel.</string>
     <!-- Translators: Row on From your phone while the TV waits for the phone to send the form. -->

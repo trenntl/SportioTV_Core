@@ -1682,6 +1682,7 @@
     <string name="settings_add_type_here">Hier eingeben</string>
     <string name="settings_line_add_type_here">Xtream, M3U oder Stalker mit der Fernbedienung</string>
     <string name="settings_help_add_from_phone">Öffnen Sie die Adresse oder scannen Sie den Code im Browser eines beliebigen Geräts im selben WLAN – Smartphone, Computer oder ein anderer Fernseher –, füllen Sie dort Ihre Playlist aus und senden Sie sie hierher. Viel schneller als eine URL mit der Fernbedienung zu tippen.</string>
+    <string name="settings_help_add_from_message">Die Seite am Handy hat einen Reiter für die eingefügte Nachricht eines Anbieters: Fügen Sie die Nachricht dort ein, und der TV liest Server, Benutzername und Passwort für Sie aus – vor dem Import prüfen Sie die Werte trotzdem.</string>
     <string name="settings_help_add_type_here">Geben Sie Xtream-Zugangsdaten, eine M3U-Adresse oder ein Stalker-Portal mit der Fernbedienung ein und starten Sie den Import im Bereich rechts.</string>
     <string name="settings_remote_waiting">Warten auf das andere Gerät</string>
     <string name="settings_remote_nothing_yet">Noch nichts empfangen</string>

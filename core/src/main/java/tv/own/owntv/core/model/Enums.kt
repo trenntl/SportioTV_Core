@@ -7,6 +7,51 @@ enum class MediaType { LIVE, MOVIE, SERIES, EPISODE }
 enum class SourceType { M3U, XTREAM, LOCAL_BACKUP, STALKER }
 
 /**
+ * How far the reading of a pasted provider message got.
+ *
+ * [HIGH] means the values were *read*: credentials in the URL's query, a complete label, or a MAC
+ * next to a portal. [GUESS] means one of them was inferred — the classic "URL / user / pass"
+ * order, or an AI's reading of a prose message. [NONE] means nothing usable was found.
+ *
+ * Not a measure of the provider's quality: it describes how sure the *reader* is, which is what
+ * the confirm step needs to know before a wrong server costs minutes of sync.
+ */
+enum class SourceMessageConfidence { HIGH, GUESS, NONE }
+
+/**
+ * What the AI did with a pasted provider message — or why it did not.
+ *
+ * The companion page needs this to say what happened: a message read with the TV's own rules
+ * looks the same as one the AI read, and the user deserves to know which happened and where the
+ * API key belongs.
+ */
+enum class SourceAnalysisAiState {
+    /** The AI read the message. */
+    USED,
+
+    /** No API key is set, so nothing was sent. */
+    NO_KEY,
+
+    /** The key that is set was rejected. */
+    INVALID_KEY,
+
+    /** The AI provider has no credit for this key. */
+    NO_CREDIT,
+
+    /** The AI was not reachable or did not answer. */
+    FAILED,
+
+    /** The AI was not asked about this message at all. */
+    NOT_ASKED,
+
+    /**
+     * The AI functions are switched off on the TV, so nothing was sent and the message was read
+     * with the TV's own rules.
+     */
+    DISABLED,
+}
+
+/**
  * What we know about an Xtream provider's HLS support, from `user_info.allowed_output_formats`.
  *
  * Three states rather than a boolean because "no" and "we haven't asked yet" are different answers and

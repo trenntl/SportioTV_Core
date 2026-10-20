@@ -54,6 +54,10 @@ class CompanionController(context: Context, localeStore: LocaleStore) {
     /** TMDB API keys handed over from the remote device in [startForTmdbKey] mode. */
     private val _tmdbKeys = MutableSharedFlow<String>(extraBufferCapacity = 4)
     val tmdbKeys: SharedFlow<String> = _tmdbKeys.asSharedFlow()
+
+    /** AI provider API keys (the Sports hub's DeepSeek key) handed over in [startForApiKey] mode. */
+    private val _apiKeys = MutableSharedFlow<String>(extraBufferCapacity = 4)
+    val apiKeys: SharedFlow<String> = _apiKeys.asSharedFlow()
     private val _tmdbConfigs = MutableSharedFlow<CompanionServiceConfig>(extraBufferCapacity = 4)
     val tmdbConfigs: SharedFlow<CompanionServiceConfig> = _tmdbConfigs.asSharedFlow()
     private val _openSubtitlesConfigs = MutableSharedFlow<CompanionServiceConfig>(extraBufferCapacity = 4)
@@ -62,6 +66,17 @@ class CompanionController(context: Context, localeStore: LocaleStore) {
     /** Chosen ids from a [CompanionMode.SELECT_ITEMS] pick list (last selection wins). */
     private val _selections = MutableSharedFlow<Set<String>>(extraBufferCapacity = 4)
     val selections: SharedFlow<Set<String>> = _selections.asSharedFlow()
+
+    /**
+     * Optional hook: read a pasted provider message (the "URL / user / pass" blob a shop or reseller
+     * sends). The AI client lives in the app, so core asks for the result instead of calling out
+     * itself — the same one-way rule as the other app-to-core hooks.
+     *
+     * Null means "no reader available" (no key, no network, no budget): the analysis endpoint then
+     * answers 503 and the page falls back to the fields the user types in.
+     */
+    @Volatile
+    var sourceAnalyzer: CompanionSourceAnalyzer? = null
 
     /** A fresh 6-digit PIN per [start], so a leaked code is short-lived. */
     @Volatile private var currentPin: String = ""
@@ -117,6 +132,9 @@ class CompanionController(context: Context, localeStore: LocaleStore) {
 
     /** Starts the companion server in TMDB-key mode: the remote device sends an API key, emitted on [tmdbKeys]. */
     fun startForTmdbKey(port: Int) = startInternal(port, CompanionMode.TMDB_KEY)
+
+    /** Starts the companion server in AI-key mode: the remote device sends an AI provider key, emitted on [apiKeys]. */
+    fun startForApiKey(port: Int) = startInternal(port, CompanionMode.AI_KEY)
     fun startForTmdbConfig(port: Int) = startInternal(port, CompanionMode.TMDB_CONFIG)
     fun startForOpenSubtitlesConfig(port: Int) = startInternal(port, CompanionMode.OPEN_SUBTITLES_CONFIG)
 
@@ -177,6 +195,7 @@ class CompanionController(context: Context, localeStore: LocaleStore) {
                 onImage = ::onImageUploaded,
                 // Never logged, at any level: it is the user's own credential.
                 onTmdbKey = { key -> _tmdbKeys.tryEmit(key) },
+                onApiKey = { key -> _apiKeys.tryEmit(key) },
                 onServiceConfig = { config ->
                     when (mode) {
                         CompanionMode.TMDB_CONFIG -> _tmdbConfigs.tryEmit(config)
@@ -191,6 +210,9 @@ class CompanionController(context: Context, localeStore: LocaleStore) {
                 selectTitle = selectTitle,
                 selectItems = selectItems,
                 onSelection = onSelection,
+                // Read through the property on every call, not captured once: the app may set the
+                // hook after the server is already listening.
+                onAnalyze = { message, preferredUrl -> sourceAnalyzer?.invoke(message, preferredUrl) },
                 onLocked = {
                     // The server has already stopped itself; just reflect it on the TV so the user
                     // knows why the link went away and that restarting gives them a new PIN.

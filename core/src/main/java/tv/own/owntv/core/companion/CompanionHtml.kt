@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.annotation.StringRes
 import org.json.JSONObject
 import tv.own.owntv.core.R
+import tv.own.owntv.core.model.SourceAnalysisAiState
+import tv.own.owntv.core.model.SourceMessageConfidence
 import tv.own.owntv.core.model.SourceType
 
 /**
@@ -46,18 +48,22 @@ internal object CompanionHtml {
       .card{background:var(--card); border:1px solid var(--line); border-radius:20px;
         padding:26px 22px; box-shadow:0 24px 60px rgba(0,0,0,.45)}
       h1{margin:0 0 8px; font-size:24px}
+      h2{margin:0 0 8px; font-size:20px}
       p{line-height:1.55; color:var(--muted); margin:0 0 16px}
       form{display:grid; gap:14px}
       label{display:grid; gap:6px; font-size:14px; color:var(--text)}
-      input,select{border:1px solid var(--line); border-radius:12px; padding:13px 14px;
-        background:#0C1311; color:var(--text); font-size:16px; width:100%}
-      input:focus,select:focus{outline:none; border-color:var(--accent);
+      input,select,textarea{border:1px solid var(--line); border-radius:12px; padding:13px 14px;
+        background:#0C1311; color:var(--text); font-size:16px; width:100%; font-family:inherit}
+      textarea{resize:vertical; min-height:110px; line-height:1.45}
+      input:focus,select:focus,textarea:focus{outline:none; border-color:var(--accent);
         box-shadow:0 0 0 3px rgba(140,238,43,.20)}
       .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px}
       .checks{display:grid; gap:10px; grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:2px}
       .check{display:flex; align-items:center; gap:9px; color:var(--muted)}
       .check input{width:18px; height:18px}
       .tabs{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-bottom:18px}
+      /* Four tabs (Xtream / M3U / Stalker / From message): as many fit, two per row on a phone. */
+      .tabs.wrap{grid-template-columns:repeat(auto-fit,minmax(110px,1fr))}
       .tab{border:1px solid var(--line); border-radius:12px; padding:12px 10px; background:var(--card-2);
         color:var(--muted); font-weight:600; font-size:15px; cursor:pointer; font-family:inherit}
       .tab.active{border-color:var(--accent); background:#1E2E0C; color:#EAFFD0}
@@ -99,12 +105,16 @@ internal object CompanionHtml {
       .mini{border:1px solid var(--line); background:var(--card-2); color:var(--muted); font:inherit;
         font-size:13px; border-radius:10px; padding:8px 12px; cursor:pointer}
       .tabs.fit{grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); margin-bottom:0}
+      /* The addresses found in a message: one per row, long URLs break instead of overflowing. */
+      .picks{display:grid; gap:8px; margin:10px 0}
+      .picks .url{word-break:break-all}
       .savebar{position:fixed; left:0; right:0; bottom:0; z-index:4; display:flex; align-items:center; gap:10px;
         padding:12px 20px calc(12px + env(safe-area-inset-bottom));
         background:linear-gradient(0deg,rgba(4,14,11,.98) 0%,rgba(4,14,11,.92) 70%,rgba(4,14,11,0) 100%)}
       .savebar .go{flex:1; margin:0}
       .savebar.dirty .go{box-shadow:0 0 0 3px rgba(140,238,43,.25)}
-      @media (max-width:640px){.grid,.checks,.tabs{grid-template-columns:1fr}}
+      @media (max-width:640px){.grid,.checks,.tabs{grid-template-columns:1fr}
+        .tabs.wrap{grid-template-columns:repeat(2,minmax(0,1fr))}}
     """
 
     private const val LOGO_SVG =
@@ -131,6 +141,15 @@ internal object CompanionHtml {
         val tmdbSentBody = s(R.string.companion_tmdb_sent_body)
         val tmdbSentLink = s(R.string.companion_tmdb_sent_link)
 
+        val aiKeyTitle = s(R.string.companion_ai_key_page_title)
+        val aiKeyHeading = s(R.string.companion_ai_key_heading)
+        val aiKeyDescription = s(R.string.companion_ai_key_description)
+        val aiKeyGetKey = s(R.string.companion_ai_key_get_key)
+        val aiKeyLabel = s(R.string.companion_ai_key_label)
+        val aiKeyInvalid = s(R.string.companion_ai_key_invalid)
+        val aiKeySentBody = s(R.string.companion_ai_key_sent_body)
+        val aiKeySentLink = s(R.string.companion_ai_key_sent_link)
+
         val addTitle = s(R.string.companion_add_page_title)
         val addHeading = s(R.string.companion_add_heading)
         val addDescription = s(R.string.companion_add_description)
@@ -149,6 +168,7 @@ internal object CompanionHtml {
         val playlistUrlOrFile = s(R.string.companion_playlist_url_or_file)
         val portalUrl = s(R.string.setup_portal_url)
         val portalExample = s(R.string.setup_portal_example)
+        val mac = s(R.string.setup_mac_address)
         val username = s(R.string.setup_username)
         val password = s(R.string.setup_password)
         val userAgent = s(R.string.setup_user_agent_optional)
@@ -174,6 +194,31 @@ internal object CompanionHtml {
         }
         val defaultPlaylistLabel = s(R.string.companion_default_playlist)
         val sendToTv = s(R.string.companion_send_to_tv)
+
+        val importTab = s(R.string.companion_import_tab)
+        val importHeading = s(R.string.companion_import_heading)
+        val importDescription = s(R.string.companion_import_description)
+        val importMessageLabel = s(R.string.companion_import_message_label)
+        val importConsent = s(R.string.companion_import_consent)
+        val importConsentMissing = s(R.string.companion_import_consent_missing)
+        val importAnalyze = s(R.string.companion_import_analyze)
+        val importAnalyzing = s(R.string.companion_import_analyzing)
+        val importConfirmTitle = s(R.string.companion_import_confirm_title)
+        val importConfirmHeading = s(R.string.companion_import_confirm_heading)
+        val importConfirmDescription = s(R.string.companion_import_confirm_description)
+        val importTypeLabel = s(R.string.companion_import_type_label)
+        val importChooseUrl = s(R.string.companion_import_choose_url)
+        val importShowUrl = s(R.string.companion_import_show_url)
+        val importReadByAi = s(R.string.companion_import_read_by_ai)
+        val importReadByRules = s(R.string.companion_import_read_by_rules)
+        val importAiNoKey = s(R.string.companion_import_ai_no_key)
+        val importAiInvalidKey = s(R.string.companion_import_ai_invalid_key)
+        val importAiNoCredit = s(R.string.companion_import_ai_no_credit)
+        val importAiFailed = s(R.string.companion_import_ai_failed)
+        val importAiDisabled = s(R.string.companion_import_ai_disabled)
+        val importGuessed = s(R.string.companion_import_guessed)
+        val importNothingFound = s(R.string.companion_import_nothing_found)
+        val importMissingFields = s(R.string.companion_import_missing_fields)
 
         val savedTitle = s(R.string.companion_saved_page_title)
         val savedHeading = s(R.string.companion_saved_heading)
@@ -257,19 +302,32 @@ internal object CompanionHtml {
         """.trimIndent())
     }
 
-    fun formPage(context: Context, pin: String): String {
+    /**
+     * The add-source page: the three source forms plus — when the host app can read messages — the
+     * "From message" panel.
+     */
+    fun formPage(
+        context: Context,
+        pin: String,
+        messagePanel: CompanionMessagePanel = CompanionMessagePanel(),
+    ): String {
         val c = Copy(context)
+        // The message panel is the one the page opens on when the user has just been sent back to
+        // it (a missing consent) — otherwise the Xtream form leads, as before.
+        val messageActive = messagePanel.available && messagePanel.active
+        val xtreamPanel = if (messageActive) "panel" else "panel active"
         return page(context, c.addTitle, """
             <div class="card">
               <h1>${c.addHeading.h()}</h1>
               <p>${c.addDescription.h()}</p>
-              <div class="tabs">
-                <button type="button" class="tab active" data-k="xtream">${c.xtream.h()}</button>
+              <div class="tabs wrap">
+                <button type="button" class="tab${if (messageActive) "" else " active"}" data-k="xtream">${c.xtream.h()}</button>
                 <button type="button" class="tab" data-k="m3u">${c.m3u.h()}</button>
                 <button type="button" class="tab" data-k="stalker">${c.stalker.h()}</button>
+                ${if (messagePanel.available) "<button type=\"button\" class=\"tab${if (messageActive) " active" else ""}\" data-k=\"message\">${c.importTab.h()}</button>" else ""}
               </div>
 
-              <form class="panel active" data-k="xtream" method="post" action="/xtream?pin=$pin">
+              <form class="$xtreamPanel" data-k="xtream" method="post" action="/xtream?pin=$pin">
                 <input type="hidden" name="type" value="xtream">
                 <div class="grid">
                   <label>${c.name.h()} <input name="name" placeholder="${c.defaultIptv.h()}"></label>
@@ -335,6 +393,7 @@ internal object CompanionHtml {
                 <label class="check"><input type="checkbox" name="isDefault" value="true"> ${c.defaultPlaylistLabel.h()}</label>
                 <button class="go" type="submit">${c.sendToTv.h()}</button>
               </form>
+${if (messagePanel.available) messagePanelHtml(c.importLabels(), pin, messagePanel.message, messagePanel.error, messagePanel.active) else ""}
             </div>
             <script>
               var tabs=document.querySelectorAll('.tab'), panels=document.querySelectorAll('.panel');
@@ -372,8 +431,271 @@ internal object CompanionHtml {
                 r.readAsText(file);
                 return false;
               });
+              // Message panel: the button waits for a message and for the consent, and the status
+              // line says what the TV is doing while the analysis runs.
+              var msgForm=document.getElementById('messageForm'), msgText=document.getElementById('srcMessage'),
+                  msgConsent=document.getElementById('srcConsent'), msgSend=document.getElementById('srcAnalyze'),
+                  msgStatus=document.getElementById('srcStatus');
+              if(msgForm){
+                var msgReady=function(){
+                  msgSend.disabled=!((msgText.value||'').trim().length && msgConsent.checked);
+                };
+                msgText.addEventListener('input',msgReady);
+                msgConsent.addEventListener('change',msgReady);
+                msgReady();
+                msgForm.addEventListener('submit',function(){
+                  msgSend.disabled=true; msgStatus.textContent=${c.importAnalyzing.js()};
+                });
+              }
             </script>
         """.trimIndent())
+    }
+
+    /**
+     * Every label the two message pages show.
+     *
+     * The renderers take them instead of a [Context], so the pages — the paste panel and the
+     * confirmation — stay unit-testable on the JVM, the same split [CompanionSelectHtml] uses.
+     */
+    data class ImportLabels(
+        val heading: String,
+        val description: String,
+        val messageLabel: String,
+        val consent: String,
+        val analyze: String,
+        val analyzing: String,
+        val confirmHeading: String,
+        val confirmDescription: String,
+        val typeLabel: String,
+        val xtream: String,
+        val m3u: String,
+        val stalker: String,
+        val name: String,
+        val namePlaceholder: String,
+        val serverUrl: String,
+        val portalUrl: String,
+        val username: String,
+        val password: String,
+        val mac: String,
+        val sendToTv: String,
+        val chooseUrl: String,
+        val showUrl: String,
+        val readByAi: String,
+        val readByRules: String,
+        val aiNoKey: String,
+        val aiInvalidKey: String,
+        val aiNoCredit: String,
+        val aiFailed: String,
+        val aiDisabled: String,
+        val guessed: String,
+        val nothingFound: String,
+        val missingFields: String,
+    )
+
+    /** The labels of the message pages, taken from the resources of the current locale. */
+    private fun Copy.importLabels(): ImportLabels = ImportLabels(
+        heading = importHeading,
+        description = importDescription,
+        messageLabel = importMessageLabel,
+        consent = importConsent,
+        analyze = importAnalyze,
+        analyzing = importAnalyzing,
+        confirmHeading = importConfirmHeading,
+        confirmDescription = importConfirmDescription,
+        typeLabel = importTypeLabel,
+        xtream = xtream,
+        m3u = m3u,
+        stalker = stalker,
+        name = name,
+        namePlaceholder = defaultIptv,
+        serverUrl = serverUrl,
+        portalUrl = portalUrl,
+        username = username,
+        password = password,
+        mac = mac,
+        sendToTv = sendToTv,
+        chooseUrl = importChooseUrl,
+        showUrl = importShowUrl,
+        readByAi = importReadByAi,
+        readByRules = importReadByRules,
+        aiNoKey = importAiNoKey,
+        aiInvalidKey = importAiInvalidKey,
+        aiNoCredit = importAiNoCredit,
+        aiFailed = importAiFailed,
+        aiDisabled = importAiDisabled,
+        guessed = importGuessed,
+        nothingFound = importNothingFound,
+        missingFields = importMissingFields,
+    )
+
+    /**
+     * The "From message" panel: a text field for the pasted provider message, the consent that
+     * lets the message be read by the AI, and the button that starts the analysis.
+     *
+     * The consent is a checkbox, so an unticked box is simply not part of the POST — the server
+     * then sends the message nowhere and hands the page back with the error.
+     */
+    internal fun messagePanelHtml(
+        labels: ImportLabels,
+        pin: String,
+        message: String,
+        error: String?,
+        active: Boolean,
+    ): String = """
+              <form class="panel${if (active) " active" else ""}" id="messageForm" data-k="message" method="post" action="/source/analyze?pin=$pin">
+                <h2>${labels.heading.h()}</h2>
+                <p>${labels.description.h()}</p>
+                <label>${labels.messageLabel.h()} <textarea id="srcMessage" name="message" rows="7">${message.h()}</textarea></label>
+                <label class="check"><input type="checkbox" id="srcConsent" name="consent" value="1"><span>${labels.consent.h()}</span></label>
+                ${if (error != null) "<p class=\"err\">${error.h()}</p>" else ""}
+                <button class="go" id="srcAnalyze" type="submit">${labels.analyze.h()}</button>
+                <p id="srcStatus" class="hint"></p>
+              </form>
+    """.trimIndent()
+
+    /**
+     * The confirm page: the values read from the message, pre-filled and editable, plus the choice
+     * of address when the message held more than one.
+     */
+    fun sourceConfirmPage(
+        context: Context,
+        pin: String,
+        analysis: CompanionSourceAnalysis,
+        message: String,
+    ): String {
+        val c = Copy(context)
+        return page(context, c.importConfirmTitle, sourceConfirmBody(c.importLabels(), pin, analysis, message))
+    }
+
+    /**
+     * The body of the confirm page: the type, the values, the choice of address and the button.
+     *
+     * The type can be changed, and the form follows it: the endpoint, the name of the URL field and
+     * the fields that belong to the type. The TV still receives the ordinary payload — the page
+     * only fills the form, the import is started there.
+     */
+    internal fun sourceConfirmBody(
+        labels: ImportLabels,
+        pin: String,
+        analysis: CompanionSourceAnalysis,
+        message: String,
+    ): String {
+        val type = when (analysis.type) {
+            SourceType.M3U -> "m3u"
+            SourceType.STALKER -> "stalker"
+            else -> "xtream"
+        }
+        val hints = buildList {
+            if (!analysis.hasContent) {
+                add(labels.nothingFound)
+            } else {
+                if (analysis.confidence == SourceMessageConfidence.GUESS) add(labels.guessed)
+                add(
+                    when {
+                        // The values on show are the AI's.
+                        analysis.fromAi -> labels.readByAi
+                        // The AI read the message, but these values are the local ones.
+                        analysis.aiState == SourceAnalysisAiState.USED -> labels.readByRules
+                        else -> aiHint(labels, analysis.aiState)
+                    },
+                )
+            }
+        }
+        return """
+            <div class="card">
+              <h1>${labels.confirmHeading.h()}</h1>
+              <p>${labels.confirmDescription.h()}</p>
+              ${hints.joinToString("") { "<p class=\"hint\">${it.h()}</p>" }}
+${urlChoiceHtml(labels, analysis, message, pin)}
+              <form id="srcForm" method="post" action="/$type?pin=$pin">
+                <label>${labels.typeLabel.h()}
+                  <select name="type" id="srcType">
+                    <option value="xtream"${if (type == "xtream") " selected" else ""}>${labels.xtream.h()}</option>
+                    <option value="m3u"${if (type == "m3u") " selected" else ""}>${labels.m3u.h()}</option>
+                    <option value="stalker"${if (type == "stalker") " selected" else ""}>${labels.stalker.h()}</option>
+                  </select>
+                </label>
+                <label>${labels.name.h()} <input name="name" placeholder="${labels.namePlaceholder.h()}"></label>
+                <label><span id="srcUrlLabel">${labels.serverUrl.h()}</span> <input id="srcUrl" name="server" value="${analysis.server.h()}"></label>
+                <div class="grid" id="srcXtreamFields">
+                  <label>${labels.username.h()} <input id="srcUser" name="user" value="${analysis.username.h()}" autocomplete="username"></label>
+                  <label>${labels.password.h()} <input id="srcPass" name="pass" type="password" value="${analysis.password.h()}" autocomplete="current-password"></label>
+                </div>
+                <label id="srcMacField">${labels.mac.h()} <input id="srcMac" name="mac" value="${analysis.mac.h()}"></label>
+                <button class="go" type="submit">${labels.sendToTv.h()}</button>
+                <p id="srcStatus" class="hint"></p>
+              </form>
+            </div>
+            <script>
+              var srcForm=document.getElementById('srcForm'), srcType=document.getElementById('srcType'),
+                  srcUrl=document.getElementById('srcUrl'), srcUrlLabel=document.getElementById('srcUrlLabel'),
+                  srcMacField=document.getElementById('srcMacField'), srcXtreamFields=document.getElementById('srcXtreamFields'),
+                  srcStatus=document.getElementById('srcStatus');
+              if(srcForm){
+                // The type drives the endpoint, the name of the URL field and the fields on show.
+                var srcApply=function(){
+                  var t=srcType.value;
+                  srcForm.action='/'+t+'?pin=$pin';
+                  srcUrl.name=(t==='stalker')?'portalUrl':'server';
+                  srcUrlLabel.textContent=(t==='stalker')?${labels.portalUrl.js()}:${labels.serverUrl.js()};
+                  srcXtreamFields.hidden=(t!=='xtream');
+                  srcMacField.hidden=(t!=='stalker');
+                };
+                srcType.addEventListener('change',srcApply);
+                srcApply();
+                // An incomplete source is refused by the TV, so catch it here: the user would
+                // otherwise lose the whole form to a one-line error page.
+                srcForm.addEventListener('submit',function(ev){
+                  var t=srcType.value, ok=!!(srcUrl.value||'').trim();
+                  if(t==='xtream'){ok=ok&&!!(document.getElementById('srcUser').value||'').trim()&&!!(document.getElementById('srcPass').value||'').trim();}
+                  else if(t==='stalker'){ok=ok&&!!(document.getElementById('srcMac').value||'').trim();}
+                  if(!ok){ev.preventDefault();srcStatus.textContent=${labels.missingFields.js()};return false;}
+                  return true;
+                });
+              }
+            </script>
+        """.trimIndent()
+    }
+
+    /**
+     * The hint that says why the AI did not read the message — and, for a missing key, where the
+     * key belongs.
+     */
+    private fun aiHint(labels: ImportLabels, state: SourceAnalysisAiState): String = when (state) {
+        SourceAnalysisAiState.USED -> labels.readByAi
+        SourceAnalysisAiState.NO_KEY -> labels.aiNoKey
+        SourceAnalysisAiState.INVALID_KEY -> labels.aiInvalidKey
+        SourceAnalysisAiState.NO_CREDIT -> labels.aiNoCredit
+        SourceAnalysisAiState.FAILED -> labels.aiFailed
+        SourceAnalysisAiState.NOT_ASKED -> labels.readByRules
+        SourceAnalysisAiState.DISABLED -> labels.aiDisabled
+    }
+
+    /**
+     * The choice between the addresses the message held. Only shown when there is more than one —
+     * the picked one is posted back to the analysis endpoint, which re-reads the message for it.
+     */
+    private fun urlChoiceHtml(
+        labels: ImportLabels,
+        analysis: CompanionSourceAnalysis,
+        message: String,
+        pin: String,
+    ): String {
+        if (analysis.urls.size < 2) return ""
+        val options = analysis.urls.joinToString("\n") { url ->
+            """<label class="check"><input type="radio" name="url" value="${url.h()}"${if (url == analysis.url) " checked" else ""}><span class="url">${url.h()}</span></label>"""
+        }
+        return """
+              <form method="post" action="/source/analyze?pin=$pin">
+                <input type="hidden" name="message" value="${message.h()}">
+                <input type="hidden" name="consent" value="1">
+                <p class="hint">${labels.chooseUrl.h()}</p>
+                <div class="picks">
+                  $options
+                </div>
+                <button class="go" type="submit">${labels.showUrl.h()}</button>
+              </form>
+        """.trimIndent()
     }
 
     fun savedPage(context: Context, payload: CompanionPayload, pin: String): String {
@@ -491,6 +813,56 @@ internal object CompanionHtml {
         return page(context, c.savedTitle, """
             <div class="card"><h1>${c.savedHeading.h()}</h1>
               <p>${c.tmdbSentBody.h()}</p><p><a href="/?pin=$pin">${c.tmdbSentLink.h()}</a></p>
+            </div>
+        """.trimIndent())
+    }
+
+    /**
+     * One-field page for an AI provider's API key (the Sports hub's DeepSeek key): paste it and send
+     * it to the TV.
+     *
+     * The reason is the same one that produced [tmdbKeyPage]: a long key is painful to type on a
+     * remote. The link goes straight to DeepSeek's key page because the Sports hub is the only
+     * caller today.
+     */
+    fun aiKeyPage(context: Context, pin: String): String {
+        val c = Copy(context)
+        return page(context, c.aiKeyTitle, """
+            <div class="card">
+              <h1>${c.aiKeyHeading.h()}</h1>
+              <p>${c.aiKeyDescription.h()}</p>
+              <p><a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener">${c.aiKeyGetKey.h()}</a></p>
+              <form id="f" onsubmit="return false">
+                <label>${c.aiKeyLabel.h()} <input id="key" type="text" autocomplete="off"
+                  autocapitalize="off" spellcheck="false" required></label>
+                <button class="go" id="send" type="submit">${c.sendToTv.h()}</button>
+              </form>
+              <p id="status" class="hint"></p>
+            </div>
+            <script>
+              var k=document.getElementById('key'), b=document.getElementById('send'), s=document.getElementById('status');
+              document.getElementById('f').addEventListener('submit',function(){
+                var v=(k.value||'').trim();
+                // Mirror of the server-side shape check, purely so a typo is caught before a round trip.
+                if(!/^[A-Za-z0-9._:-]{8,256}$/.test(v)){s.textContent=${c.aiKeyInvalid.js()};return false;}
+                b.disabled=true; s.textContent=${c.sending.js()};
+                fetch('/apikey?pin=$pin',{method:'POST',headers:{'Content-Type':'text/plain'},body:v})
+                  .then(function(res){
+                    if(res.ok){document.open();res.text().then(function(t){document.write(t);document.close();});}
+                    else{b.disabled=false;s.textContent=${c.uploadFailed.js()}.replace('__STATUS__',String(res.status));}
+                  })
+                  .catch(function(){b.disabled=false;s.textContent=${c.couldNotReach.js()};});
+                return false;
+              });
+            </script>
+        """.trimIndent())
+    }
+
+    fun aiKeySentPage(context: Context, pin: String): String {
+        val c = Copy(context)
+        return page(context, c.savedTitle, """
+            <div class="card"><h1>${c.savedHeading.h()}</h1>
+              <p>${c.aiKeySentBody.h()}</p><p><a href="/?pin=$pin">${c.aiKeySentLink.h()}</a></p>
             </div>
         """.trimIndent())
     }

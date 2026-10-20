@@ -9,6 +9,14 @@
 > in one bolded line of its own (e.g. **Database v46 · Backup v24 · Breaking**). The detail — what,
 > why, files and verification — belongs in the commit message, never here.
 
+## core-1.0.71 — 2026-10-20
+
+**New source-analysis state DISABLED — a consuming app must build against this version**
+
+### New features
+
+- **The companion import page says when the TV's AI functions are switched off**
+
 ## core-1.0.70 — 2026-10-13
 
 ### New features
